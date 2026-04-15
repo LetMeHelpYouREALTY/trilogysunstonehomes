@@ -4,10 +4,9 @@ import { getAllResourcePaths } from "@/lib/resource-pages";
 import { SITE_URL } from "@/lib/site-contact";
 
 const base = SITE_URL.replace(/\/$/, "");
-const SITEMAP_REVALIDATE_SECONDS = 60 * 60 * 24; // 24h
 const DEFAULT_LAST_MODIFIED_ISO = "2026-04-15T00:00:00.000Z";
 
-export const revalidate = SITEMAP_REVALIDATE_SECONDS;
+export const revalidate = 86400;
 
 function safeDate(input: string | undefined) {
   if (!input) return new Date(DEFAULT_LAST_MODIFIED_ISO);
