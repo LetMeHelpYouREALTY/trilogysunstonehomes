@@ -4,7 +4,7 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd } from "@/lib/schema";
-import { SITE_NAME_SHORT } from "@/lib/site-contact";
+import { REALSCOUT_SHARED_SEARCH_URL, SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: `FAQ | ${SITE_NAME_SHORT}`,
@@ -108,9 +108,14 @@ export default function FaqPage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Still have questions?</h2>
               <p className="text-slate-700 mb-6">
                 Browse{" "}
-                <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium">
+                <a
+                  href={REALSCOUT_SHARED_SEARCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-medium"
+                >
                   Trilogy Sunstone homes for sale
-                </Link>
+                </a>
                 , read our{" "}
                 <Link href="/buyers-guide" className="text-blue-600 hover:text-blue-700 font-medium">
                   buyer&apos;s guide

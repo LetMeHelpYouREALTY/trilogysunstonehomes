@@ -6,6 +6,7 @@ import {
   MAPS_SEARCH_URL,
   PHONE_DISPLAY,
   PHONE_E164,
+  REALSCOUT_SHARED_SEARCH_URL,
   SITE_NAME,
   SITE_NAME_SHORT,
 } from "@/lib/site-contact";
@@ -23,7 +24,7 @@ const quickLinks = [
 
 const services = [
   { href: "/buyers-guide", label: "Home Buying" },
-  { href: "/", label: "View Listings" },
+  { href: REALSCOUT_SHARED_SEARCH_URL, label: "View Listings" },
   { href: "/neighborhoods/trilogy-sunstone", label: "Trilogy Sunstone Community" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -59,12 +60,23 @@ export function SiteFooter() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-[#eaf0f2] hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.href.startsWith("http") ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#eaf0f2] hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-[#eaf0f2] hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

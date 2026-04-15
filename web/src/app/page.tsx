@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { RealScoutOfficeListings } from "@/components/realscout-office-listings";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
-import { SITE_NAME_SHORT } from "@/lib/site-contact";
+import { REALSCOUT_SHARED_SEARCH_URL, SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME_SHORT} — Las Vegas 55+ homes for sale`,
@@ -46,9 +46,14 @@ export default function HomePage() {
                 </h2>
                 <p className="text-lg text-[#3d4544]">
                   We simplify your home search with{" "}
-                  <Link href="/" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  <a
+                    href={REALSCOUT_SHARED_SEARCH_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1c5087] hover:text-[#003a70] font-medium"
+                  >
                     curated Trilogy Sunstone listings
-                  </Link>
+                  </a>
                   , expert guidance, and exclusive{" "}
                   <Link
                     href="/neighborhoods/trilogy-sunstone"

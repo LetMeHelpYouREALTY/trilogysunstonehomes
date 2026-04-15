@@ -1,0 +1,11 @@
+---
+description: SEO implementation defaults
+alwaysApply: true
+---
+
+# SEO Rules
+
+- Create `error.tsx` alongside each `page.tsx`.
+- Use `generateMetadata()` with title, description, Open Graph, and canonical URL fields.
+- Use auto-generated sitemap via `next-sitemap`.
+- Allow CCBot in `robots.txt` and never block it.

@@ -5,6 +5,7 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd } from "@/lib/schema";
+import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Buyer's Guide | How to Buy a Trilogy Sunstone Home for Sale",
@@ -85,9 +86,14 @@ export default function BuyersGuidePage() {
                   <h3 className="text-xl font-semibold text-slate-900 inline">Search and tour.</h3>
                   <p className="text-slate-700 mt-1 ml-6">
                     Browse{" "}
-                    <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium">
+                    <a
+                      href={REALSCOUT_SHARED_SEARCH_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-700 font-medium"
+                    >
                       current Trilogy Sunstone listings
-                    </Link>{" "}
+                    </a>{" "}
                     and schedule showings. We can help you narrow by price, floor plan, and
                     location within the community.
                   </p>
@@ -150,9 +156,14 @@ export default function BuyersGuidePage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Ready to start?</h2>
               <p className="text-slate-700 mb-6">
                 View{" "}
-                <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium">
+                <a
+                  href={REALSCOUT_SHARED_SEARCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-medium"
+                >
                   Trilogy Sunstone homes for sale
-                </Link>{" "}
+                </a>{" "}
                 or{" "}
                 <Link href="/contact" className="text-blue-600 hover:text-blue-700 font-medium">
                   contact us
@@ -160,12 +171,14 @@ export default function BuyersGuidePage() {
                 for personalized help.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link
-                  href="/"
+                <a
+                  href={REALSCOUT_SHARED_SEARCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
                 >
                   View Listings
-                </Link>
+                </a>
                 <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
                   Schedule time with me
                 </CalendlyPopupButton>

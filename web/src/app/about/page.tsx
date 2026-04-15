@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "About Trilogy Sunstone | Las Vegas 55+ Community",
@@ -40,9 +41,14 @@ export default function AboutPage() {
             <p className="text-[#3d4544] leading-relaxed">
               Whether you&apos;re downsizing, relocating, or looking for your next chapter,
               we&apos;re here to help you{" "}
-              <Link href="/" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+              <a
+                href={REALSCOUT_SHARED_SEARCH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1c5087] hover:text-[#003a70] font-medium"
+              >
                 find the right home
-              </Link>{" "}
+              </a>{" "}
               and navigate the Trilogy Sunstone market with our{" "}
               <Link href="/buyers-guide" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                 buyer&apos;s guide
@@ -71,9 +77,14 @@ export default function AboutPage() {
                 <h3 className="font-semibold text-[#1c5087] mb-2">New Construction</h3>
                 <p className="text-[#6b7373] text-sm">
                   Discover{" "}
-                  <Link href="/" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  <a
+                    href={REALSCOUT_SHARED_SEARCH_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1c5087] hover:text-[#003a70] font-medium"
+                  >
                     new homes
-                  </Link>{" "}
+                  </a>{" "}
                   built for comfort, accessibility, and modern living.
                 </p>
               </li>
@@ -97,9 +108,14 @@ export default function AboutPage() {
             </h2>
             <p className="text-lg text-[#3d4544] mb-6">
               Explore{" "}
-              <Link href="/" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+              <a
+                href={REALSCOUT_SHARED_SEARCH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1c5087] hover:text-[#003a70] font-medium"
+              >
                 Trilogy Sunstone listings
-              </Link>
+              </a>
               , read our{" "}
               <Link href="/faq" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                 FAQ
@@ -107,12 +123,14 @@ export default function AboutPage() {
               , or get in touch for personalized help.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/"
+              <a
+                href={REALSCOUT_SHARED_SEARCH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-[#1c5087] hover:bg-[#003a70] text-white font-semibold px-6 py-3 rounded-md shadow transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
               >
                 View Listings
-              </Link>
+              </a>
               <Link
                 href="/neighborhoods/trilogy-sunstone"
                 className="inline-flex items-center justify-center border border-[#d9e0e2] bg-white text-[#3d4544] hover:bg-[#eaf0f2] font-semibold px-6 py-3 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"

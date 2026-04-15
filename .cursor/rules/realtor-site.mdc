@@ -1,0 +1,12 @@
+---
+description: Realtor site safety and integration rules
+alwaysApply: true
+---
+
+# Realtor Site Rules
+
+- Never change site-specific phone numbers directly in page/component code. Read from environment variables.
+- Use RealScout embeds in Server Components only.
+- Include LocalBusiness and RealEstateListing JSON-LD schema on every page.
+- Use the Cloudflare Worker schema injector pattern across all sites.
+- `cadencehenderson.com` is new-build buyers only and uses phone `702-930-8672`.

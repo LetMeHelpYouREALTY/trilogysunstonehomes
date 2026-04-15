@@ -23,3 +23,5 @@ export const BROKERAGE_LEGAL_LINE =
   "© 2026 Berkshire Hathaway HomeServices Nevada Properties. All Rights Reserved.";
 
 export const REALSCOUT_AGENT_ENCODED_ID = "QWdlbnQtMjI1MDUw";
+export const REALSCOUT_SHARED_SEARCH_URL =
+  "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0yMDk0Ng==";

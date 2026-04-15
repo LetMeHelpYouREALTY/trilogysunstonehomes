@@ -46,7 +46,13 @@
     @apply transition-colors;
   }
   a {
-    @apply outline-0 focus:ring-2 focus:ring-offset-1 focus:ring-[#1c5087];
+    @apply outline-0 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#1c5087];
+    text-decoration-skip-ink: auto;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.4px;
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
   }
   h1,
   h2,
@@ -127,7 +133,12 @@
   }
 
   .link-accent {
-    @apply font-semibold text-[#eaf0f2] underline decoration-[#d9e0e2]/80 underline-offset-4 transition-colors hover:text-white hover:decoration-[#ffffff];
+    @apply rounded-sm font-semibold text-[#eaf0f2] underline decoration-[#d9e0e2]/85 underline-offset-4 transition-colors hover:text-white hover:decoration-[#ffffff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c5087];
+    text-decoration-thickness: 1.8px;
+  }
+
+  .link-accent:hover {
+    text-decoration-thickness: 2.2px;
   }
 }
 
