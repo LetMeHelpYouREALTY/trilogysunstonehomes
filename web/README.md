@@ -26,4 +26,4 @@ See [AGENTS.md](../AGENTS.md) v0 section.
 
 ## Deploy
 
-Vercel: set project **Root Directory** to `web` if builds from the monorepo root do not detect Next automatically; root `vercel.json` also runs `cd web && npm install && npm run build`.
+Vercel: set project **Root Directory** to **`web`** (required). Config lives in [`vercel.json`](vercel.json) in this folder only—no monorepo-root `vercel.json`.
