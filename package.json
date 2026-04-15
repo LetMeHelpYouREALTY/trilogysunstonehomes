@@ -2,6 +2,11 @@
   "name": "trilogysunstonehomes",
   "private": true,
   "description": "Monorepo root; Next.js marketing site in web/ (Trilogy Sunstone Las Vegas).",
+  "dependencies": {
+    "next": "16.2.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
   "scripts": {
     "dev": "cd web && npm run dev",
     "build": "cd web && npm run build",
