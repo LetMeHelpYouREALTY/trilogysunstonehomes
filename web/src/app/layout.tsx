@@ -50,13 +50,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={geist.variable}>
       <head>
-        <meta name="theme-color" content="#172554" />
+        <meta name="theme-color" content="#003a70" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="preconnect" href="https://www.realscout.com" />
         <JsonLd data={websiteJsonLd()} />
       </head>
-      <body className="min-h-screen flex flex-col text-sm md:text-base font-sans text-slate-800">
+      <body className="min-h-screen flex flex-col text-sm md:text-base font-sans text-[#3d4544]">
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
@@ -64,7 +64,7 @@ export default function RootLayout({
         />
         <a
           href="#main-content"
-          className="absolute left-[-9999px] top-4 w-px h-px overflow-hidden focus:left-4 focus:top-4 focus:z-[100] focus:px-4 focus:py-2 focus:w-auto focus:h-auto focus:overflow-visible focus:bg-blue-600 focus:text-white focus:rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+          className="absolute left-[-9999px] top-4 w-px h-px overflow-hidden focus:left-4 focus:top-4 focus:z-[100] focus:px-4 focus:py-2 focus:w-auto focus:h-auto focus:overflow-visible focus:bg-[#1c5087] focus:text-white focus:rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1c5087]"
         >
           Skip to main content
         </a>

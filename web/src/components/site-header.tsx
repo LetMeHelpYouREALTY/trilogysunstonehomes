@@ -17,19 +17,19 @@ const navLinks = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/70">
+    <header className="sticky top-0 z-50 border-b border-[#d9e0e2]/80 bg-white/90 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/75">
       <nav
         className="container mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-4"
         aria-label="Main navigation"
       >
         <Link href="/" className="flex flex-col group max-w-[min(100%,20rem)] sm:max-w-none">
-          <span className="text-base sm:text-lg md:text-xl font-bold text-slate-900 leading-snug tracking-tight transition-colors group-hover:text-blue-800">
+          <span className="text-base sm:text-lg md:text-xl font-bold text-[#3d4544] leading-snug tracking-tight transition-colors group-hover:text-[#1c5087]">
             <span className="block sm:inline">{beforeHomes} </span>
-            <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#40738d] to-[#003a70] bg-clip-text text-transparent">
               Homes
             </span>
           </span>
-          <span className="text-[11px] sm:text-xs font-medium text-slate-600 hidden sm:block">
+          <span className="text-[11px] sm:text-xs font-medium text-[#6b7373] hidden sm:block">
             {SITE_NAME}
           </span>
         </Link>
@@ -38,7 +38,7 @@ export function SiteHeader() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-slate-600 hover:text-blue-700 font-medium transition-colors text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded-lg px-2.5 py-1.5 hover:bg-slate-50"
+                className="text-[#6b7373] hover:text-[#1c5087] font-medium transition-colors text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1c5087] focus-visible:ring-offset-2 rounded-lg px-2.5 py-1.5 hover:bg-[#eaf0f2]"
               >
                 {link.label}
               </Link>
@@ -47,7 +47,7 @@ export function SiteHeader() {
           <li>
             <a
               href={`tel:${PHONE_E164}`}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 text-white text-sm font-semibold shadow-md shadow-blue-900/25 h-9 px-4 transition-all hover:from-blue-500 hover:to-blue-700 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-[#1c5087] to-[#003a70] text-white text-sm font-semibold shadow-md shadow-[#003a70]/30 h-9 px-4 transition-all hover:from-[#205d9e] hover:to-[#1c5087] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1c5087] focus-visible:ring-offset-2"
             >
               Call {PHONE_DISPLAY}
             </a>

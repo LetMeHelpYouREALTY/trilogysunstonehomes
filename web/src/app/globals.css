@@ -3,19 +3,19 @@
 /* Design tokens — v0-style depth + Las Vegas 55+ trust palette (blue + warm gold accent) */
 @theme inline {
   --font-sans: var(--font-geist-sans);
-  --color-surface-page: #f1f5fb;
-  --color-surface-muted: #e8eef8;
-  --color-brand-50: #eff6ff;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-700: #1d4ed8;
-  --color-brand-800: #1e40af;
-  --color-brand-900: #1e3a8a;
-  --color-accent-400: #fcd34d;
-  --color-accent-500: #f59e0b;
-  --color-ink: #0f172a;
-  --shadow-elevated: 0 25px 50px -12px rgb(15 23 42 / 0.18);
-  --shadow-soft: 0 12px 40px -16px rgb(15 23 42 / 0.12);
+  --color-surface-page: #eaf0f2;
+  --color-surface-muted: #d9e0e2;
+  --color-brand-50: #eaf0f2;
+  --color-brand-500: #40738d;
+  --color-brand-600: #205d9e;
+  --color-brand-700: #1c5087;
+  --color-brand-800: #003a70;
+  --color-brand-900: #003a70;
+  --color-accent-400: #b7bec0;
+  --color-accent-500: #6b7373;
+  --color-ink: #3d4544;
+  --shadow-elevated: 0 25px 50px -12px rgb(0 58 112 / 0.2);
+  --shadow-soft: 0 12px 40px -16px rgb(61 69 68 / 0.18);
 }
 
 @layer base {
@@ -23,7 +23,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply antialiased text-slate-800;
+    @apply antialiased text-[#3d4544];
     background: var(--color-surface-page);
   }
   @media (prefers-reduced-motion: reduce) {
@@ -43,7 +43,7 @@
     @apply transition-colors;
   }
   a {
-    @apply outline-0 focus:ring-2 focus:ring-offset-1 focus:ring-blue-600;
+    @apply outline-0 focus:ring-2 focus:ring-offset-1 focus:ring-[#1c5087];
   }
   h1,
   h2,
@@ -63,9 +63,9 @@
     isolation: isolate;
     color: #fff;
     background:
-      radial-gradient(ellipse 110% 85% at 50% -35%, rgba(147, 197, 253, 0.5), transparent 58%),
-      radial-gradient(ellipse 80% 50% at 100% 0%, rgba(251, 191, 36, 0.12), transparent 45%),
-      linear-gradient(135deg, var(--color-brand-900) 0%, var(--color-brand-700) 42%, #172554 100%);
+      radial-gradient(ellipse 110% 85% at 50% -35%, rgba(217, 224, 226, 0.34), transparent 58%),
+      radial-gradient(ellipse 80% 50% at 100% 0%, rgba(183, 190, 192, 0.18), transparent 45%),
+      linear-gradient(135deg, var(--color-brand-900) 0%, var(--color-brand-700) 42%, var(--color-brand-500) 100%);
   }
 
   .hero-mesh::before {
@@ -76,7 +76,7 @@
       to bottom,
       rgba(255, 255, 255, 0.08) 0%,
       transparent 35%,
-      rgba(15, 23, 42, 0.15) 100%
+      rgba(61, 69, 68, 0.26) 100%
     );
     pointer-events: none;
     z-index: 0;
@@ -89,7 +89,7 @@
 
   .card-elevated {
     border-radius: 1.25rem;
-    border: 1px solid rgb(226 232 240 / 0.9);
+    border: 1px solid rgb(217 224 226 / 0.92);
     background: #fff;
     box-shadow: var(--shadow-soft);
   }
@@ -103,27 +103,27 @@
       135deg,
       var(--color-brand-800) 0%,
       var(--color-brand-700) 50%,
-      var(--color-brand-900) 100%
+      var(--color-brand-500) 100%
     );
     color: #fff;
   }
 
   .btn-primary-solid {
-    @apply inline-flex items-center justify-center rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-blue-800 shadow-lg transition-all;
-    box-shadow: 0 18px 40px -18px rgb(30 58 138 / 0.55);
+    @apply inline-flex items-center justify-center rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-[#003a70] shadow-lg transition-all;
+    box-shadow: 0 18px 40px -18px rgb(0 58 112 / 0.5);
   }
 
   .btn-primary-solid:hover {
-    @apply bg-blue-50 text-blue-900;
-    box-shadow: 0 22px 48px -16px rgb(30 58 138 / 0.45);
+    @apply bg-[#eaf0f2] text-[#1c5087];
+    box-shadow: 0 22px 48px -16px rgb(0 58 112 / 0.44);
   }
 
   .btn-primary-solid:focus-visible {
-    @apply outline-none ring-2 ring-white ring-offset-2 ring-offset-blue-900;
+    @apply outline-none ring-2 ring-white ring-offset-2 ring-offset-[#003a70];
   }
 
   .link-accent {
-    @apply font-semibold text-amber-200 underline decoration-amber-300/70 underline-offset-4 transition-colors hover:text-white hover:decoration-amber-200;
+    @apply font-semibold text-[#eaf0f2] underline decoration-[#d9e0e2]/80 underline-offset-4 transition-colors hover:text-white hover:decoration-[#ffffff];
   }
 }
 

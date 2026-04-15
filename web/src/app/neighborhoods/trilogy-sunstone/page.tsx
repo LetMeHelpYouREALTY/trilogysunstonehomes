@@ -4,6 +4,8 @@ import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd, trilogySunstoneBreadcrumbJsonLd } from "@/lib/schema";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Trilogy Sunstone Community | Las Vegas 55+ Active Adult Homes",
   description:
@@ -58,12 +60,12 @@ export default function TrilogySunstonePage() {
       <main className="min-h-screen flex flex-col">
         <nav
           aria-label="Breadcrumb"
-          className="border-b border-slate-200 bg-white py-3 text-sm text-slate-600"
+          className="border-b border-[#d9e0e2] bg-white py-3 text-sm text-[#6b7373]"
         >
           <div className="container mx-auto px-4">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
-                <Link href="/" className="text-blue-600 hover:text-blue-800 font-medium">
+                <Link href="/" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   Home
                 </Link>
               </li>
@@ -71,13 +73,13 @@ export default function TrilogySunstonePage() {
               <li>
                 <Link
                   href="/neighborhoods"
-                  className="text-blue-600 hover:text-blue-800 font-medium"
+                  className="text-[#1c5087] hover:text-[#003a70] font-medium"
                 >
                   Neighborhoods
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="font-medium text-slate-900" aria-current="page">
+              <li className="font-medium text-[#3d4544]" aria-current="page">
                 Trilogy Sunstone
               </li>
             </ol>
@@ -96,22 +98,22 @@ export default function TrilogySunstonePage() {
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Overview</h2>
-              <p className="text-slate-700 leading-relaxed mb-4">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Overview</h2>
+              <p className="text-[#3d4544] leading-relaxed mb-4">
                 Trilogy Sunstone is an age-qualified 55+ community in the Las Vegas area,
                 offering new and resale homes in a setting designed for active adults. Residents
                 enjoy a low-maintenance lifestyle with access to community amenities and a
                 built-in social environment.
               </p>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#3d4544] leading-relaxed">
                 Whether you are relocating, downsizing, or looking for a dedicated 55+
                 neighborhood, Trilogy Sunstone is a strong option in Southern Nevada&apos;s
                 active adult market. Learn more{" "}
-                <Link href="/about" className="text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/about" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   about our community
                 </Link>{" "}
                 or the{" "}
-                <Link href="/buyers-guide" className="text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/buyers-guide" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   home buying process
                 </Link>
                 .
@@ -120,11 +122,11 @@ export default function TrilogySunstonePage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-20 bg-slate-50">
+        <section className="py-16 md:py-20 bg-[#eaf0f2]">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Amenities &amp; lifestyle</h2>
-              <ul className="space-y-2 text-slate-700 list-disc list-inside">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Amenities &amp; lifestyle</h2>
+              <ul className="space-y-2 text-[#3d4544] list-disc list-inside">
                 <li>Resort-style pool and outdoor spaces</li>
                 <li>Fitness and wellness facilities</li>
                 <li>Social and activity programming for residents</li>
@@ -138,25 +140,25 @@ export default function TrilogySunstonePage() {
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Who it&apos;s for</h2>
-              <p className="text-slate-700 mb-4">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-4">Who it&apos;s for</h2>
+              <p className="text-[#3d4544] mb-4">
                 Trilogy Sunstone is for households with at least one person 55 or older who want
                 a dedicated active adult community, new or like-new homes, and an engaged
                 neighborhood without the upkeep of a large house or yard.
               </p>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4 mt-8">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-4 mt-8">
                 Trilogy Sunstone homes for sale
               </h2>
-              <p className="text-slate-700">
+              <p className="text-[#3d4544]">
                 Homes at Trilogy Sunstone are built with active adults in mind: single-level or
                 accessible layouts, modern finishes, and manageable square footage. View{" "}
-                <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   Trilogy Sunstone homes for sale
                 </Link>{" "}
                 and Trilogy Sunstone Las Vegas for sale listings on our homepage; we also have
                 Trilogy Sunstone by owner (FSBO) and agent-listed inventory. For a Trilogy
                 Sunstone Las Vegas price list by plan,{" "}
-                <Link href="/contact" className="text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/contact" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   contact us
                 </Link>
                 .
@@ -165,26 +167,26 @@ export default function TrilogySunstonePage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-20 bg-slate-50">
+        <section className="py-16 md:py-20 bg-[#eaf0f2]">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-slate-900 mb-8">Community FAQ</h2>
-              <p className="text-slate-700 mb-6">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-8">Community FAQ</h2>
+              <p className="text-[#3d4544] mb-6">
                 More on HOA fees, price lists, and buying at Trilogy Sunstone in our{" "}
-                <Link href="/faq" className="text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/faq" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   FAQ
                 </Link>{" "}
                 and{" "}
-                <Link href="/buyers-guide" className="text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/buyers-guide" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   buyer&apos;s guide
                 </Link>
                 .
               </p>
               <div className="space-y-6">
                 {communityFaq.map((item) => (
-                  <article key={item.question} className="border-b border-slate-200 pb-6 last:border-0">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-2">{item.question}</h3>
-                    <p className="text-slate-700">{item.answer}</p>
+                  <article key={item.question} className="border-b border-[#d9e0e2] pb-6 last:border-0">
+                    <h3 className="text-xl font-semibold text-[#3d4544] mb-2">{item.question}</h3>
+                    <p className="text-[#3d4544]">{item.answer}</p>
                   </article>
                 ))}
               </div>
@@ -195,29 +197,29 @@ export default function TrilogySunstonePage() {
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Explore Trilogy Sunstone</h2>
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-4">Explore Trilogy Sunstone</h2>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link
                   href="/"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
                 >
                   View Listings
                 </Link>
                 <Link
                   href="/neighborhoods"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
                 >
                   All Neighborhoods
                 </Link>
                 <Link
                   href="/buyers-guide"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
                 >
                   Buyer&apos;s Guide
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
                 >
                   Contact Us
                 </Link>
