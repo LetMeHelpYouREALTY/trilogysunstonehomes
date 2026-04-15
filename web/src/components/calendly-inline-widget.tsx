@@ -6,14 +6,16 @@ type CalendlyInlineWidgetProps = {
 };
 
 export function CalendlyInlineWidget({ className, title = "Schedule a home tour" }: CalendlyInlineWidgetProps) {
+  const iframeUrl = `${CALENDLY_INLINE_URL}&hide_gdpr_banner=1`;
+
   return (
-    <div className={className}>
-      <div
-        className="calendly-inline-widget rounded-xl border border-[#d9e0e2] bg-white"
-        data-url={CALENDLY_INLINE_URL}
+    <div className={className} role="region" aria-label={title}>
+      <iframe
+        title={title}
+        src={iframeUrl}
+        className="w-full rounded-xl border border-[#d9e0e2] bg-white"
         style={{ minWidth: "320px", height: "700px" }}
-        role="region"
-        aria-label={title}
+        loading="lazy"
       />
     </div>
   );
