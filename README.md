@@ -1,5 +1,7 @@
 # Trilogy Sunstone Homes
 
+[![MDC Rules Drift](https://github.com/LetMeHelpYouREALTY/trilogysunstonehomes/actions/workflows/mdc-rules-ci.yml/badge.svg)](https://github.com/LetMeHelpYouREALTY/trilogysunstonehomes/actions/workflows/mdc-rules-ci.yml)
+
 Marketing site for Trilogy Sunstone Homes (Las Vegas 55+ community). Full formal branding: Trilogy Sunstone | Homes by Dr Jan Duffy — see `web/src/lib/site-contact.ts`. Built with **Next.js** (App Router) in `web/`, deployed on **Vercel**.
 
 ## Structure

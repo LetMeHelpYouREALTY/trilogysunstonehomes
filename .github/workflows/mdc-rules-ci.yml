@@ -1,0 +1,19 @@
+name: CI — MDC Rules Drift
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  mdc-rules-drift:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify baseline MDC rules are in sync
+        shell: pwsh
+        run: |
+          ./scripts/sync-mdc-rules.ps1 -RepoPaths "." -DryRun -FailOnDrift
