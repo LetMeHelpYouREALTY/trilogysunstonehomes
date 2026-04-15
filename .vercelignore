@@ -1,0 +1,11 @@
+# Paths are relative to the Git repository root.
+# Shrinks upload / build context for the Next.js app (dashboard Root Directory: web).
+
+# Retired Astro site — not part of the Next production app
+archive
+
+# Internal notes and planning — not needed at build or runtime
+tasks
+
+# Local reference clone (see root .gitignore); harmless if absent
+heyberkshire-source

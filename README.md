@@ -22,7 +22,7 @@ Or from monorepo root:
 npm run build
 ```
 
-**Hosting:** Production is **Vercel** (Next.js in `web/`). In the Vercel project **Settings → General → Root Directory**, set **`web`** so Git pushes trigger builds (leave `spiffy-saturn` behind—that folder is archived). Redirects and headers for the Next app live in [web/vercel.json](web/vercel.json); the root [vercel.json](vercel.json) still has install/build commands for root-based deploys. Cloudflare Pages is not the primary target unless you add a Next-on-Pages pipeline—see [AGENTS.md](AGENTS.md).
+**Hosting:** Production is **Vercel** (Next.js in `web/`). In the Vercel project **Settings → General → Root Directory**, set **`web`** so Git pushes trigger builds (leave `spiffy-saturn` behind—that folder is archived). Redirects and headers for the Next app live in [web/vercel.json](web/vercel.json); the root [vercel.json](vercel.json) still has install/build commands for root-based deploys. Repo-root [`.vercelignore`](.vercelignore) keeps `archive/`, `tasks/`, and the optional `heyberkshire-source/` clone out of the Vercel upload. Cloudflare Pages is not the primary target unless you add a Next-on-Pages pipeline—see [AGENTS.md](AGENTS.md).
 
 **`vercel build`:** Run from `web/` after `vercel link` / `vercel pull` so project settings exist locally; otherwise `npm run build` in `web/` is the supported CI check (see GitHub Actions).
 

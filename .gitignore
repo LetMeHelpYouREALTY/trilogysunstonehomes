@@ -1,2 +1,13 @@
 # Design source (clone for porting only; do not commit)
 heyberkshire-source/
+
+# OS / editor noise (keeps repos and Vercel git clones cleaner)
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+*.swp
+*.swo
+
+# Local scratch (never ship)
+*.local.md

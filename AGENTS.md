@@ -8,6 +8,8 @@
   - **Settings → Git:** confirm the correct repository and **Production Branch** (`main`). Use **Disconnect** / reconnect if the integration looks stale.
   - After changing Root Directory, trigger **Deployments → Redeploy** once, or push an empty commit, to verify.
 - **Config files:** With Root Directory **`web`**, Vercel reads [`web/vercel.json`](web/vercel.json) (redirects + headers). The repo-root [`vercel.json`](vercel.json) still documents `installCommand` / `buildCommand` for deploys that use the **repository root** as the project root (e.g. some CLI flows); prefer dashboard Root Directory = **`web`** for Git integration.
+- **Deploy context:** Repo-root [`.vercelignore`](.vercelignore) excludes `archive/`, `tasks/`, and `heyberkshire-source/` from the files Vercel uploads for a deployment (smaller upload, faster steps). Do **not** add a second `.vercelignore` inside `web/` unless you intend to replace that behavior—Vercel prefers the project-directory file and would stop reading the repo-root ignore ([docs](https://vercel.com/docs/deployments/vercel-ignore)).
+- **Large media:** Prefer optimized WebP/AVIF under `web/public/images/`; avoid committing very large originals to Git (clone size affects CI and every Vercel git fetch). Use compression or a CDN for huge assets.
 - **Cloudflare Pages:** not wired for this Next app. Using Next on Cloudflare would require [`@cloudflare/next-on-pages`](https://developers.cloudflare.com/pages/framework-guides/nextjs/) or a static export—do not assume the old Astro → Cloudflare flow applies.
 
 ## Cursor rules
