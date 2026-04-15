@@ -1,6 +1,9 @@
 # Design source (clone for porting only; do not commit)
 heyberkshire-source/
 
+# Root npm install (monorepo root package.json deps for Vercel detection)
+/node_modules
+
 # OS / editor noise (keeps repos and Vercel git clones cleaner)
 .DS_Store
 Thumbs.db
