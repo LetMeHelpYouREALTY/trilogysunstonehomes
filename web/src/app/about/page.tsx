@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 
 export const metadata: Metadata = {
   title: "About Trilogy Sunstone | Las Vegas 55+ Community",
@@ -118,12 +119,9 @@ export default function AboutPage() {
               >
                 Community Details
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center border border-[#d9e0e2] bg-white text-[#3d4544] hover:bg-[#eaf0f2] font-semibold px-6 py-3 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-              >
-                Contact Us
-              </Link>
+              <CalendlyPopupButton className="inline-flex items-center justify-center border border-[#d9e0e2] bg-white text-[#3d4544] hover:bg-[#eaf0f2] font-semibold px-6 py-3 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2">
+                Schedule time with me
+              </CalendlyPopupButton>
             </div>
           </div>
         </div>

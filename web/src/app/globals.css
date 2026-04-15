@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Design tokens — v0-style depth + Las Vegas 55+ trust palette (blue + warm gold accent) */
+/* Design tokens — Trilogy blue base + lifestyle green accent from provided reference image */
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --color-surface-page: #eaf0f2;
@@ -11,6 +11,9 @@
   --color-brand-700: #1c5087;
   --color-brand-800: #003a70;
   --color-brand-900: #003a70;
+  --color-green-500: #8bb63e;
+  --color-green-600: #789e35;
+  --color-green-700: #66872d;
   --color-accent-400: #b7bec0;
   --color-accent-500: #6b7373;
   --color-ink: #3d4544;
@@ -109,17 +112,18 @@
   }
 
   .btn-primary-solid {
-    @apply inline-flex items-center justify-center rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-[#003a70] shadow-lg transition-all;
-    box-shadow: 0 18px 40px -18px rgb(0 58 112 / 0.5);
+    @apply inline-flex items-center justify-center rounded-xl px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all;
+    background: linear-gradient(135deg, var(--color-green-500) 0%, var(--color-green-600) 100%);
+    box-shadow: 0 18px 40px -18px rgb(102 135 45 / 0.55);
   }
 
   .btn-primary-solid:hover {
-    @apply bg-[#eaf0f2] text-[#1c5087];
-    box-shadow: 0 22px 48px -16px rgb(0 58 112 / 0.44);
+    background: linear-gradient(135deg, var(--color-green-600) 0%, var(--color-green-700) 100%);
+    box-shadow: 0 22px 48px -16px rgb(102 135 45 / 0.48);
   }
 
   .btn-primary-solid:focus-visible {
-    @apply outline-none ring-2 ring-white ring-offset-2 ring-offset-[#003a70];
+    @apply outline-none ring-2 ring-[#8bb63e] ring-offset-2 ring-offset-[#003a70];
   }
 
   .link-accent {

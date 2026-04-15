@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { PHONE_DISPLAY, PHONE_E164 } from "@/lib/site-contact";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { cn } from "@/lib/cn";
 
 type StickyMobileCtaProps = {
@@ -10,7 +9,7 @@ type StickyMobileCtaProps = {
 };
 
 /**
- * Mobile-first sticky Call + Contact bar (plan: conversion / repeat CTAs).
+ * Mobile-first sticky Calendly scheduling bar.
  */
 export function StickyMobileCta({ className }: StickyMobileCtaProps) {
   return (
@@ -22,18 +21,9 @@ export function StickyMobileCta({ className }: StickyMobileCtaProps) {
       role="region"
       aria-label="Quick contact"
     >
-      <a
-        href={`tel:${PHONE_E164}`}
-        className="inline-flex flex-1 items-center justify-center rounded-md bg-blue-600 px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-      >
-        Call {PHONE_DISPLAY}
-      </a>
-      <Link
-        href="/contact"
-        className="inline-flex flex-1 items-center justify-center rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-      >
-        Contact
-      </Link>
+      <CalendlyPopupButton className="inline-flex flex-1 items-center justify-center rounded-md bg-[#8bb63e] px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#789e35] focus:outline-none focus:ring-2 focus:ring-[#8bb63e] focus:ring-offset-2">
+        Schedule time with me
+      </CalendlyPopupButton>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { CalendlyBadgeInit } from "@/components/calendly-badge-init";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -52,6 +53,10 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#003a70" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link
+          rel="stylesheet"
+          href="https://assets.calendly.com/assets/external/widget.css"
+        />
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="preconnect" href="https://www.realscout.com" />
         <JsonLd data={websiteJsonLd()} />
@@ -62,6 +67,11 @@ export default function RootLayout({
           type="module"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
+        <CalendlyBadgeInit />
         <a
           href="#main-content"
           className="absolute left-[-9999px] top-4 w-px h-px overflow-hidden focus:left-4 focus:top-4 focus:z-[100] focus:px-4 focus:py-2 focus:w-auto focus:h-auto focus:overflow-visible focus:bg-[#1c5087] focus:text-white focus:rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1c5087]"

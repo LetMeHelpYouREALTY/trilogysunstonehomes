@@ -7,12 +7,12 @@ const turbopackRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com",
-  "style-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://assets.calendly.com",
+  "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
   "img-src 'self' data: https: blob:",
   "font-src 'self' data:",
-  "connect-src 'self' https://www.realscout.com https://em.realscout.com",
-  "frame-src 'self' https://www.google.com https://www.realscout.com",
+  "connect-src 'self' https://www.realscout.com https://em.realscout.com https://calendly.com https://assets.calendly.com",
+  "frame-src 'self' https://www.google.com https://www.realscout.com https://calendly.com https://assets.calendly.com",
   "base-uri 'self'",
   "form-action 'self'",
 ].join("; ");

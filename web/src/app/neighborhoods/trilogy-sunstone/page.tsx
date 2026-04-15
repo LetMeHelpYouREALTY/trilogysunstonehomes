@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd, trilogySunstoneBreadcrumbJsonLd } from "@/lib/schema";
@@ -223,7 +225,23 @@ export default function TrilogySunstonePage() {
                 >
                   Contact Us
                 </Link>
+                <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] bg-white text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2">
+                  Schedule time with me
+                </CalendlyPopupButton>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="py-16 md:py-20 bg-[#eaf0f2]">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-4 text-center">
+                Schedule a 90-Minute Trilogy Sunstone Tour
+              </h2>
+              <p className="text-[#6b7373] mb-8 text-center">
+                Book directly on our calendar to tour 2-3 homes in the community.
+              </p>
+              <CalendlyInlineWidget />
             </div>
           </div>
         </section>

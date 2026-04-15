@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const dynamic = "force-static";
@@ -111,12 +112,9 @@ export default function NeighborhoodsPage() {
               </Link>
               .
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-            >
-              Contact Us
-            </Link>
+            <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2">
+              Schedule time with me
+            </CalendlyPopupButton>
           </div>
         </div>
       </section>

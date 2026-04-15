@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutOfficeListings } from "@/components/realscout-office-listings";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
@@ -30,9 +32,9 @@ export default function HomePage() {
             Las Vegas&apos; premier 55+ active lifestyle community. Discover new homes,
             amenities, and a vibrant neighborhood.
           </p>
-          <Link href="/contact" className="btn-primary-solid">
-            Get Started
-          </Link>
+          <CalendlyPopupButton className="btn-primary-solid">
+            Schedule a Home Tour
+          </CalendlyPopupButton>
         </section>
 
         <section className="py-16 md:py-20 bg-white">
@@ -162,12 +164,23 @@ export default function HomePage() {
                 </Link>{" "}
                 for common questions, or reach out anytime.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-[#1c5087] hover:bg-[#003a70] text-white font-semibold px-8 py-4 rounded-md shadow transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-              >
+              <CalendlyPopupButton className="inline-flex items-center justify-center bg-[#789e35] hover:bg-[#66872d] text-white font-semibold px-8 py-4 rounded-md shadow transition-colors focus:outline-none focus:ring-2 focus:ring-[#8bb63e] focus:ring-offset-2">
                 Ask a Question
-              </Link>
+              </CalendlyPopupButton>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-4 text-center">
+                Schedule Your 90-Minute Home Tour
+              </h2>
+              <p className="text-[#6b7373] mb-8 text-center">
+                Pick a time that works for you and we will confirm the details.
+              </p>
+              <CalendlyInlineWidget />
             </div>
           </div>
         </section>
@@ -188,9 +201,9 @@ export default function HomePage() {
               </Link>
               .
             </p>
-            <Link href="/buyers-guide" className="btn-primary-solid">
-              Get Your Free Guide
-            </Link>
+            <CalendlyPopupButton className="btn-primary-solid">
+              Schedule time with me
+            </CalendlyPopupButton>
           </div>
         </section>
       </main>

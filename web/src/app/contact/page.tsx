@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { contactRealEstateAgentJsonLd } from "@/lib/schema";
 import {
   ADDRESS_LINE,
   MAPS_SEARCH_URL,
-  PHONE_E164,
   SITE_NAME_SHORT,
 } from "@/lib/site-contact";
 
@@ -52,20 +53,28 @@ export default function ContactPage() {
                   , or to schedule a visit.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href={`tel:${PHONE_E164}`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-                  >
-                    Call (702) 500-1942
-                  </a>
-                  <Link
-                    href="/"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-                  >
+                  <CalendlyPopupButton className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold bg-[#789e35] text-white hover:bg-[#66872d] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#8bb63e] focus:ring-offset-2">
+                    Schedule time with me
+                  </CalendlyPopupButton>
+                  <Link href="/" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2">
                     View Listings
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-4 text-center">
+                Book Your 90-Minute Home Tour
+              </h2>
+              <p className="text-[#6b7373] mb-8 text-center">
+                Choose a date and time to connect directly with Dr. Jan Duffy.
+              </p>
+              <CalendlyInlineWidget />
             </div>
           </div>
         </section>

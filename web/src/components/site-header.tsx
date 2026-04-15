@@ -47,7 +47,7 @@ export function SiteHeader() {
           <li>
             <a
               href={`tel:${PHONE_E164}`}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-[#1c5087] to-[#003a70] text-white text-sm font-semibold shadow-md shadow-[#003a70]/30 h-9 px-4 transition-all hover:from-[#205d9e] hover:to-[#1c5087] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1c5087] focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-[#8bb63e] to-[#789e35] text-white text-sm font-semibold shadow-md shadow-[#66872d]/35 h-9 px-4 transition-all hover:from-[#789e35] hover:to-[#66872d] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8bb63e] focus-visible:ring-offset-2"
             >
               Call {PHONE_DISPLAY}
             </a>

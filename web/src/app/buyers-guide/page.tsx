@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd } from "@/lib/schema";
@@ -164,12 +166,9 @@ export default function BuyersGuidePage() {
                 >
                   View Listings
                 </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-                >
-                  Contact Us
-                </Link>
+                <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+                  Schedule time with me
+                </CalendlyPopupButton>
                 <Link
                   href="/faq"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
@@ -177,6 +176,19 @@ export default function BuyersGuidePage() {
                   More FAQ
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="py-16 md:py-20 bg-slate-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
+                Schedule Your 2-3 Home Tour
+              </h2>
+              <p className="text-slate-700 mb-8 text-center">
+                Reserve a 90-minute consultation and tour slot that fits your schedule.
+              </p>
+              <CalendlyInlineWidget />
             </div>
           </div>
         </section>
