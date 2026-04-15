@@ -17,7 +17,7 @@
 
 ## CI (GitHub Actions)
 
-- **[`.github/workflows/deploy-astro.yml`](.github/workflows/deploy-astro.yml)** — `main` pushes: install/build/typecheck/lint in **`web/`** (name is legacy; it is the Next app).
+- **[`.github/workflows/web-ci.yml`](.github/workflows/web-ci.yml)** — `main` pushes: install/build/typecheck/lint in **`web/`** (Next.js app).
 - **[`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml)** — GitHub Pages template; **`workflow_dispatch` only** so it does not run on every push (production is Vercel). Enable `push` there only after adapting it for `web/` + static export if you need Pages.
 - **`.nvmrc`** — Node **20**, aligned with [`web/package.json`](web/package.json) `engines`.
 
