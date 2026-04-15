@@ -26,4 +26,4 @@ See [AGENTS.md](../AGENTS.md) v0 section.
 
 ## Deploy
 
-Vercel: set project **Root Directory** to **`web`** (required). Config lives in [`vercel.json`](vercel.json) in this folder only—no monorepo-root `vercel.json`.
+Vercel: prefer **Root Directory** **`web`** so this folder’s [`vercel.json`](vercel.json) is the app config. If the project uses the **repository root** as Root Directory, the repo root must include a root `vercel.json` with `"framework": "nextjs"` (see repo [AGENTS.md](../AGENTS.md)).

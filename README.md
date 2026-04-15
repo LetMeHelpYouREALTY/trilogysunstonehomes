@@ -22,7 +22,7 @@ Or from monorepo root:
 npm run build
 ```
 
-**Hosting:** Production is **Vercel** (Next.js in `web/`). Set the Vercel project **Root Directory** to **`web`** (required). Routing and headers are in [web/vercel.json](web/vercel.json) only—do not add install/build overrides there unless you know you need them. Repo-root [`.vercelignore`](.vercelignore) keeps `archive/`, `tasks/`, and the optional `heyberkshire-source/` clone out of the Vercel upload. Cloudflare Pages is not the primary target unless you add a Next-on-Pages pipeline—see [AGENTS.md](AGENTS.md).
+**Hosting:** Production is **Vercel** (Next.js in `web/`). Prefer **Root Directory** = **`web`** (then [web/vercel.json](web/vercel.json) is the only app config). If Root Directory is the **repo root**, you must also have [vercel.json](vercel.json) at the root with **`"framework": "nextjs"`** or Vercel treats the build as static and errors on a missing `public` output folder. Do not add `installCommand` / `buildCommand` / `outputDirectory` to `vercel.json` unless required. Repo-root [`.vercelignore`](.vercelignore) trims upload size. See [AGENTS.md](AGENTS.md).
 
 **`vercel build`:** Run from `web/` after `vercel link` / `vercel pull` so project settings exist locally; otherwise `npm run build` in `web/` is the supported CI check (see GitHub Actions).
 
