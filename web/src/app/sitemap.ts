@@ -1,56 +1,59 @@
 import type { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 import { getAllResourcePaths } from "@/lib/resource-pages";
 import { SITE_URL } from "@/lib/site-contact";
 
 const base = SITE_URL.replace(/\/$/, "");
+const SITEMAP_REVALIDATE_SECONDS = 60 * 60 * 24; // 24h
+const DEFAULT_LAST_MODIFIED_ISO = "2026-04-15T00:00:00.000Z";
+
+export const revalidate = SITEMAP_REVALIDATE_SECONDS;
+
+function safeDate(input: string | undefined) {
+  if (!input) return new Date(DEFAULT_LAST_MODIFIED_ISO);
+  const parsed = new Date(input);
+  return Number.isNaN(parsed.getTime()) ? new Date(DEFAULT_LAST_MODIFIED_ISO) : parsed;
+}
+
+function latestBlogLastModified() {
+  if (BLOG_POSTS.length === 0) return new Date(DEFAULT_LAST_MODIFIED_ISO);
+  return BLOG_POSTS.reduce((latest, post) => {
+    const postDate = safeDate(post.publishedAt);
+    return postDate > latest ? postDate : latest;
+  }, new Date(DEFAULT_LAST_MODIFIED_ISO));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const high = 0.8;
-  const mid = 0.6;
+  const libraryLastModified = latestBlogLastModified();
   const resources = getAllResourcePaths();
+  const staticRoutes = [
+    "/",
+    "/resources",
+    "/accessibility-statement",
+    "/contact",
+    "/neighborhoods/trilogy-sunstone",
+    "/buyers-guide",
+    "/faq",
+    "/about",
+    "/neighborhoods",
+  ];
 
   return [
-    { url: `${base}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/resources`, lastModified: now, changeFrequency: "weekly", priority: high },
-    { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: mid },
+    ...staticRoutes.map((path) => ({
+      url: `${base}${path}`,
+      lastModified: libraryLastModified,
+    })),
     {
-      url: `${base}/accessibility-statement`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: mid,
+      url: `${base}/blog`,
+      lastModified: libraryLastModified,
     },
-    {
-      url: `${base}/contact`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: high,
-    },
-    {
-      url: `${base}/neighborhoods/trilogy-sunstone`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: high,
-    },
-    {
-      url: `${base}/buyers-guide`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: high,
-    },
-    { url: `${base}/faq`, lastModified: now, changeFrequency: "weekly", priority: high },
-    { url: `${base}/about`, lastModified: now, changeFrequency: "weekly", priority: mid },
-    {
-      url: `${base}/neighborhoods`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: mid,
-    },
+    ...BLOG_POSTS.map((post) => ({
+      url: `${base}/blog/${post.slug}`,
+      lastModified: safeDate(post.publishedAt),
+    })),
     ...resources.map((path) => ({
       url: `${base}${path}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: mid,
+      lastModified: libraryLastModified,
     })),
   ];
 }

@@ -38,7 +38,10 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return [{ source: "/markdown-page", destination: "/", permanent: true }];
+    return [
+      { source: "/markdown-page", destination: "/", permanent: true },
+      { source: "/sitemap-index.xml", destination: "/sitemap.xml", permanent: true },
+    ];
   },
 };
 
