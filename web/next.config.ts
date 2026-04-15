@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: turbopackRoot,
   },
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
+  },
   async headers() {
     return [
       {

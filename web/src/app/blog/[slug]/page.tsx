@@ -1,0 +1,107 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { BLOG_POSTS, getBlogPost } from "@/lib/blog-posts";
+import { getRssImageMap } from "@/lib/rss-images";
+import { SITE_NAME_SHORT } from "@/lib/site-contact";
+
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
+  if (!post) return {};
+
+  return {
+    title: `${post.title} | ${SITE_NAME_SHORT}`,
+    description: post.description,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      url: `/blog/${post.slug}`,
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
+  if (!post) notFound();
+
+  const rssImageMap = await getRssImageMap();
+  const image = rssImageMap.get(post.slug) ?? post.image;
+
+  return (
+    <main className="min-h-screen flex flex-col">
+      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+        <p className="text-sm text-white/80 mb-2">
+          {new Date(post.publishedAt).toLocaleDateString()} · {post.readMinutes} min read
+        </p>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{post.title}</h1>
+        <p className="text-lg md:text-xl max-w-3xl text-white/90">{post.excerpt}</p>
+      </section>
+
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {image ? (
+            <div className="mb-8 overflow-hidden rounded-xl border border-[#d9e0e2]">
+              <Image
+                src={image}
+                alt={post.title}
+                width={1600}
+                height={900}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
+          ) : null}
+
+          <div className="space-y-10">
+            {post.sections.map((section) => (
+              <article key={section.heading}>
+                <h2 className="text-2xl font-bold text-[#3d4544] mb-4">{section.heading}</h2>
+                <div className="space-y-4">
+                  {section.body.map((paragraph) => (
+                    <p key={paragraph} className="text-[#3d4544] leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 bg-[#eaf0f2]">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-2xl font-bold text-[#3d4544] mb-4">Need help applying this strategy?</h2>
+          <p className="text-[#3d4544] mb-6">
+            Schedule a planning call with Dr. Jan Duffy for personalized next steps.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <CalendlyPopupButton className="inline-flex items-center justify-center rounded-md bg-[#8bb63e] text-white font-semibold px-6 py-3 hover:bg-[#789e35] transition-colors">
+              Schedule time with me
+            </CalendlyPopupButton>
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center rounded-md border border-[#d9e0e2] bg-white text-[#3d4544] font-semibold px-6 py-3 hover:bg-[#f7fafb] transition-colors"
+            >
+              Back to blog
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { BLOG_POSTS } from "@/lib/blog-posts";
+import { getRssImageMap } from "@/lib/rss-images";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
@@ -10,28 +13,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-const featuredPosts = [
-  {
-    title: "How to compare new-construction options in Trilogy Sunstone",
-    excerpt:
-      "A practical framework for evaluating lot, plan, and upgrade decisions before signing a builder contract.",
-    href: "/resources/buying-a-trilogy-sunstone-new-home-with-dr-jan-duffy",
-  },
-  {
-    title: "Mortgage preparation checklist for Las Vegas 55+ buyers",
-    excerpt:
-      "Organize lender docs, timeline milestones, and payment scenarios to reduce financing delays.",
-    href: "/resources/five-step-mortgage-process",
-  },
-  {
-    title: "Design upgrades that improve daily comfort and long-term value",
-    excerpt:
-      "Focus budget on practical features that support lifestyle needs and strong resale positioning.",
-    href: "/resources/20-must-have-features-in-your-new-construction-home",
-  },
-];
+export default async function BlogPage() {
+  const rssImageMap = await getRssImageMap();
+  const posts = BLOG_POSTS.map((post) => ({
+    ...post,
+    image: rssImageMap.get(post.slug) ?? post.image,
+  }));
 
-export default function BlogPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
@@ -46,15 +34,29 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Featured articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {featuredPosts.map((post) => (
+            {posts.map((post) => (
               <article
                 key={post.title}
                 className="rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-5 flex flex-col"
               >
+                {post.image ? (
+                  <div className="mb-4 overflow-hidden rounded-md border border-[#d9e0e2] bg-white">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={1200}
+                      height={675}
+                      className="h-44 w-full object-cover"
+                    />
+                  </div>
+                ) : null}
                 <h3 className="text-lg font-semibold text-[#1c5087] mb-3">{post.title}</h3>
                 <p className="text-[#3d4544] text-sm leading-relaxed mb-5">{post.excerpt}</p>
-                <Link href={post.href} className="mt-auto text-[#003a70] font-medium hover:underline">
-                  Read related resource
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="mt-auto text-[#003a70] font-medium hover:underline"
+                >
+                  Read article
                 </Link>
               </article>
             ))}
