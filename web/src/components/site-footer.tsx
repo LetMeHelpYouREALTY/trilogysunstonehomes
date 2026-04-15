@@ -12,6 +12,8 @@ import {
 
 const quickLinks = [
   { href: "/", label: "Home" },
+  { href: "/resources", label: "Resources" },
+  { href: "/blog", label: "Blog" },
   { href: "/neighborhoods", label: "Neighborhoods" },
   { href: "/about", label: "About" },
   { href: "/buyers-guide", label: "Buyer's Guide" },
@@ -158,6 +160,9 @@ export function SiteFooter() {
             >
               <Link href="/faq" className="text-[#d9e0e2] hover:text-white transition-colors">
                 FAQ
+              </Link>
+              <Link href="/accessibility-statement" className="text-[#d9e0e2] hover:text-white transition-colors">
+                Accessibility
               </Link>
               <Link href="/sitemap.xml" className="text-[#d9e0e2] hover:text-white transition-colors">
                 Sitemap
