@@ -1,4 +1,4 @@
-name: Deploy Astro Site
+name: CI — Next.js site (web)
 
 on:
   push:
@@ -17,34 +17,16 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: web/package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install and build
+        working-directory: web
+        run: npm ci && npm run build
 
-      - name: Build
-        run: npm run build
+      - name: Typecheck
+        working-directory: web
+        run: npm run typecheck
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: ./dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: ./dist
-
-      - name: Deploy to Cloudflare
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ./dist --project-name=trilogysunstonehomes
-        env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }} 
+      - name: Lint
+        working-directory: web
+        run: npm run lint

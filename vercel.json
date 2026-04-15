@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd spiffy-saturn && npm install && npm run build",
-  "outputDirectory": "spiffy-saturn/dist",
+  "buildCommand": "cd web && npm install && npm run build",
+  "installCommand": "cd web && npm install",
   "headers": [
     {
       "source": "/(.*)",

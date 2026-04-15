@@ -1,5 +1,12 @@
 {
   "name": "trilogysunstonehomes",
   "private": true,
-  "description": "Monorepo root; Astro app in spiffy-saturn/"
+  "description": "Monorepo root; Next.js marketing site in web/ (Trilogy Sunstone Las Vegas).",
+  "scripts": {
+    "dev": "cd web && npm run dev",
+    "build": "cd web && npm run build",
+    "lint": "cd web && npm run lint",
+    "typecheck": "cd web && npm run typecheck",
+    "vercel-build": "cd web && npm install && npm run build"
+  }
 }

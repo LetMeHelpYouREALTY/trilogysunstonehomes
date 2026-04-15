@@ -1,21 +1,34 @@
 # Trilogy Sunstone Homes
 
-Static site for Trilogy Sunstone (Las Vegas 55+ community). Built with Astro, deployed on Vercel.
+Marketing site for Trilogy Sunstone Homes (Las Vegas 55+ community). Full formal branding: Trilogy Sunstone | Homes by Dr Jan Duffy — see `web/src/lib/site-contact.ts`. Built with **Next.js** (App Router) in `web/`, deployed on **Vercel**.
 
 ## Structure
 
-- **spiffy-saturn/** – Astro app (pages, components, layouts). Build output: `spiffy-saturn/dist`.
+- **web/** – Next.js app (`src/app`, components, metadata, sitemap). Production build: `web/.next`.
+- **archive/spiffy-saturn/** – Previous Astro implementation (retired after Next migration).
 - **tasks/** – Planning and lessons: [tasks/README.md](tasks/README.md).
 
 ## Build and deploy
 
-From repo root (Vercel uses this):
+From repo root:
 
 ```bash
-cd spiffy-saturn && npm install && npm run build
+cd web && npm install && npm run build
 ```
 
-Output directory: `spiffy-saturn/dist`. Root [vercel.json](vercel.json) configures build, redirects (non-www → www), and headers.
+Or from monorepo root:
+
+```bash
+npm run build
+```
+
+**Hosting:** Production is **Vercel** (Next.js in `web/`). Root [vercel.json](vercel.json) runs the build inside `web/` and keeps redirects (apex → `www`). In the Vercel project dashboard, set **Root Directory** to `web` if the project does not detect Next from the monorepo root. Cloudflare Pages is not the primary target unless you add a Next-on-Pages pipeline—see [AGENTS.md](AGENTS.md).
+
+**`vercel build`:** Run from `web/` after `vercel link` / `vercel pull` so project settings exist locally; otherwise `npm run build` in `web/` is the supported CI check (see GitHub Actions).
+
+## Environment
+
+See [web/.env.example](web/.env.example) for optional `NEXT_PUBLIC_*` variables.
 
 ## Tasks workflow
 

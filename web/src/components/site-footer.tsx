@@ -1,0 +1,176 @@
+import Link from "next/link";
+import {
+  ADDRESS_LINE,
+  AGENT_LICENSE_LINE,
+  BROKERAGE_LEGAL_LINE,
+  MAPS_SEARCH_URL,
+  PHONE_DISPLAY,
+  PHONE_E164,
+  SITE_NAME,
+  SITE_NAME_SHORT,
+} from "@/lib/site-contact";
+
+const quickLinks = [
+  { href: "/", label: "Home" },
+  { href: "/neighborhoods", label: "Neighborhoods" },
+  { href: "/about", label: "About" },
+  { href: "/buyers-guide", label: "Buyer's Guide" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+const services = [
+  { href: "/buyers-guide", label: "Home Buying" },
+  { href: "/", label: "View Listings" },
+  { href: "/neighborhoods/trilogy-sunstone", label: "Trilogy Sunstone Community" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export function SiteFooter() {
+  return (
+    <footer
+      className="relative mt-auto border-t border-amber-400/25 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white"
+      role="contentinfo"
+    >
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent"
+        aria-hidden="true"
+      />
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div>
+            <h3 className="font-bold text-xl mb-4">
+              <Link href="/" className="text-white hover:text-blue-300 transition-colors">
+                {SITE_NAME_SHORT}
+              </Link>
+            </h3>
+            <p className="text-slate-400 text-xs mb-4">{SITE_NAME}</p>
+            <p className="text-slate-300 mb-4 text-sm">
+              Las Vegas 55+ active adult community. Your trusted partner for Trilogy
+              Sunstone homes for sale and community information. Backed by a legacy of
+              trust and integrity.
+            </p>
+          </div>
+
+          <nav aria-label="Quick links">
+            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-slate-300 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Real estate services">
+            <h3 className="font-bold text-lg mb-4">Real Estate Services</h3>
+            <ul className="space-y-2">
+              {services.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-slate-300 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div>
+            <h3 className="font-bold text-lg mb-4">Contact</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="text-blue-400 shrink-0 mt-0.5" aria-hidden="true">
+                  📍
+                </span>
+                <a
+                  href={MAPS_SEARCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  {ADDRESS_LINE}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-blue-400 shrink-0" aria-hidden="true">
+                  📞
+                </span>
+                <a
+                  href={`tel:${PHONE_E164}`}
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  {PHONE_DISPLAY}
+                </a>
+              </li>
+              <li className="flex flex-wrap gap-2 mt-2">
+                <a
+                  href={`tel:${PHONE_E164}`}
+                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md h-9 px-4 transition-colors"
+                >
+                  Call
+                </a>
+                <a
+                  href={MAPS_SEARCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center border border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white text-sm font-medium rounded-md h-9 px-4 transition-colors"
+                >
+                  Directions
+                </a>
+                <a
+                  href={MAPS_SEARCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center border border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white text-sm font-medium rounded-md h-9 px-4 transition-colors"
+                >
+                  View Google Reviews
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Schedule a call or send a message →
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-slate-800 mt-8 pt-8 space-y-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-slate-400 text-sm text-center md:text-left">
+              {BROKERAGE_LEGAL_LINE}
+            </p>
+            <nav
+              aria-label="Footer legal and site links"
+              className="flex flex-wrap justify-center gap-4 text-sm"
+            >
+              <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">
+                FAQ
+              </Link>
+              <Link href="/sitemap.xml" className="text-slate-400 hover:text-white transition-colors">
+                Sitemap
+              </Link>
+            </nav>
+          </div>
+          <p className="text-slate-500 text-xs text-center">{AGENT_LICENSE_LINE}</p>
+          <p className="text-slate-500 text-xs text-center max-w-2xl mx-auto">
+            When you work with a Berkshire Hathaway HomeServices agent, you&apos;re backed
+            by a name synonymous with trust, ethical standards, and financial strength.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
