@@ -12,6 +12,7 @@
     "build": "cd web && npm run build",
     "lint": "cd web && npm run lint",
     "typecheck": "cd web && npm run typecheck",
-    "vercel-build": "cd web && npm install --include=dev && npm run build"
+    "vercel-build": "cd web && npm install --include=dev && npm run build",
+    "vercel:set-root": "node scripts/set-vercel-root-web.mjs"
   }
 }
