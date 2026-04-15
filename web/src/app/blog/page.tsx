@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { BLOG_POSTS } from "@/lib/blog-posts";
+import { getOptimizedImageUrl } from "@/lib/image-url";
 import { getRssImageMap } from "@/lib/rss-images";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
@@ -36,13 +37,21 @@ export default async function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {posts.map((post) => (
               <article
-                key={post.title}
+                key={post.slug}
                 className="rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-5 flex flex-col"
               >
                 {post.image ? (
                   <div className="mb-4 overflow-hidden rounded-md border border-[#d9e0e2] bg-white">
                     <Image
-                      src={post.image}
+                      src={
+                        getOptimizedImageUrl(post.image, {
+                          width: 1200,
+                          height: 675,
+                          fit: "cover",
+                          format: "webp",
+                          quality: 85,
+                        }) ?? post.image
+                      }
                       alt={post.title}
                       width={1200}
                       height={675}

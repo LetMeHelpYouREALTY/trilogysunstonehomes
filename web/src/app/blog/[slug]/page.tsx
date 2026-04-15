@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { BLOG_POSTS, getBlogPost } from "@/lib/blog-posts";
+import { getOptimizedImageUrl } from "@/lib/image-url";
 import { getRssImageMap } from "@/lib/rss-images";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
@@ -19,6 +20,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
+  const rssImageMap = await getRssImageMap();
+  const image = getOptimizedImageUrl(rssImageMap.get(post.slug) ?? post.image, {
+    width: 1200,
+    height: 630,
+    fit: "cover",
+    format: "webp",
+    quality: 85,
+  });
 
   return {
     title: `${post.title} | ${SITE_NAME_SHORT}`,
@@ -29,6 +38,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: post.description,
       type: "article",
       url: `/blog/${post.slug}`,
+      images: image ? [{ url: image, width: 1200, height: 630, alt: post.title }] : undefined,
     },
   };
 }
@@ -56,7 +66,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {image ? (
             <div className="mb-8 overflow-hidden rounded-xl border border-[#d9e0e2]">
               <Image
-                src={image}
+                src={
+                  getOptimizedImageUrl(image, {
+                    width: 1600,
+                    height: 900,
+                    fit: "cover",
+                    format: "webp",
+                    quality: 85,
+                  }) ?? image
+                }
                 alt={post.title}
                 width={1600}
                 height={900}

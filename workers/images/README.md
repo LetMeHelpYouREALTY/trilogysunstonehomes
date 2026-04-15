@@ -58,6 +58,22 @@ curl "http://127.0.0.1:8787/sign-private?url=https://imagedelivery.net/<ACCOUNT_
 npx wrangler deploy
 ```
 
+## 7) Wire Next.js app
+
+Add the Worker URL to your `web/.env.local`:
+
+```bash
+NEXT_PUBLIC_IMAGES_WORKER_URL=https://<your-worker-subdomain>.workers.dev
+```
+
+In the app, internal image keys (for example `blog/cover.jpg`) are transformed through:
+
+```text
+https://<worker>/img/blog/cover.jpg?w=1200&h=675&fit=cover&format=webp&q=85
+```
+
+Absolute external URLs remain untouched unless you explicitly proxy/migrate them.
+
 ## Notes
 
 - Keep `IMAGES_SIGNING_KEY` and `INTERNAL_ORIGIN_TOKEN` as secrets only.
