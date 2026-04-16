@@ -24,13 +24,13 @@ export default function HomePage() {
       <div className="pb-24 md:pb-0">
       <main className="min-h-screen flex flex-col">
         <section className="hero-mesh relative flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9e0e2]">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
             Northwest Las Vegas · 55+ Active Adult · Trilogy at Sunstone
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-sm">
             Trilogy Sunstone Homes for Sale
           </h1>
-          <p className="text-lg md:text-xl text-[#f5f8f9] mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto">
             Buy a home in Trilogy Sunstone — Las Vegas&apos; 55+ community with Shea Homes
             new construction, resale homes, and resort-style living near Red Rock Canyon.
           </p>
@@ -40,7 +40,7 @@ export default function HomePage() {
               Schedule a Home Tour
             </CalendlyPopupButton>
           </div>
-          <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-[#eef2f3] sm:text-xs">
+          <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-white/90 sm:text-xs">
             {AGENT_LICENSE_LINE}
           </p>
           <p className="mt-4 text-sm font-medium text-white">
