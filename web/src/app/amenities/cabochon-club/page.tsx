@@ -75,6 +75,17 @@ export default function CabochonClubPage() {
                 those amenities are non-negotiable, confirm court reservations, hours, and any
                 guest policies during your discovery period—not just on a website screenshot.
               </p>
+              <p className="leading-relaxed">
+                Next step: review the{" "}
+                <Link href="/buyers-guide" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  Trilogy Sunstone buyer&apos;s guide
+                </Link>{" "}
+                and{" "}
+                <Link href="/guides/northwest-las-vegas-55-plus-homes" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  northwest Las Vegas 55+ guide
+                </Link>{" "}
+                to compare lifestyle fit, HOA expectations, and tour planning.
+              </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
                   href="/neighborhoods/trilogy-sunstone"

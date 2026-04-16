@@ -86,6 +86,23 @@ export default function DelWebbVsTrilogyPage() {
                 , then schedule a community tour with questions in hand. If you want a side-by-side
                 itinerary, contact us and we will help you structure it.
               </p>
+              <h2 className="text-2xl font-bold">Quick verdict</h2>
+              <p className="leading-relaxed">
+                If builder pedigree is your top priority, both Del Webb and Trilogy are strong
+                national brands. For this comparison, your daily-drive geography and the exact home
+                available now usually matter more than brand preference alone.
+              </p>
+              <p className="text-sm text-[#6b7373]">
+                Continue comparing with{" "}
+                <Link href="/compare/sun-city-summerlin-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
+                  Sun City Summerlin vs Trilogy Sunstone
+                </Link>{" "}
+                and{" "}
+                <Link href="/compare/regency-at-summerlin-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
+                  Regency at Summerlin vs Trilogy Sunstone
+                </Link>
+                .
+              </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
                   href="/neighborhoods/trilogy-sunstone"

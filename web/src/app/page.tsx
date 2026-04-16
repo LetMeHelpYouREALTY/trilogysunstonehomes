@@ -74,6 +74,17 @@ export default function HomePage() {
                   </Link>
                   .
                 </p>
+              <p className="mt-4 text-sm text-[#4e5655]">
+                Start with our{" "}
+                <Link href="/buyers-guide" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  buyers guide
+                </Link>{" "}
+                for resale vs new construction, then review{" "}
+                <Link href="/faq" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  HOA fee and pricing FAQ
+                </Link>{" "}
+                before scheduling a tour.
+              </p>
               </div>
               <span
                 className="shrink-0 w-6 h-6 rounded-full bg-[#eaf0f2] flex items-center justify-center"

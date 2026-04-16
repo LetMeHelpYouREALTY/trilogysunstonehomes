@@ -6,7 +6,7 @@ import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Guides | Las Vegas 55+ Homes, Relocation & Community Comparisons",
+  title: "Las Vegas 55+ Guides | Northwest Active Adult, Relocation & Comparisons",
   description:
     "Guides for northwest Las Vegas 55+ homes, California-to-Vegas retirement, and how top active adult communities compare—including Trilogy Sunstone.",
   alternates: { canonical: "/guides" },
@@ -80,7 +80,7 @@ export default function GuidesIndexPage() {
           </nav>
           <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
-              Guides &amp; comparisons
+              Las Vegas 55+ guides and community comparisons
             </h1>
             <p className="text-lg md:text-xl max-w-2xl text-white/90">
               Practical resources for {SITE_NAME_SHORT} buyers—local context, relocation, and
@@ -110,6 +110,13 @@ export default function GuidesIndexPage() {
           <section className="py-16 md:py-20 bg-[#eaf0f2]">
             <div className="container mx-auto px-4 max-w-3xl">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Community comparisons</h2>
+              <p className="text-[#3d4544] mb-4">
+                Start with our{" "}
+                <Link href="/guides/best-55-plus-communities-las-vegas" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  best 55+ communities Las Vegas 2026 overview
+                </Link>{" "}
+                and then use the direct comparisons below for side-by-side decisions.
+              </p>
               <ul className="space-y-3 list-disc list-inside text-[#3d4544]">
                 {comparisons.map((c) => (
                   <li key={c.href}>

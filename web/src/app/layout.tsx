@@ -4,7 +4,7 @@ import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { websiteJsonLd } from "@/lib/schema";
+import { localBusinessJsonLd, websiteJsonLd } from "@/lib/schema";
 import { SITE_NAME_SHORT, SITE_URL } from "@/lib/site-contact";
 
 const geist = Geist({
@@ -64,6 +64,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://assets.calendly.com" />
         <link rel="dns-prefetch" href="https://calendly.com" />
         <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={localBusinessJsonLd()} />
       </head>
       <body className="min-h-screen flex flex-col text-sm md:text-base font-sans text-[#3d4544]">
         <a

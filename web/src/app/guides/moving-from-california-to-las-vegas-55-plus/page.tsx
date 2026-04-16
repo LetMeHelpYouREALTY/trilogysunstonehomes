@@ -104,7 +104,15 @@ export default function CaliforniaRelocationGuidePage() {
               </p>
               <p className="text-sm text-[#6b7373] border-t border-[#d9e0e2] pt-6">
                 Questions? {SITE_NAME_SHORT} is happy to coordinate tours and introductions to
-                trusted local professionals when you need them.
+                trusted local professionals when you need them. Start with our{" "}
+                <Link href="/faq" className="text-[#1c5087] font-medium">
+                  Trilogy Sunstone FAQ
+                </Link>{" "}
+                or{" "}
+                <Link href="/contact" className="text-[#1c5087] font-medium">
+                  contact page
+                </Link>{" "}
+                for buyer support.
               </p>
             </div>
           </article>

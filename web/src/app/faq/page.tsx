@@ -5,10 +5,9 @@ import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd } from "@/lib/schema";
-import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: `Trilogy Sunstone FAQ | HOA Fees, Cost & 55+ Rules | ${SITE_NAME_SHORT}`,
+  title: `Trilogy Sunstone FAQ | HOA Fees, Home Costs, 55+ Rules & Comparisons`,
   description:
     "FAQ: HOA fees at Trilogy Sunstone, how much homes cost, age rules, zip code, distance to the Strip, and comparisons (Sun City Summerlin, Del Webb). Trilogy Sunstone Las Vegas 55+ community.",
   alternates: { canonical: "/faq" },
@@ -96,17 +95,17 @@ export default function FaqPage() {
       <main className="min-h-screen flex flex-col">
         <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
-            Frequently Asked Questions
+            Trilogy Sunstone FAQ: Costs, HOA Fees, and 55+ Rules
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-            Common questions about{" "}
+            Direct answers to common questions about{" "}
             <Link
               href="/neighborhoods/trilogy-sunstone"
               className="text-white font-semibold underline underline-offset-2 hover:no-underline"
             >
               Trilogy Sunstone
             </Link>{" "}
-            and buying in the area.
+            including pricing, HOA fees, age restrictions, and comparison pages.
           </p>
         </section>
 

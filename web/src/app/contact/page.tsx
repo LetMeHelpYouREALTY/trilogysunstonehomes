@@ -56,7 +56,7 @@ export default function ContactPage() {
                   >
                     community information
                   </Link>
-                  , or to schedule a visit.
+                  , resale vs new construction guidance, or to schedule a visit.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <CalendlyPopupButton className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold bg-[#789e35] text-white hover:bg-[#66872d] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#8bb63e] focus:ring-offset-2">

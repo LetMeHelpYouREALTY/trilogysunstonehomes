@@ -117,6 +117,17 @@ export default function NorthwestLasVegas55GuidePage() {
                 , and call {SITE_NAME_SHORT} when you want buyer representation aligned with your
                 timeline.
               </p>
+              <p className="text-[#3d4544] leading-relaxed mb-6">
+                For planning details before touring, read the{" "}
+                <Link href="/buyers-guide" className="text-[#1c5087] font-medium">
+                  buyer&apos;s guide
+                </Link>{" "}
+                and review{" "}
+                <Link href="/faq" className="text-[#1c5087] font-medium">
+                  HOA fee and pricing FAQ
+                </Link>
+                .
+              </p>
               <p className="text-sm text-[#6b7373]">
                 <a
                   href={MAPS_SEARCH_URL}

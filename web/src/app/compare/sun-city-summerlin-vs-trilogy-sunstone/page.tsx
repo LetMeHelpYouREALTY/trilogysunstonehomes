@@ -87,6 +87,24 @@ export default function SunCityVsTrilogyPage() {
                 patterns differ. Tour each with a written list: guest parking, pickleball, pool hours,
                 fitness offerings, and social clubs you will actually use.
               </p>
+              <h2 className="text-2xl font-bold text-[#3d4544]">Quick verdict</h2>
+              <p className="leading-relaxed">
+                Sun City Summerlin often fits buyers who prefer an established resale-heavy setting.
+                Trilogy Sunstone often fits buyers who want newer Shea Homes floor plans in northwest
+                Las Vegas with resort-style programming. The right choice depends on your commute,
+                budget, and amenity priorities.
+              </p>
+              <p className="text-sm text-[#6b7373]">
+                Compare other options:{" "}
+                <Link href="/compare/del-webb-north-ranch-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
+                  Del Webb North Ranch vs Trilogy Sunstone
+                </Link>{" "}
+                and{" "}
+                <Link href="/compare/regency-at-summerlin-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
+                  Regency at Summerlin vs Trilogy Sunstone
+                </Link>
+                .
+              </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
                   href="/neighborhoods/trilogy-sunstone"

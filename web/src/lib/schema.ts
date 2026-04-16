@@ -4,6 +4,7 @@
 import {
   ADDRESS_LOCALITY,
   ADDRESS_REGION,
+  MAPS_SEARCH_URL,
   PHONE_E164,
   POSTAL_CODE,
   SITE_NAME,
@@ -29,6 +30,34 @@ export function websiteJsonLd() {
     url: base,
     description: `${SITE_NAME_SHORT} — Las Vegas 55+ active adult community. Find homes for sale, community info, and buyer resources.`,
     publisher: { "@id": SCHEMA_IDS.realEstateAgent },
+  };
+}
+
+export function localBusinessJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${base}/#localBusiness`,
+    name: SITE_NAME_SHORT,
+    alternateName: SITE_NAME,
+    url: base,
+    telephone: PHONE_E164,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: STREET_ADDRESS,
+      addressLocality: ADDRESS_LOCALITY,
+      addressRegion: ADDRESS_REGION,
+      postalCode: POSTAL_CODE,
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Las Vegas",
+      containedInPlace: { "@type": "State", name: "Nevada" },
+    },
+    hasMap: MAPS_SEARCH_URL,
+    description: `${SITE_NAME_SHORT} helps buyers with Trilogy Sunstone homes for sale in Las Vegas 55+ communities.`,
+    image: `${base}/favicon-48.png`,
   };
 }
 

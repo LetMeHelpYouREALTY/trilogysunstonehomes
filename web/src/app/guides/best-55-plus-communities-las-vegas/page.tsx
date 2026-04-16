@@ -98,6 +98,10 @@ export default function Best55PlusCommunitiesPage() {
                 <Link href="/compare/del-webb-north-ranch-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
                   Del Webb North Ranch comparison
                 </Link>
+                {" "}or{" "}
+                <Link href="/compare/regency-at-summerlin-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
+                  Regency at Summerlin comparison
+                </Link>
                 .
               </p>
               <p className="text-sm text-[#6b7373]">

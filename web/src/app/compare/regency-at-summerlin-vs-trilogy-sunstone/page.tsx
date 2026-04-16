@@ -88,6 +88,23 @@ export default function RegencyVsTrilogyPage() {
                 </Link>
                 .
               </p>
+              <h2 className="text-2xl font-bold">Quick verdict</h2>
+              <p className="leading-relaxed">
+                Regency at Summerlin can be compelling for buyers prioritizing a Summerlin luxury
+                address. Trilogy Sunstone can be a better match for buyers prioritizing northwest Las
+                Vegas location and newer Shea Homes product at different price bands.
+              </p>
+              <p className="text-sm text-[#6b7373]">
+                Related comparisons:{" "}
+                <Link href="/compare/sun-city-summerlin-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
+                  Sun City Summerlin vs Trilogy Sunstone
+                </Link>{" "}
+                and{" "}
+                <Link href="/compare/del-webb-north-ranch-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
+                  Del Webb North Ranch vs Trilogy Sunstone
+                </Link>
+                .
+              </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
                   href="/neighborhoods/trilogy-sunstone"

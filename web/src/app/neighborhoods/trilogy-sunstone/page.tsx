@@ -11,7 +11,7 @@ import { POSTAL_CODE } from "@/lib/site-contact";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Trilogy Sunstone Community | Shea Homes 55+ | Cabochon Club & HOA | Las Vegas",
+  title: "Trilogy at Sunstone Real Estate | Shea Homes Floor Plans, HOA & Cabochon Club",
   description:
     "Trilogy at Sunstone real estate: Shea Homes Trilogy Sunstone in the Sunstone master plan (northwest Las Vegas). Freedom Collection & Resort Collection homes, HOA fees, Cabochon Club, resale & new construction. Inventory & tours.",
   alternates: { canonical: "/neighborhoods/trilogy-sunstone" },
@@ -106,7 +106,7 @@ export default function TrilogySunstonePage() {
         </nav>
         <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
-            Trilogy Sunstone Community
+            Trilogy at Sunstone Real Estate
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
             Shea Homes Trilogy Sunstone — Freedom &amp; Resort Collection homes, Cabochon Club
