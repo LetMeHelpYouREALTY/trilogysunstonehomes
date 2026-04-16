@@ -3,8 +3,8 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { LazyRealScoutOfficeListings } from "@/components/lazy-realscout-office-listings";
 import { MlsListingDisclaimer } from "@/components/mls-listing-disclaimer";
-import { RealScoutOfficeListings } from "@/components/realscout-office-listings";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
@@ -30,7 +30,7 @@ export default function HomePage() {
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-sm">
             Trilogy Sunstone Homes for Sale
           </h1>
-          <p className="text-lg md:text-xl text-[#eaf0f2] mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[#f5f8f9] mb-10 max-w-2xl mx-auto">
             Buy a home in Trilogy Sunstone — Las Vegas&apos; 55+ community with Shea Homes
             new construction, resale homes, and resort-style living near Red Rock Canyon.
           </p>
@@ -40,10 +40,10 @@ export default function HomePage() {
               Schedule a Home Tour
             </CalendlyPopupButton>
           </div>
-          <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-[#d9e0e2]/90 sm:text-xs">
+          <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-[#eef2f3] sm:text-xs">
             {AGENT_LICENSE_LINE}
           </p>
-          <p className="mt-4 text-sm font-medium text-white/95">
+          <p className="mt-4 text-sm font-medium text-white">
             <Link
               href={`/contact#${CONTACT_SELLING_SECTION_ID}`}
               className="rounded-sm underline decoration-white/40 underline-offset-[3px] transition hover:decoration-white"
@@ -162,7 +162,7 @@ export default function HomePage() {
               </Link>
               .
             </p>
-            <RealScoutOfficeListings />
+            <LazyRealScoutOfficeListings />
             <MlsListingDisclaimer />
           </div>
         </section>

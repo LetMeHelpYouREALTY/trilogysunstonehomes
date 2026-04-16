@@ -71,7 +71,7 @@ export function SiteFooter() {
                 {SITE_NAME_SHORT}
               </Link>
             </h3>
-            <p className="text-[#b7bec0] text-xs mb-4">{SITE_NAME}</p>
+            <p className="text-[#d4dce0] text-xs mb-4">{SITE_NAME}</p>
             <p className="text-[#eaf0f2] mb-4 text-sm">
               Las Vegas 55+ active adult community. Your trusted partner for Trilogy
               Sunstone homes for sale and community information. Backed by a legacy of

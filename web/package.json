@@ -5,6 +5,12 @@
   "engines": {
     "node": "20.x"
   },
+  "browserslist": [
+    "chrome >= 92",
+    "edge >= 92",
+    "firefox >= 92",
+    "safari >= 15.4"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

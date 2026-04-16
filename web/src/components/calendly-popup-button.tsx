@@ -1,6 +1,7 @@
 "use client";
 
 import type { MouseEvent } from "react";
+import { loadCalendlyWidget } from "@/lib/calendly-loader";
 import { CALENDLY_EVENT_URL } from "@/lib/calendly";
 
 declare global {
@@ -30,9 +31,14 @@ export function CalendlyPopupButton({
   className,
   url = CALENDLY_EVENT_URL,
 }: CalendlyPopupButtonProps) {
-  function openCalendly(event: MouseEvent<HTMLButtonElement>) {
+  async function openCalendly(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
-    window.Calendly?.initPopupWidget?.({ url });
+    try {
+      await loadCalendlyWidget();
+      window.Calendly?.initPopupWidget?.({ url });
+    } catch {
+      /* network blocked or CSP; user can retry */
+    }
   }
 
   return (
