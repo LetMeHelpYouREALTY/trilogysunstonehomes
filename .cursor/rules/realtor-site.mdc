@@ -5,8 +5,8 @@ alwaysApply: true
 
 # Realtor Site Rules
 
-- Never change site-specific phone numbers directly in page/component code. Read from environment variables.
-- Use RealScout embeds in Server Components only.
-- Include LocalBusiness and RealEstateListing JSON-LD schema on every page.
-- Use the Cloudflare Worker schema injector pattern across all sites.
-- `cadencehenderson.com` is new-build buyers only and uses phone `702-930-8672`.
+- Never hardcode site-specific phone numbers, address lines, or license text in page/component copy when a shared source already exists. Use shared constants such as `web/src/lib/site-contact.ts`.
+- Keep visible NAP, metadata, and JSON-LD aligned. If a page mentions Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, or Trilogy Sunstone contact details, they must match the shared contact source.
+- Use RealScout embeds only where the integration requires them, and keep related CSP/script domains aligned with the app config.
+- Use shared schema helpers in `web/src/lib/schema.ts` for `WebSite`, `RealEstateAgent`, `LocalBusiness`, `FAQPage`, and breadcrumbs before adding page-specific schema.
+- Do not add `RealEstateListing` schema unless the page has concrete listing-level data to support it.

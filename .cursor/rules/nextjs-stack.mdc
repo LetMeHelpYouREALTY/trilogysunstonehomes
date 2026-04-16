@@ -5,9 +5,10 @@ alwaysApply: true
 
 # Next.js Stack Baseline
 
-- Next.js 15, App Router only. Never use Pages Router patterns.
+- Next.js 16, App Router only. Never use Pages Router patterns.
 - React 19 with TypeScript strict mode.
-- Use `next/image` for all listing photos. Never use raw `<img>` tags.
-- Use `generateMetadata()` on every page.
+- Use `next/image` for local listing photos and other first-party images. Only use raw third-party embeds or iframes when the integration requires it.
+- Every route should export either static `metadata` or `generateMetadata()` with page-specific title, description, and canonical behavior.
 - Server Components by default. Use `'use client'` only when required.
-- Tailwind CSS v4 classes for styling. Avoid inline styles.
+- Tailwind CSS v4 classes for styling. Avoid inline styles unless a browser API or external embed requires a dynamic inline value.
+- Prefer shared constants and helpers in `web/src/lib/` over duplicating SEO, NAP, schema, or URL strings in page files.
