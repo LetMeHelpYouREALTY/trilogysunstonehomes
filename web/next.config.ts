@@ -1,9 +1,4 @@
 import type { NextConfig } from "next";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-/** App directory (this package). Keeps Turbopack root stable in the monorepo; aligns with Vercel when Root Directory is `web`. */
-const turbopackRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const csp = [
   "default-src 'self'",
@@ -18,9 +13,6 @@ const csp = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: turbopackRoot,
-  },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
