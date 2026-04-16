@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">Stylized illustration of Cabochon Club lifestyle at Trilogy Sunstone</title>
+  <desc id="desc">
+    Abstract clubhouse interior with people gathering, warm lighting, and desert colors to suggest the Cabochon Club
+    at Trilogy Sunstone. Replace this placeholder with real Cabochon Club photography when available.
+  </desc>
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="35%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#facc15" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bgGradient)" />
+
+  <!-- Hanging lights -->
+  <g stroke="#fed7aa" stroke-width="3" stroke-linecap="round">
+    <line x1="260" y1="80" x2="260" y2="170" />
+    <line x1="520" y1="60" x2="520" y2="165" />
+    <line x1="880" y1="70" x2="880" y2="175" />
+    <line x1="1140" y1="90" x2="1140" y2="190" />
+  </g>
+  <g fill="#fed7aa" opacity="0.9">
+    <circle cx="260" cy="180" r="22" />
+    <circle cx="520" cy="175" r="26" />
+    <circle cx="880" cy="185" r="24" />
+    <circle cx="1140" cy="200" r="20" />
+  </g>
+
+  <!-- Back wall feature -->
+  <rect x="140" y="210" width="1120" height="260" rx="24" fill="#020617" opacity="0.9" />
+  <rect x="180" y="250" width="1040" height="180" rx="20" fill="#0b1120" />
+  <rect x="220" y="270" width="960" height="140" rx="18" fill="#111827" />
+
+  <!-- Bar / counter -->
+  <rect x="120" y="380" width="1160" height="170" rx="24" fill="#0f172a" />
+  <rect x="150" y="400" width="1100" height="140" rx="18" fill="#111827" />
+  <rect x="150" y="400" width="1100" height="8" fill="url(#accentGradient)" />
+
+  <!-- Bottles / decor -->
+  <g fill="#22c55e" opacity="0.9">
+    <rect x="230" y="310" width="12" height="44" rx="4" />
+    <rect x="260" y="298" width="12" height="56" rx="4" />
+    <rect x="290" y="318" width="12" height="36" rx="4" />
+  </g>
+  <g fill="#38bdf8" opacity="0.9">
+    <rect x="1060" y="312" width="14" height="52" rx="4" />
+    <rect x="1094" y="300" width="14" height="64" rx="4" />
+    <rect x="1128" y="320" width="14" height="44" rx="4" />
+  </g>
+
+  <!-- People at tables -->
+  <g transform="translate(260, 470)">
+    <rect x="-80" y="0" width="160" height="80" rx="18" fill="#020617" />
+    <rect x="-70" y="10" width="140" height="60" rx="16" fill="#111827" />
+    <circle cx="-26" cy="-26" r="20" fill="#fcd34d" />
+    <rect x="-42" y="-12" width="32" height="60" rx="14" fill="#e5e7eb" opacity="0.9" />
+    <circle cx="46" cy="-22" r="18" fill="#fb923c" />
+    <rect x="32" y="-10" width="28" height="54" rx="13" fill="#e5e7eb" opacity="0.9" />
+  </g>
+
+  <g transform="translate(700, 490)">
+    <rect x="-80" y="0" width="160" height="80" rx="18" fill="#020617" />
+    <rect x="-70" y="10" width="140" height="60" rx="16" fill="#111827" />
+    <circle cx="-34" cy="-30" r="19" fill="#f97316" />
+    <rect x="-48" y="-16" width="30" height="62" rx="14" fill="#e5e7eb" opacity="0.9" />
+    <circle cx="38" cy="-24" r="17" fill="#22c55e" />
+    <rect x="26" y="-10" width="26" height="56" rx="13" fill="#e5e7eb" opacity="0.9" />
+  </g>
+
+  <g transform="translate(1080, 465)">
+    <rect x="-80" y="0" width="160" height="80" rx="18" fill="#020617" />
+    <rect x="-70" y="10" width="140" height="60" rx="16" fill="#111827" />
+    <circle cx="-30" cy="-30" r="18" fill="#4ade80" />
+    <rect x="-44" y="-14" width="30" height="60" rx="14" fill="#e5e7eb" opacity="0.9" />
+    <circle cx="40" cy="-24" r="17" fill="#38bdf8" />
+    <rect x="28" y="-10" width="26" height="54" rx="13" fill="#e5e7eb" opacity="0.9" />
+  </g>
+
+  <!-- Floor / foreground -->
+  <path
+    d="M0 620 C260 600 480 598 700 602 C940 606 1200 618 1400 632 L1400 800 L0 800 Z"
+    fill="#020617"
+  />
+  <path
+    d="M0 608 C260 590 480 586 700 590 C940 594 1200 604 1400 620"
+    fill="none"
+    stroke="#0f172a"
+    stroke-width="18"
+    opacity="0.9"
+  />
+</svg>
+
