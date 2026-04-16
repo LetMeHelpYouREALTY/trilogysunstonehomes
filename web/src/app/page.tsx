@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
@@ -24,7 +23,7 @@ export default function HomePage() {
       <JsonLd data={homeRealEstateAgentWithReviewsJsonLd()} />
       <div className="pb-24 md:pb-0">
       <main className="min-h-screen flex flex-col">
-        <section className="hero-mesh relative flex flex-col items-center justify-center min-h-[60vh] px-4 text-center overflow-hidden">
+        <section className="hero-mesh relative flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
             Northwest Las Vegas · 55+ Active Adult · Trilogy at Sunstone
           </p>
@@ -44,7 +43,7 @@ export default function HomePage() {
           <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-white/90 sm:text-xs">
             {AGENT_LICENSE_LINE}
           </p>
-          <p className="mt-4 text-sm font-medium text-white relative z-10">
+          <p className="mt-4 text-sm font-medium text-white">
             <Link
               href={`/contact#${CONTACT_SELLING_SECTION_ID}`}
               className="rounded-sm underline decoration-white/40 underline-offset-[3px] transition hover:decoration-white"
@@ -52,18 +51,6 @@ export default function HomePage() {
               Selling your Trilogy Sunstone home?
             </Link>
           </p>
-          <div className="pointer-events-none absolute inset-x-0 bottom-[-5rem] flex justify-center opacity-80">
-            <div className="relative h-40 w-[22rem] md:h-56 md:w-[32rem] lg:h-64 lg:w-[40rem]">
-              <Image
-                src="/images/photos/trilogy-sunstone-hero.svg"
-                alt="Illustration of Trilogy Sunstone 55+ community with resort-style clubhouse, pool, and desert mountains in northwest Las Vegas"
-                fill
-                priority
-                sizes="(min-width: 1024px) 640px, (min-width: 768px) 512px, 352px"
-                className="pointer-events-none select-none object-contain drop-shadow-[0_20px_45px_rgba(15,23,42,0.7)]"
-              />
-            </div>
-          </div>
         </section>
 
         <section className="py-16 md:py-20 bg-white">

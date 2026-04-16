@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
@@ -53,27 +52,13 @@ export default function Best55PlusCommunitiesPage() {
             </div>
           </nav>
 
-          <section className="hero-mesh relative flex flex-col items-center justify-center py-16 px-4 text-center overflow-hidden">
-            <div className="relative z-10">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
-                Best 55+ communities in Las Vegas—how to compare
-              </h1>
-              <p className="text-lg md:text-xl max-w-2xl text-white/90">
-                A people-first framework for 2026 shopping: fit beats buzzwords.
-              </p>
-            </div>
-            <div className="pointer-events-none absolute inset-x-0 bottom-[-4rem] flex justify-center opacity-85">
-              <div className="relative h-40 w-[22rem] md:h-52 md:w-[30rem] lg:h-60 lg:w-[36rem]">
-                <Image
-                  src="/images/photos/best-55-plus-las-vegas.svg"
-                  alt="Stylized Las Vegas valley map highlighting multiple 55-plus communities for comparison"
-                  fill
-                  priority={false}
-                  sizes="(min-width: 1024px) 576px, (min-width: 768px) 480px, 352px"
-                  className="pointer-events-none select-none object-contain drop-shadow-[0_18px_40px_rgba(15,23,42,0.75)]"
-                />
-              </div>
-            </div>
+          <section className="hero-mesh relative flex flex-col items-center justify-center py-16 px-4 text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+              Best 55+ communities in Las Vegas—how to compare
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl text-white/90">
+              A people-first framework for 2026 shopping: fit beats buzzwords.
+            </p>
           </section>
 
           <article className="py-16 md:py-20 bg-white">

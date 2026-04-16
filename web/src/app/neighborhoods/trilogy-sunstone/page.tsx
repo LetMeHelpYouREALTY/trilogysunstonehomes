@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
@@ -105,28 +104,14 @@ export default function TrilogySunstonePage() {
             </ol>
           </div>
         </nav>
-        <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center overflow-hidden">
-          <div className="relative z-10">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
-              Trilogy at Sunstone Real Estate
-            </h1>
-            <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-              Shea Homes Trilogy Sunstone — Freedom &amp; Resort Collection homes, Cabochon Club
-              lifestyle, and Trilogy at Sunstone real estate in northwest Las Vegas.
-            </p>
-          </div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-[-4rem] flex justify-center opacity-85">
-            <div className="relative h-40 w-[22rem] md:h-52 md:w-[30rem] lg:h-60 lg:w-[36rem]">
-              <Image
-                src="/images/photos/trilogy-cabochon-lifestyle.svg"
-                alt="Stylized Cabochon Club scene at Trilogy Sunstone with residents gathering in a warm, modern clubhouse"
-                fill
-                priority={false}
-                sizes="(min-width: 1024px) 576px, (min-width: 768px) 480px, 352px"
-                className="pointer-events-none select-none object-contain drop-shadow-[0_18px_40px_rgba(15,23,42,0.75)]"
-              />
-            </div>
-          </div>
+        <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
+            Trilogy at Sunstone Real Estate
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
+            Shea Homes Trilogy Sunstone — Freedom &amp; Resort Collection homes, Cabochon Club
+            lifestyle, and Trilogy at Sunstone real estate in northwest Las Vegas.
+          </p>
         </section>
 
         <section className="py-16 md:py-20 bg-white">
