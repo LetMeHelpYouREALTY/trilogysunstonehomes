@@ -14,6 +14,7 @@ import {
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/resources", label: "Resources" },
+  { href: "/guides", label: "Guides" },
   { href: "/blog", label: "Blog" },
   { href: "/neighborhoods", label: "Neighborhoods" },
   { href: "/about", label: "About" },
@@ -27,6 +28,32 @@ const services = [
   { href: REALSCOUT_SHARED_SEARCH_URL, label: "View Listings" },
   { href: "/neighborhoods/trilogy-sunstone", label: "Trilogy Sunstone Community" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+const guidesAndComparisons = [
+  { href: "/guides", label: "Guides hub" },
+  { href: "/guides/northwest-las-vegas-55-plus-homes", label: "Northwest Las Vegas 55+" },
+  {
+    href: "/guides/moving-from-california-to-las-vegas-55-plus",
+    label: "California to Las Vegas 55+",
+  },
+  {
+    href: "/guides/best-55-plus-communities-las-vegas",
+    label: "Best 55+ communities overview",
+  },
+  { href: "/amenities/cabochon-club", label: "Cabochon Club" },
+  {
+    href: "/compare/sun-city-summerlin-vs-trilogy-sunstone",
+    label: "Sun City Summerlin vs Trilogy",
+  },
+  {
+    href: "/compare/del-webb-north-ranch-vs-trilogy-sunstone",
+    label: "Del Webb North Ranch vs Trilogy",
+  },
+  {
+    href: "/compare/regency-at-summerlin-vs-trilogy-sunstone",
+    label: "Regency at Summerlin vs Trilogy",
+  },
 ] as const;
 
 export function SiteFooter() {
@@ -160,6 +187,25 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
+
+        <nav
+          aria-label="Guides and community comparisons"
+          className="border-t border-[#40738d]/50 mt-8 pt-8"
+        >
+          <h3 className="font-bold text-lg mb-4">Guides &amp; comparisons</h3>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {guidesAndComparisons.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-[#eaf0f2] hover:text-white transition-colors underline-offset-2 hover:underline"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="border-t border-[#40738d] mt-8 pt-8 space-y-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">

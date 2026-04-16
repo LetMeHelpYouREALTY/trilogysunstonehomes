@@ -5,14 +5,14 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd, trilogySunstoneBreadcrumbJsonLd } from "@/lib/schema";
-import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
+import { POSTAL_CODE, REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Trilogy Sunstone Community | Las Vegas 55+ Active Adult Homes",
+  title: "Trilogy Sunstone Community | Shea Homes 55+ | Cabochon Club & HOA | Las Vegas",
   description:
-    "Trilogy Sunstone Las Vegas: homes for sale, reviews, price list, HOA fees, for rent. 55+ active adult community. See listings and community info.",
+    "Trilogy at Sunstone real estate: Shea Homes Trilogy Sunstone in the Sunstone master plan (northwest Las Vegas). Freedom Collection & Resort Collection homes, HOA fees, Cabochon Club, resale & new construction. Listings & tours.",
   alternates: { canonical: "/neighborhoods/trilogy-sunstone" },
 };
 
@@ -23,14 +23,29 @@ const communityFaq = [
       "Yes. Trilogy Sunstone is a 55+ active adult community. At least one household member must be 55 or older. This supports a lifestyle focused on active adults.",
   },
   {
+    question: "What zip code is Trilogy Sunstone?",
+    answer:
+      `Trilogy Sunstone is in Las Vegas zip code ${POSTAL_CODE}, in the northwest Las Vegas / Sunstone area. Always confirm the property address on the listing you are considering.`,
+  },
+  {
+    question: "How far is Trilogy Sunstone from the Las Vegas Strip?",
+    answer:
+      "Trilogy Sunstone is in northwest Las Vegas—roughly 20–25 miles from the central Las Vegas Strip depending on your route. Drive time varies with traffic and time of day; use your maps app for a live estimate when touring.",
+  },
+  {
     question: "What types of homes are available at Trilogy Sunstone?",
     answer:
-      "Trilogy Sunstone offers new construction and resale homes designed for low-maintenance, single-level or accessible living. Floor plans and price ranges vary; check our Trilogy Sunstone homes for sale listings or contact us for a Trilogy Sunstone Las Vegas price list.",
+      "Trilogy Sunstone offers Shea Homes new construction and resale homes: typically low-maintenance, single-story and accessible layouts, including Freedom Collection plans and Resort Collection duplex-style product where offered. Floor plans and availability change—see current Trilogy Sunstone homes for sale or ask us for a plan-specific overview.",
   },
   {
     question: "What are Trilogy Sunstone HOA fees?",
     answer:
       "Trilogy Sunstone HOA fees depend on phase and home type. They generally cover common areas, amenities, and often exterior or landscape maintenance. Ask for current HOA fee details when viewing a specific Trilogy Sunstone home for sale.",
+  },
+  {
+    question: "What is the Cabochon Club at Trilogy Sunstone?",
+    answer:
+      "The Cabochon Club is the resident lifestyle hub for the community—resort-style gathering space, fitness and social programming, and a central place to meet neighbors. Details evolve with the community; review the Cabochon Club page on this site or tour to confirm current amenities.",
   },
   {
     question: "What amenities does Trilogy Sunstone offer?",
@@ -40,7 +55,7 @@ const communityFaq = [
   {
     question: "Where is Trilogy Sunstone located?",
     answer:
-      "Trilogy Sunstone is in the Las Vegas area, Southern Nevada. It is part of the broader Trilogy brand of 55+ communities, with easy access to area shopping, healthcare, and entertainment.",
+      `Trilogy Sunstone sits in northwest Las Vegas within the Sunstone master-planned area (zip ${POSTAL_CODE}), with outdoor recreation toward Red Rock Canyon and Mount Charleston. It is part of the Trilogy brand of 55+ communities, with access to shopping, healthcare, and entertainment across the valley.`,
   },
   {
     question: "Where can I find Trilogy Sunstone Las Vegas reviews?",
@@ -93,8 +108,8 @@ export default function TrilogySunstonePage() {
             Trilogy Sunstone Community
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-            Las Vegas&apos; premier 55+ active adult community—new homes and a lifestyle built
-            for you.
+            Shea Homes Trilogy Sunstone — Freedom &amp; Resort Collection homes, Cabochon Club
+            lifestyle, and Trilogy at Sunstone real estate in northwest Las Vegas.
           </p>
         </section>
 
@@ -103,10 +118,17 @@ export default function TrilogySunstonePage() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Overview</h2>
               <p className="text-[#3d4544] leading-relaxed mb-4">
-                Trilogy Sunstone is an age-qualified 55+ community in the Las Vegas area,
-                offering new and resale homes in a setting designed for active adults. Residents
-                enjoy a low-maintenance lifestyle with access to community amenities and a
-                built-in social environment.
+                Trilogy Sunstone is a Shea Homes 55+ community in the Sunstone master plan
+                (northwest Las Vegas), offering new construction and resale homes for active
+                adults. Residents enjoy low-maintenance living, resort-style amenities, and a
+                built-in social environment—including the{" "}
+                <Link
+                  href="/amenities/cabochon-club"
+                  className="text-[#1c5087] hover:text-[#003a70] font-medium"
+                >
+                  Cabochon Club
+                </Link>
+                .
               </p>
               <p className="text-[#3d4544] leading-relaxed">
                 Whether you are relocating, downsizing, or looking for a dedicated 55+
@@ -130,11 +152,20 @@ export default function TrilogySunstonePage() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Amenities &amp; lifestyle</h2>
               <ul className="space-y-2 text-[#3d4544] list-disc list-inside">
-                <li>Resort-style pool and outdoor spaces</li>
+                <li>
+                  <Link
+                    href="/amenities/cabochon-club"
+                    className="text-[#1c5087] hover:text-[#003a70] font-medium"
+                  >
+                    Cabochon Club
+                  </Link>{" "}
+                  — resident clubhouse and lifestyle programming
+                </li>
+                <li>Resort-style pool, pickleball, and outdoor spaces (confirm on tour)</li>
                 <li>Fitness and wellness facilities</li>
-                <li>Social and activity programming for residents</li>
+                <li>Shea Homes Freedom Collection (single-story plans) and Resort Collection (duplex-style options where offered)</li>
                 <li>Low-maintenance homes and landscaping</li>
-                <li>Proximity to Las Vegas area shopping, healthcare, and entertainment</li>
+                <li>Northwest Las Vegas location—outdoor recreation toward Red Rock Canyon and Mount Charleston</li>
               </ul>
             </div>
           </div>
@@ -226,6 +257,18 @@ export default function TrilogySunstonePage() {
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
                 >
                   Buyer&apos;s Guide
+                </Link>
+                <Link
+                  href="/guides"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
+                >
+                  Guides &amp; comparisons
+                </Link>
+                <Link
+                  href="/amenities/cabochon-club"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
+                >
+                  Cabochon Club
                 </Link>
                 <Link
                   href="/contact"

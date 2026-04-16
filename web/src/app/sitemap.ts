@@ -35,6 +35,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/faq",
     "/about",
     "/neighborhoods",
+    "/guides",
+    "/guides/northwest-las-vegas-55-plus-homes",
+    "/guides/moving-from-california-to-las-vegas-55-plus",
+    "/guides/best-55-plus-communities-las-vegas",
+    "/compare/sun-city-summerlin-vs-trilogy-sunstone",
+    "/compare/del-webb-north-ranch-vs-trilogy-sunstone",
+    "/compare/regency-at-summerlin-vs-trilogy-sunstone",
+    "/amenities/cabochon-club",
   ];
 
   return [

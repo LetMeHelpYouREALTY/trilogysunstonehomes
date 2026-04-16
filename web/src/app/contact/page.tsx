@@ -7,15 +7,17 @@ import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { contactRealEstateAgentJsonLd } from "@/lib/schema";
 import {
   ADDRESS_LINE,
+  AGENT_LICENSE_LINE,
   MAPS_SEARCH_URL,
+  PHONE_DISPLAY,
   REALSCOUT_SHARED_SEARCH_URL,
   SITE_NAME_SHORT,
 } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: `Contact | ${SITE_NAME_SHORT}`,
+  title: `Contact Dr. Jan Duffy | Trilogy Sunstone Specialist | BHHS Nevada`,
   description:
-    "Get in touch about homes and real estate at Trilogy Sunstone, Las Vegas' premier 55+ active lifestyle community. We're here to help.",
+    `Contact Dr. Jan Duffy for Trilogy Sunstone homes for sale — Berkshire Hathaway HomeServices Nevada Properties. Call ${PHONE_DISPLAY}. Las Vegas 55+ buyer representation.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -27,10 +29,11 @@ export default function ContactPage() {
       <main className="min-h-screen flex flex-col">
         <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
-            Contact Us
+            Contact Dr. Jan Duffy
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-            Questions about Trilogy Sunstone homes? We&apos;re here to help.
+            Trilogy Sunstone specialist · Berkshire Hathaway HomeServices Nevada Properties · Call{" "}
+            {PHONE_DISPLAY}
           </p>
         </section>
 
@@ -38,6 +41,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Get in Touch</h2>
+              <p className="text-sm text-[#6b7373] mb-4">{AGENT_LICENSE_LINE}</p>
               <div className="space-y-6 text-[#3d4544]">
                 <p className="text-lg">
                   Reach out for{" "}

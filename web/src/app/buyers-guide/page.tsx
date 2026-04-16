@@ -8,9 +8,9 @@ import { faqPageJsonLd } from "@/lib/schema";
 import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Buyer's Guide | How to Buy a Trilogy Sunstone Home for Sale",
+  title: "Buy a Home in Trilogy Sunstone | Resale vs New | Floor Plans & Listings",
   description:
-    "Step-by-step guide to buying a Trilogy Sunstone home for sale. Pre-approval, age rules, timeline, inspections, and Trilogy Sunstone Las Vegas price list info.",
+    "Buy a home in Trilogy Sunstone: resale vs new construction, Freedom & Resort Collection floor plans, single-story options, and how to search Trilogy Sunstone homes for sale in Las Vegas.",
   alternates: { canonical: "/buyers-guide" },
 };
 
@@ -70,6 +70,32 @@ export default function BuyersGuidePage() {
                 </Link>{" "}
                 follows the same proven steps as any great home purchase—with the added
                 benefit of a 55+ community designed for your lifestyle. Here is how it works.
+              </p>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                Resale vs new construction at Trilogy Sunstone
+              </h2>
+              <p className="text-slate-700 mb-6">
+                <strong>Resale</strong> homes can offer quicker move-in timelines and established landscaping;
+                <strong> new construction</strong> may offer builder warranties and personalization through
+                Shea Homes (Freedom Collection single-story plans and Resort Collection duplex-style
+                product where offered). Neither is automatically “better”—your timeline, budget, and
+                floor plan needs should drive the decision. Browse{" "}
+                <a
+                  href={REALSCOUT_SHARED_SEARCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-medium"
+                >
+                  current inventory
+                </a>{" "}
+                and we will help you compare net cost, HOA, and inspections side by side.
+              </p>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Floor plans &amp; search tips</h2>
+              <p className="text-slate-700 mb-6">
+                Trilogy Sunstone listings span single-story homes and select duplex-style plans.
+                Searching by price band (for example homes under $500K or roughly $600K–$800K) works
+                best inside live search—inventory changes weekly. Tell us your must-haves (single-story,
+                guest suite, low-maintenance yard) and we will align tours to real availability.
               </p>
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Steps to Buy</h2>
               <ol className="space-y-6 list-decimal list-inside">

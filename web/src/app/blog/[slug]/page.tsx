@@ -98,6 +98,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </article>
             ))}
           </div>
+
+          {post.relatedLinks && post.relatedLinks.length > 0 ? (
+            <nav
+              aria-label="Related guides and pages"
+              className="mt-12 rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-6"
+            >
+              <h2 className="text-lg font-bold text-[#3d4544] mb-3">Related guides</h2>
+              <ul className="space-y-2">
+                {post.relatedLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-[#1c5087] hover:text-[#003a70] font-medium"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
         </div>
       </section>
 

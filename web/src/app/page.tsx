@@ -6,12 +6,12 @@ import { JsonLd } from "@/components/json-ld";
 import { RealScoutOfficeListings } from "@/components/realscout-office-listings";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
-import { REALSCOUT_SHARED_SEARCH_URL, SITE_NAME_SHORT } from "@/lib/site-contact";
+import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME_SHORT} — Las Vegas 55+ homes for sale`,
+  title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
   description:
-    "Trilogy Sunstone Las Vegas homes for sale. Find your dream home in the premier 55+ active lifestyle community. Listings, price info, and community reviews.",
+    "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Listings, tours, and buyer guidance.",
   alternates: { canonical: "/" },
 };
 
@@ -23,14 +23,14 @@ export default function HomePage() {
       <main className="min-h-screen flex flex-col">
         <section className="hero-mesh relative flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9e0e2]">
-            Las Vegas · 55+ Active Adult
+            Northwest Las Vegas · 55+ Active Adult · Trilogy at Sunstone
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-sm">
-            Find Your Dream Home at Trilogy Sunstone
+            Trilogy Sunstone Homes for Sale
           </h1>
           <p className="text-lg md:text-xl text-[#eaf0f2] mb-10 max-w-2xl mx-auto">
-            Las Vegas&apos; premier 55+ active lifestyle community. Discover new homes,
-            amenities, and a vibrant neighborhood.
+            Buy a home in Trilogy Sunstone — Las Vegas&apos; 55+ community with Shea Homes
+            new construction, resale homes, and resort-style living near Red Rock Canyon.
           </p>
           <CalendlyPopupButton className="btn-primary-solid">
             Schedule a Home Tour

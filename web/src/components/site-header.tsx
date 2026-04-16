@@ -8,6 +8,7 @@ const beforeHomes =
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/resources", label: "Resources" },
+  { href: "/guides", label: "Guides" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/neighborhoods/trilogy-sunstone", label: "Trilogy Sunstone" },

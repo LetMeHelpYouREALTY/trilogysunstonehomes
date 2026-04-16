@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
-import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
+import { AGENT_LICENSE_LINE, REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "About Trilogy Sunstone | Las Vegas 55+ Community",
+  title: "About Trilogy Sunstone | Dr. Jan Duffy | BHHS Nevada Properties",
   description:
-    "Learn about Trilogy Sunstone, Las Vegas' premier 55+ active lifestyle community. New homes, amenities, and a vibrant neighborhood in Southern Nevada.",
+    "About Trilogy Sunstone and Las Vegas 55+ living. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties—Trilogy Sunstone real estate specialist.",
   alternates: { canonical: "/about" },
 };
 
@@ -26,6 +26,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            <p className="text-sm text-[#6b7373] mb-8 border-b border-[#d9e0e2] pb-6">{AGENT_LICENSE_LINE}</p>
             <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-6">Our Community</h2>
             <p className="text-[#3d4544] leading-relaxed mb-4">
               <Link

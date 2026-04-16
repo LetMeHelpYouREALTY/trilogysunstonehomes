@@ -7,17 +7,27 @@ import { faqPageJsonLd } from "@/lib/schema";
 import { REALSCOUT_SHARED_SEARCH_URL, SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: `FAQ | ${SITE_NAME_SHORT}`,
+  title: `Trilogy Sunstone FAQ | HOA Fees, Cost & 55+ Rules | ${SITE_NAME_SHORT}`,
   description:
-    "FAQ: Trilogy Sunstone Las Vegas reviews, homes for sale, price list, by owner, for rent, HOA fees. Answers about the 55+ community and real estate.",
+    "FAQ: HOA fees at Trilogy Sunstone, how much homes cost, age rules, zip code, distance to the Strip, and comparisons (Sun City Summerlin, Del Webb). Trilogy Sunstone Las Vegas 55+ community.",
   alternates: { canonical: "/faq" },
 };
 
 const faqItems = [
   {
+    question: "How much do homes cost in Trilogy Sunstone?",
+    answer:
+      "Pricing depends on floor plan, lot, finishes, and whether the home is new construction or resale. Inventory and values change with the market—use our live listings for current asking prices, and ask us for a tailored search by budget.",
+  },
+  {
     question: "What is Trilogy Sunstone?",
     answer:
       "Trilogy Sunstone is a 55+ active adult community in the Las Vegas area. It offers new homes and amenities designed for an active, engaged lifestyle.",
+  },
+  {
+    question: "Is Trilogy Sunstone a good place to retire?",
+    answer:
+      "Many buyers choose Trilogy Sunstone for low-maintenance homes, resort-style amenities, and an active adult setting in northwest Las Vegas. The right fit depends on your budget, timeline, and lifestyle—touring and comparing communities is the best next step.",
   },
   {
     question: "Who can buy a home in Trilogy Sunstone?",
@@ -65,6 +75,16 @@ const faqItems = [
     answer:
       "Call us or use the contact page. We're happy to answer questions about Trilogy Sunstone, current inventory, and the buying process.",
   },
+  {
+    question: "Trilogy Sunstone vs Sun City Summerlin — how do they compare?",
+    answer:
+      "Both are popular Las Vegas 55+ options, but location, product type, HOA structures, and lifestyle programming differ. Use the community comparison guide linked below, then tour with questions tailored to your priorities.",
+  },
+  {
+    question: "Trilogy Sunstone vs Del Webb Las Vegas — what should I know?",
+    answer:
+      "Del Webb and Trilogy communities can both offer active adult living, but builder, floor plans, amenities, and monthly costs vary by neighborhood. Start with the comparison guide linked below and confirm details on site visits.",
+  },
 ];
 
 export default function FaqPage() {
@@ -98,6 +118,40 @@ export default function FaqPage() {
                   <p className="text-slate-700">{item.answer}</p>
                 </article>
               ))}
+            </div>
+            <div className="max-w-3xl mx-auto mt-12 rounded-lg border border-slate-200 bg-slate-50 p-6">
+              <h2 className="text-lg font-semibold text-slate-900 mb-3">Community comparisons</h2>
+              <ul className="space-y-2 text-slate-700 list-disc list-inside">
+                <li>
+                  <Link
+                    href="/compare/sun-city-summerlin-vs-trilogy-sunstone"
+                    className="text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    Sun City Summerlin vs Trilogy Sunstone
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/compare/del-webb-north-ranch-vs-trilogy-sunstone"
+                    className="text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    Del Webb North Ranch vs Trilogy Sunstone
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/compare/regency-at-summerlin-vs-trilogy-sunstone"
+                    className="text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    Regency at Summerlin vs Trilogy Sunstone
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/guides/best-55-plus-communities-las-vegas" className="text-blue-600 hover:text-blue-700 font-medium">
+                    Best 55+ communities in Las Vegas (overview)
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </section>

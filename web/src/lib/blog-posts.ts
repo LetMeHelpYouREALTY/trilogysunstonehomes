@@ -7,9 +7,90 @@ export type BlogPost = {
   readMinutes: number;
   image?: string;
   sections: { heading: string; body: string[] }[];
+  /** Internal links to guides and pillar pages (optional). */
+  relatedLinks?: { href: string; label: string }[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "pickleball-resort-style-55-plus-las-vegas",
+    title: "Pickleball, pools, and resort-style 55+ living in Las Vegas",
+    excerpt:
+      "What to verify when amenities matter as much as floor plans—especially in active adult communities like Trilogy Sunstone.",
+    description:
+      "How to evaluate pickleball, pools, and resort-style programming when shopping Las Vegas 55+ communities.",
+    publishedAt: "2026-04-15",
+    readMinutes: 5,
+    relatedLinks: [
+      { href: "/guides", label: "Guides hub" },
+      { href: "/amenities/cabochon-club", label: "Cabochon Club at Trilogy Sunstone" },
+      { href: "/neighborhoods/trilogy-sunstone", label: "Trilogy Sunstone community" },
+    ],
+    sections: [
+      {
+        heading: "Start with how you will use the amenities",
+        body: [
+          "Make a simple weekly calendar: how many days will you realistically use courts, pools, or fitness spaces?",
+          "If pickleball is a priority, confirm court count, reservation rules, and peak-hour availability—not just that the word appears on a flyer.",
+        ],
+      },
+      {
+        heading: "Resort-style means operations, not adjectives",
+        body: [
+          "Strong lifestyle programming depends on staffing, resident leadership, and consistent maintenance.",
+          "Ask what clubs are active today and how new residents plug in within the first 30 days.",
+        ],
+      },
+      {
+        heading: "Pair amenities with the home",
+        body: [
+          "The best amenity package cannot fix a floor plan that fails your daily routine.",
+          "Tour homes with a checklist: storage, guest space, single-level flow, and outdoor privacy.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "red-rock-mount-charleston-northwest-las-vegas-lifestyle",
+    title: "Red Rock and Mount Charleston from northwest Las Vegas 55+ communities",
+    excerpt:
+      "Outdoor access is a major lifestyle draw—set expectations for drives, seasons, and what “near Red Rock” really means for weekly life.",
+    description:
+      "Lifestyle notes for buyers comparing northwest Las Vegas 55+ communities with Red Rock Canyon and Mount Charleston access.",
+    publishedAt: "2026-04-15",
+    readMinutes: 5,
+    relatedLinks: [
+      { href: "/guides/northwest-las-vegas-55-plus-homes", label: "Northwest Las Vegas 55+ homes" },
+      {
+        href: "/guides/best-55-plus-communities-las-vegas",
+        label: "How to compare 55+ communities",
+      },
+      { href: "/neighborhoods/trilogy-sunstone", label: "Trilogy Sunstone community" },
+    ],
+    sections: [
+      {
+        heading: "Define “close” with minutes, not vibes",
+        body: [
+          "Map your favorite trailheads and restaurants from the community gate at the time of day you will actually travel.",
+          "Weekend visitor traffic can differ from weekday healthcare runs—test both if you can.",
+        ],
+      },
+      {
+        heading: "Seasons in the Mojave",
+        body: [
+          "Summer heat shapes when you hike or entertain outdoors; higher elevations can be cooler but require longer drives.",
+          "If you want mountain escapes, confirm you are comfortable with the mileage to Mount Charleston when roads are busy.",
+        ],
+      },
+      {
+        heading: "Pair recreation with practical living",
+        body: [
+          "Outdoor access is only one slice of happiness—also validate healthcare, shopping, and airport convenience.",
+          "Balance lifestyle keywords with HOA budget reality and home suitability.",
+        ],
+      },
+    ],
+  },
   {
     slug: "compare-new-construction-options-trilogy-sunstone",
     title: "How to compare new-construction options in Trilogy Sunstone",

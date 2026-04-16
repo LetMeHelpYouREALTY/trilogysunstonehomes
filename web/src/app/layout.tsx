@@ -25,7 +25,17 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME_SHORT}`,
   },
   description:
-    "Trilogy Sunstone Las Vegas homes for sale and community information. 55+ active adult community in Southern Nevada.",
+    "Trilogy Sunstone homes for sale — Trilogy at Sunstone real estate, Las Vegas 55+ community in northwest Las Vegas (89143). Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
@@ -52,7 +62,6 @@ export default function RootLayout({
     <html lang="en" className={geist.variable}>
       <head>
         <meta name="theme-color" content="#003a70" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link
           rel="stylesheet"
           href="https://assets.calendly.com/assets/external/widget.css"
