@@ -101,7 +101,7 @@ export default function AboutPage() {
             <p className="text-lg text-[#3d4544] mb-6">
               Explore{" "}
               <RealScoutSearchCta variant="inline" className="font-medium">
-                Trilogy Sunstone listings
+                Trilogy Sunstone inventory
               </RealScoutSearchCta>
               , read our{" "}
               <Link href="/faq" className="text-[#1c5087] hover:text-[#003a70] font-medium">

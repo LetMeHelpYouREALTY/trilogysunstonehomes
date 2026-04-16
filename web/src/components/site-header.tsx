@@ -49,12 +49,12 @@ export function SiteHeader() {
             </li>
           ))}
           <li>
-            <RealScoutSearchCta variant="nav" className="h-9 px-3 sm:px-4" />
+            <RealScoutSearchCta variant="nav" className="px-3 sm:px-4" />
           </li>
           <li>
             <a
               href={`tel:${PHONE_E164}`}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-[#8bb63e] to-[#789e35] text-white text-sm font-semibold shadow-md shadow-[#66872d]/35 h-9 px-4 transition-all hover:from-[#789e35] hover:to-[#66872d] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8bb63e] focus-visible:ring-offset-2"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-gradient-to-br from-[#8bb63e] to-[#789e35] px-4 text-sm font-semibold text-white shadow-md shadow-[#66872d]/35 transition-all hover:from-[#789e35] hover:to-[#66872d] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8bb63e] focus-visible:ring-offset-2"
             >
               Call {PHONE_DISPLAY}
             </a>

@@ -77,7 +77,7 @@ export default function SunCityVsTrilogyPage() {
                 often emphasizes newer construction and targeted resale alongside builder sales.
                 Searching{" "}
                 <RealScoutSearchCta variant="inline" className="font-medium">
-                  live listings
+                  live inventory
                 </RealScoutSearchCta>{" "}
                 beats guessing price bands.
               </p>

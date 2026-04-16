@@ -37,8 +37,10 @@ function IconArrowUpRight({ className }: { className?: string }) {
   );
 }
 
+const NEW_TAB_TITLE = "Opens in a new tab";
+
 const aria =
-  "Open Trilogy Sunstone home search on RealScout — live shared search opens in a new tab";
+  "Search Trilogy Sunstone homes for sale — current inventory with photos and details opens in a new browser tab";
 
 export type RealScoutSearchCtaVariant =
   | "nav"
@@ -63,6 +65,9 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
       <a
         href={REALSCOUT_SHARED_SEARCH_URL}
         {...externalProps}
+        title={NEW_TAB_TITLE}
+        data-cta="inventory-search"
+        data-cta-variant="inline"
         className={cn(
           "group inline-flex items-center gap-1 font-semibold text-[#1c5087] underline decoration-[#1c5087]/35 underline-offset-2 transition hover:text-[#003a70] hover:decoration-[#003a70]",
           className,
@@ -79,8 +84,8 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
     nav: (
       <>
         <IconHomeSearch className="h-4 w-4" />
-        <span className="hidden min-[400px]:inline">Trilogy listings</span>
-        <span className="min-[400px]:hidden">Listings</span>
+        <span className="hidden min-[400px]:inline">Trilogy inventory</span>
+        <span className="min-[400px]:hidden">Inventory</span>
       </>
     ),
     sticky: (
@@ -88,7 +93,7 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
         <IconHomeSearch className="h-5 w-5 opacity-95" />
         <span className="flex flex-col items-center leading-tight">
           <span className="text-[13px] font-bold tracking-tight">Trilogy Sunstone</span>
-          <span className="text-[11px] font-medium text-white/85">Search homes</span>
+          <span className="text-[11px] font-medium text-white/85">Search inventory</span>
         </span>
       </>
     ),
@@ -96,9 +101,9 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
       <>
         <IconHomeSearch className="h-6 w-6 sm:h-7 sm:w-7" />
         <span className="flex flex-col items-start text-left sm:items-center sm:text-center">
-          <span className="text-base sm:text-lg font-bold tracking-tight">Browse Trilogy listings</span>
+          <span className="text-base sm:text-lg font-bold tracking-tight">Browse Trilogy inventory</span>
           <span className="text-xs sm:text-sm font-medium text-white/85">
-            Live search · RealScout MLS feed
+            Current inventory · asking prices, photos and map · new tab
           </span>
         </span>
         <IconArrowUpRight className="ml-auto h-5 w-5 opacity-80 sm:ml-0" />
@@ -107,22 +112,22 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
     buttonPrimary: (
       <>
         <IconHomeSearch className="h-5 w-5" />
-        <span>View Trilogy Sunstone listings</span>
+        <span>View Trilogy Sunstone inventory</span>
         <IconArrowUpRight className="h-4 w-4 opacity-80" />
       </>
     ),
     buttonSecondary: (
       <>
         <IconHomeSearch className="h-4 w-4" />
-        <span>Search homes</span>
+        <span>Search inventory</span>
       </>
     ),
     footerCard: (
       <>
         <IconHomeSearch className="h-6 w-6 text-[#eaf0f2]" />
         <span className="flex flex-col gap-0.5 text-left">
-          <span className="text-sm font-bold text-white">Trilogy Sunstone listings</span>
-          <span className="text-xs text-[#b7bec0]">Opens RealScout home search</span>
+          <span className="text-sm font-bold text-white">Trilogy Sunstone inventory</span>
+          <span className="text-xs text-[#b7bec0]">Browse current inventory · new tab</span>
         </span>
         <IconArrowUpRight className="ml-auto h-5 w-5 text-[#eaf0f2]" />
       </>
@@ -130,7 +135,7 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
     footerInline: (
       <>
         <IconHomeSearch className="h-4 w-4 text-[#eaf0f2]" />
-        <span>View Trilogy Sunstone listings</span>
+        <span>View Trilogy Sunstone inventory</span>
       </>
     ),
   };
@@ -139,11 +144,11 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
 
   const styles: Record<Exclude<RealScoutSearchCtaVariant, "inline">, string> = {
     nav: cn(
-      "inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-[#003a70] to-[#1c5087] px-3 py-2 text-sm font-semibold text-white shadow-md shadow-[#003a70]/30 ring-1 ring-white/15",
+      "inline-flex min-h-11 items-center gap-2 rounded-xl bg-gradient-to-br from-[#003a70] to-[#1c5087] px-3 py-2 text-sm font-semibold text-white shadow-md shadow-[#003a70]/30 ring-1 ring-white/15",
       "transition hover:brightness-110 hover:ring-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c5087]",
     ),
     sticky: cn(
-      "inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#003a70] via-[#1c5087] to-[#205d9e] px-2 py-2.5 text-white shadow-inner ring-1 ring-white/20",
+      "inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#003a70] via-[#1c5087] to-[#205d9e] px-2 py-2.5 text-white shadow-inner ring-1 ring-white/20",
       "transition active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2",
     ),
     hero: cn(
@@ -172,6 +177,9 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
     <a
       href={REALSCOUT_SHARED_SEARCH_URL}
       {...externalProps}
+      title={NEW_TAB_TITLE}
+      data-cta="inventory-search"
+      data-cta-variant={variant}
       className={cn(styles[variant], className)}
       aria-label={aria}
     >

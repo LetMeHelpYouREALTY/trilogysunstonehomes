@@ -18,7 +18,7 @@ const faqItems = [
   {
     question: "How much do homes cost in Trilogy Sunstone?",
     answer:
-      "Pricing depends on floor plan, lot, finishes, and whether the home is new construction or resale. Inventory and values change with the market—use our live listings for current asking prices, and ask us for a tailored search by budget.",
+      "Pricing depends on floor plan, lot, finishes, and whether the home is new construction or resale. Inventory and values change with the market—use our live inventory for current asking prices, and ask us for a tailored search by budget.",
   },
   {
     question: "What is Trilogy Sunstone?",
@@ -43,12 +43,12 @@ const faqItems = [
   {
     question: "How do I see Trilogy Sunstone homes for sale?",
     answer:
-      "Our homepage lists Trilogy Sunstone Las Vegas homes for sale. You can browse current listings, request a Trilogy Sunstone Las Vegas price list, or contact us for a personalized search and showings.",
+      "Our homepage lists Trilogy Sunstone Las Vegas homes for sale. You can browse current inventory, request a Trilogy Sunstone Las Vegas price list, or contact us for a personalized search and showings.",
   },
   {
     question: "Are there Trilogy Sunstone homes for sale by owner?",
     answer:
-      "Some Trilogy Sunstone listings are for sale by owner (FSBO). Our site and MLS include both agent-listed and by-owner homes. Contact us to see what is available and how we can help with any purchase.",
+      "Some Trilogy Sunstone listings are for sale by owner (FSBO). Our site and MLS include both agent-listed and by-owner homes. If you buy from a FSBO seller, buyer representation is optional and compensation (if any) is negotiated between you and any agent you involve—ask us how that typically works. Contact us to see what is available and how we can help with any purchase.",
   },
   {
     question: "What are Trilogy Sunstone HOA fees?",
@@ -164,7 +164,7 @@ export default function FaqPage() {
               <p className="text-slate-700 mb-6">
                 Browse{" "}
                 <RealScoutSearchCta variant="inline" className="text-blue-600 hover:text-blue-700 font-medium">
-                  Trilogy Sunstone homes for sale
+                  Trilogy Sunstone inventory
                 </RealScoutSearchCta>
                 , read our{" "}
                 <Link href="/buyers-guide" className="text-blue-600 hover:text-blue-700 font-medium">

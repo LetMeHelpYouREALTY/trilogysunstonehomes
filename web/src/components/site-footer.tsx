@@ -4,6 +4,7 @@ import {
   ADDRESS_LINE,
   AGENT_LICENSE_LINE,
   BROKERAGE_LEGAL_LINE,
+  CONTACT_SELLING_SECTION_ID,
   MAPS_SEARCH_URL,
   PHONE_DISPLAY,
   PHONE_E164,
@@ -77,6 +78,14 @@ export function SiteFooter() {
               trust and integrity.
             </p>
             <RealScoutSearchCta variant="footerCard" />
+            <p className="mt-4 text-sm">
+              <Link
+                href={`/contact#${CONTACT_SELLING_SECTION_ID}`}
+                className="font-medium text-[#eaf0f2] underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+              >
+                Selling in Trilogy? Get guidance
+              </Link>
+            </p>
           </div>
 
           <nav aria-label="Quick links">

@@ -8,7 +8,7 @@ import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Buy a Home in Trilogy Sunstone | Resale vs New | Floor Plans & Listings",
+  title: "Buy a Home in Trilogy Sunstone | Resale vs New | Floor Plans & Inventory",
   description:
     "Buy a home in Trilogy Sunstone: resale vs new construction, Freedom & Resort Collection floor plans, single-story options, and how to search Trilogy Sunstone homes for sale in Las Vegas.",
   alternates: { canonical: "/buyers-guide" },
@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "What price range can I expect at Trilogy Sunstone?",
     answer:
-      "Prices vary by floor plan, lot, and market. Our homepage lists current Trilogy Sunstone listings with prices. Contact us for a personalized overview of available homes and recent sales in your target range.",
+      "Prices vary by floor plan, lot, and market. Our homepage lists current Trilogy Sunstone inventory with prices. Contact us for a personalized overview of available homes and recent sales in your target range.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function BuyersGuidePage() {
               </p>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Floor plans &amp; search tips</h2>
               <p className="text-slate-700 mb-6">
-                Trilogy Sunstone listings span single-story homes and select duplex-style plans.
+                The Trilogy Sunstone inventory spans single-story homes and select duplex-style plans.
                 Searching by price band (for example homes under $500K or roughly $600K–$800K) works
                 best inside live search—inventory changes weekly. Tell us your must-haves (single-story,
                 guest suite, low-maintenance yard) and we will align tours to real availability.
@@ -111,7 +111,7 @@ export default function BuyersGuidePage() {
                       variant="inline"
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
-                      current Trilogy Sunstone listings
+                      current Trilogy Sunstone inventory
                     </RealScoutSearchCta>{" "}
                     and schedule showings. We can help you narrow by price, floor plan, and
                     location within the community.
@@ -176,7 +176,7 @@ export default function BuyersGuidePage() {
               <p className="text-slate-700 mb-6">
                 View{" "}
                 <RealScoutSearchCta variant="inline" className="text-blue-600 hover:text-blue-700 font-medium">
-                  Trilogy Sunstone homes for sale
+                  Trilogy Sunstone inventory
                 </RealScoutSearchCta>{" "}
                 or{" "}
                 <Link href="/contact" className="text-blue-600 hover:text-blue-700 font-medium">

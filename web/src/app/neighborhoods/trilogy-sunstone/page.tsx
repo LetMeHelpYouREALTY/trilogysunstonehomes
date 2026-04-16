@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Trilogy Sunstone Community | Shea Homes 55+ | Cabochon Club & HOA | Las Vegas",
   description:
-    "Trilogy at Sunstone real estate: Shea Homes Trilogy Sunstone in the Sunstone master plan (northwest Las Vegas). Freedom Collection & Resort Collection homes, HOA fees, Cabochon Club, resale & new construction. Listings & tours.",
+    "Trilogy at Sunstone real estate: Shea Homes Trilogy Sunstone in the Sunstone master plan (northwest Las Vegas). Freedom Collection & Resort Collection homes, HOA fees, Cabochon Club, resale & new construction. Inventory & tours.",
   alternates: { canonical: "/neighborhoods/trilogy-sunstone" },
 };
 
@@ -188,10 +188,10 @@ export default function TrilogySunstonePage() {
                 Homes at Trilogy Sunstone are built with active adults in mind: single-level or
                 accessible layouts, modern finishes, and manageable square footage. View{" "}
                 <RealScoutSearchCta variant="inline" className="font-medium">
-                  Trilogy Sunstone homes for sale
+                  current Trilogy Sunstone inventory
                 </RealScoutSearchCta>{" "}
-                and Trilogy Sunstone Las Vegas for sale listings on our homepage; we also have
-                Trilogy Sunstone by owner (FSBO) and agent-listed inventory. For a Trilogy
+                on our homepage (including Las Vegas for-sale homes); we also have
+                Trilogy Sunstone by owner (FSBO) and agent-listed homes. For a Trilogy
                 Sunstone Las Vegas price list by plan,{" "}
                 <Link href="/contact" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                   contact us

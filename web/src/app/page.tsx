@@ -3,15 +3,17 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { MlsListingDisclaimer } from "@/components/mls-listing-disclaimer";
 import { RealScoutOfficeListings } from "@/components/realscout-office-listings";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
+import { AGENT_LICENSE_LINE, CONTACT_SELLING_SECTION_ID } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
   description:
-    "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Listings, tours, and buyer guidance.",
+    "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Inventory, tours, and buyer guidance.",
   alternates: { canonical: "/" },
 };
 
@@ -38,6 +40,17 @@ export default function HomePage() {
               Schedule a Home Tour
             </CalendlyPopupButton>
           </div>
+          <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-[#d9e0e2]/90 sm:text-xs">
+            {AGENT_LICENSE_LINE}
+          </p>
+          <p className="mt-4 text-sm font-medium text-white/95">
+            <Link
+              href={`/contact#${CONTACT_SELLING_SECTION_ID}`}
+              className="rounded-sm underline decoration-white/40 underline-offset-[3px] transition hover:decoration-white"
+            >
+              Selling your Trilogy Sunstone home?
+            </Link>
+          </p>
         </section>
 
         <section className="py-16 md:py-20 bg-white">
@@ -50,7 +63,7 @@ export default function HomePage() {
                 <p className="text-lg text-[#3d4544]">
                   We simplify your home search with{" "}
                   <RealScoutSearchCta variant="inline" className="font-medium">
-                    curated Trilogy Sunstone listings
+                    curated Trilogy Sunstone inventory
                   </RealScoutSearchCta>
                   , expert guidance, and exclusive{" "}
                   <Link
@@ -140,7 +153,7 @@ export default function HomePage() {
               Trilogy Sunstone homes for sale
             </h2>
             <p className="text-center text-[#6b7373] mb-8">
-              Explore current listings and home values in the{" "}
+              Explore current inventory and home values in the{" "}
               <Link
                 href="/neighborhoods/trilogy-sunstone"
                 className="text-[#1c5087] hover:text-[#003a70] font-medium"
@@ -150,6 +163,7 @@ export default function HomePage() {
               .
             </p>
             <RealScoutOfficeListings />
+            <MlsListingDisclaimer />
           </div>
         </section>
 

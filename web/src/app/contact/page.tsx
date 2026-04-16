@@ -9,6 +9,7 @@ import { contactRealEstateAgentJsonLd } from "@/lib/schema";
 import {
   ADDRESS_LINE,
   AGENT_LICENSE_LINE,
+  CONTACT_SELLING_SECTION_ID,
   MAPS_SEARCH_URL,
   PHONE_DISPLAY,
   SITE_NAME_SHORT,
@@ -17,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: `Contact Dr. Jan Duffy | Trilogy Sunstone Specialist | BHHS Nevada`,
   description:
-    `Contact Dr. Jan Duffy for Trilogy Sunstone homes for sale — Berkshire Hathaway HomeServices Nevada Properties. Call ${PHONE_DISPLAY}. Las Vegas 55+ buyer representation.`,
+    `Contact Dr. Jan Duffy for Trilogy Sunstone homes for sale or selling — Berkshire Hathaway HomeServices Nevada Properties. Call ${PHONE_DISPLAY}. Las Vegas 55+ buyer and seller guidance.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -46,7 +47,7 @@ export default function ContactPage() {
                 <p className="text-lg">
                   Reach out for{" "}
                   <RealScoutSearchCta variant="inline" className="font-medium">
-                    Trilogy Sunstone homes for sale
+                    current Trilogy Sunstone inventory
                   </RealScoutSearchCta>
                   ,{" "}
                   <Link
@@ -63,6 +64,35 @@ export default function ContactPage() {
                   </CalendlyPopupButton>
                   <RealScoutSearchCta variant="buttonPrimary" className="w-full sm:w-auto" />
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id={CONTACT_SELLING_SECTION_ID}
+          className="scroll-mt-24 border-y border-[#d9e0e2] bg-[#f7fafb] py-14"
+        >
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-2xl">
+              <h2 className="mb-3 text-2xl font-bold text-[#3d4544]">
+                Selling your Trilogy Sunstone home?
+              </h2>
+              <p className="mb-2 text-sm text-[#6b7373]">{AGENT_LICENSE_LINE}</p>
+              <p className="mb-6 text-[#3d4544]">
+                Get pricing context, prep guidance, and a marketing plan aligned with northwest Las Vegas
+                55+ demand—not a one-size-fits-all template.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <CalendlyPopupButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#1c5087] px-6 py-3 font-semibold text-white shadow transition-colors hover:bg-[#003a70] focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2">
+                  Talk about selling
+                </CalendlyPopupButton>
+                <Link
+                  href="/faq"
+                  className="inline-flex min-h-11 items-center justify-center text-center text-sm font-semibold text-[#1c5087] underline decoration-[#1c5087]/35 underline-offset-2 transition hover:text-[#003a70]"
+                >
+                  Seller questions — FAQ
+                </Link>
               </div>
             </div>
           </div>

@@ -81,7 +81,7 @@ export default function DelWebbVsTrilogyPage() {
               <p className="leading-relaxed">
                 Open{" "}
                 <RealScoutSearchCta variant="inline" className="font-medium">
-                  Trilogy Sunstone listings
+                  Trilogy Sunstone inventory
                 </RealScoutSearchCta>
                 , then schedule a community tour with questions in hand. If you want a side-by-side
                 itinerary, contact us and we will help you structure it.

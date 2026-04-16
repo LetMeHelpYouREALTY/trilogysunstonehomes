@@ -25,3 +25,6 @@ export const BROKERAGE_LEGAL_LINE =
 export const REALSCOUT_AGENT_ENCODED_ID = "QWdlbnQtMjI1MDUw";
 export const REALSCOUT_SHARED_SEARCH_URL =
   "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xMDkzMA==";
+
+/** In-page anchor on `/contact` for seller-focused guidance */
+export const CONTACT_SELLING_SECTION_ID = "selling";

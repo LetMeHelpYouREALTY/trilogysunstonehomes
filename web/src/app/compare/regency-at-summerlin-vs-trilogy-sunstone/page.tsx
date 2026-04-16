@@ -80,7 +80,7 @@ export default function RegencyVsTrilogyPage() {
               <p className="leading-relaxed">
                 Browse{" "}
                 <RealScoutSearchCta variant="inline" className="font-medium">
-                  Trilogy Sunstone homes for sale
+                  Trilogy Sunstone inventory
                 </RealScoutSearchCta>{" "}
                 and pair data with a tour. For a broader Summerlin vs northwest discussion, read{" "}
                 <Link href="/guides/best-55-plus-communities-las-vegas" className="text-[#1c5087] font-medium">
