@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
-import { REALSCOUT_SHARED_SEARCH_URL, SITE_NAME_SHORT } from "@/lib/site-contact";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
+import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const dynamic = "force-static";
 
@@ -36,14 +37,9 @@ export default function NeighborhoodsPage() {
               </h3>
               <p className="text-[#3d4544] mb-4">
                 Las Vegas&apos; premier 55+ active lifestyle community.{" "}
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#1c5087] hover:text-[#003a70] font-medium"
-                >
+                <RealScoutSearchCta variant="inline" className="font-medium">
                   New homes
-                </a>{" "}
+                </RealScoutSearchCta>{" "}
                 for sale, resort-style amenities, and a vibrant neighborhood designed for active
                 adults.
               </p>
@@ -54,14 +50,7 @@ export default function NeighborhoodsPage() {
                 >
                   Learn About the Community
                 </Link>
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-                >
-                  View Trilogy Sunstone Listings
-                </a>
+                <RealScoutSearchCta variant="buttonPrimary" />
               </div>
             </div>
           </div>

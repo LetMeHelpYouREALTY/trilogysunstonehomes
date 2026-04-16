@@ -3,9 +3,10 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd, trilogySunstoneBreadcrumbJsonLd } from "@/lib/schema";
-import { POSTAL_CODE, REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
+import { POSTAL_CODE } from "@/lib/site-contact";
 
 export const dynamic = "force-dynamic";
 
@@ -186,14 +187,9 @@ export default function TrilogySunstonePage() {
               <p className="text-[#3d4544]">
                 Homes at Trilogy Sunstone are built with active adults in mind: single-level or
                 accessible layouts, modern finishes, and manageable square footage. View{" "}
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#1c5087] hover:text-[#003a70] font-medium"
-                >
+                <RealScoutSearchCta variant="inline" className="font-medium">
                   Trilogy Sunstone homes for sale
-                </a>{" "}
+                </RealScoutSearchCta>{" "}
                 and Trilogy Sunstone Las Vegas for sale listings on our homepage; we also have
                 Trilogy Sunstone by owner (FSBO) and agent-listed inventory. For a Trilogy
                 Sunstone Las Vegas price list by plan,{" "}
@@ -238,14 +234,7 @@ export default function TrilogySunstonePage() {
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-4">Explore Trilogy Sunstone</h2>
               <div className="flex flex-wrap gap-4 justify-center">
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-                >
-                  View Listings
-                </a>
+                <RealScoutSearchCta variant="buttonPrimary" />
                 <Link
                   href="/neighborhoods"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"

@@ -4,9 +4,9 @@ import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutOfficeListings } from "@/components/realscout-office-listings";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
-import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
@@ -32,9 +32,12 @@ export default function HomePage() {
             Buy a home in Trilogy Sunstone — Las Vegas&apos; 55+ community with Shea Homes
             new construction, resale homes, and resort-style living near Red Rock Canyon.
           </p>
-          <CalendlyPopupButton className="btn-primary-solid">
-            Schedule a Home Tour
-          </CalendlyPopupButton>
+          <div className="flex w-full max-w-3xl flex-col items-stretch justify-center gap-4 px-2 sm:flex-row sm:items-stretch">
+            <RealScoutSearchCta variant="hero" className="sm:min-w-0 sm:flex-1" />
+            <CalendlyPopupButton className="btn-primary-solid sm:flex-1 sm:justify-center">
+              Schedule a Home Tour
+            </CalendlyPopupButton>
+          </div>
         </section>
 
         <section className="py-16 md:py-20 bg-white">
@@ -46,14 +49,9 @@ export default function HomePage() {
                 </h2>
                 <p className="text-lg text-[#3d4544]">
                   We simplify your home search with{" "}
-                  <a
-                    href={REALSCOUT_SHARED_SEARCH_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#1c5087] hover:text-[#003a70] font-medium"
-                  >
+                  <RealScoutSearchCta variant="inline" className="font-medium">
                     curated Trilogy Sunstone listings
-                  </a>
+                  </RealScoutSearchCta>
                   , expert guidance, and exclusive{" "}
                   <Link
                     href="/neighborhoods/trilogy-sunstone"

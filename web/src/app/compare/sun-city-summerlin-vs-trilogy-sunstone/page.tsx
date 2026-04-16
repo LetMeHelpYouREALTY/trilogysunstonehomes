@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema";
-import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Sun City Summerlin vs Trilogy Sunstone | Las Vegas 55+ Comparison",
@@ -76,14 +76,9 @@ export default function SunCityVsTrilogyPage() {
                 Summerlin-area resale inventory can be broad in age and condition; Trilogy Sunstone
                 often emphasizes newer construction and targeted resale alongside builder sales.
                 Searching{" "}
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  className="text-[#1c5087] font-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <RealScoutSearchCta variant="inline" className="font-medium">
                   live listings
-                </a>{" "}
+                </RealScoutSearchCta>{" "}
                 beats guessing price bands.
               </p>
               <h2 className="text-2xl font-bold text-[#3d4544]">Lifestyle fit</h2>

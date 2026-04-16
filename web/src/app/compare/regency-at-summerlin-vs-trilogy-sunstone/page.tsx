@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema";
-import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Regency at Summerlin vs Trilogy Sunstone | 55+ Buyer Notes",
@@ -79,14 +79,9 @@ export default function RegencyVsTrilogyPage() {
               <h2 className="text-2xl font-bold">See current Trilogy inventory</h2>
               <p className="leading-relaxed">
                 Browse{" "}
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  className="text-[#1c5087] font-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <RealScoutSearchCta variant="inline" className="font-medium">
                   Trilogy Sunstone homes for sale
-                </a>{" "}
+                </RealScoutSearchCta>{" "}
                 and pair data with a tour. For a broader Summerlin vs northwest discussion, read{" "}
                 <Link href="/guides/best-55-plus-communities-las-vegas" className="text-[#1c5087] font-medium">
                   how we compare 55+ communities

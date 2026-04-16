@@ -1,6 +1,7 @@
 "use client";
 
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { cn } from "@/lib/cn";
 
 type StickyMobileCtaProps = {
@@ -9,7 +10,7 @@ type StickyMobileCtaProps = {
 };
 
 /**
- * Mobile-first sticky Calendly scheduling bar.
+ * Mobile-first sticky bar: RealScout shared search + Calendly.
  */
 export function StickyMobileCta({ className }: StickyMobileCtaProps) {
   return (
@@ -19,10 +20,11 @@ export function StickyMobileCta({ className }: StickyMobileCtaProps) {
         className,
       )}
       role="region"
-      aria-label="Quick contact"
+      aria-label="Search homes and contact"
     >
-      <CalendlyPopupButton className="inline-flex flex-1 items-center justify-center rounded-md bg-[#8bb63e] px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#789e35] focus:outline-none focus:ring-2 focus:ring-[#8bb63e] focus:ring-offset-2">
-        Schedule time with me
+      <RealScoutSearchCta variant="sticky" className="flex-1 min-w-0" />
+      <CalendlyPopupButton className="inline-flex flex-1 min-w-0 items-center justify-center rounded-md bg-[#8bb63e] px-2 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#789e35] focus:outline-none focus:ring-2 focus:ring-[#8bb63e] focus:ring-offset-2">
+        Schedule time
       </CalendlyPopupButton>
     </div>
   );

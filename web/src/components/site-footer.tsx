@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import {
   ADDRESS_LINE,
   AGENT_LICENSE_LINE,
@@ -6,7 +7,6 @@ import {
   MAPS_SEARCH_URL,
   PHONE_DISPLAY,
   PHONE_E164,
-  REALSCOUT_SHARED_SEARCH_URL,
   SITE_NAME,
   SITE_NAME_SHORT,
 } from "@/lib/site-contact";
@@ -23,12 +23,8 @@ const quickLinks = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-const services = [
-  { href: "/buyers-guide", label: "Home Buying" },
-  { href: REALSCOUT_SHARED_SEARCH_URL, label: "View Listings" },
-  { href: "/neighborhoods/trilogy-sunstone", label: "Trilogy Sunstone Community" },
-  { href: "/contact", label: "Contact" },
-] as const;
+const serviceLinkClass =
+  "text-[#eaf0f2] hover:text-white transition-colors text-sm";
 
 const guidesAndComparisons = [
   { href: "/guides", label: "Guides hub" },
@@ -80,6 +76,7 @@ export function SiteFooter() {
               Sunstone homes for sale and community information. Backed by a legacy of
               trust and integrity.
             </p>
+            <RealScoutSearchCta variant="footerCard" />
           </div>
 
           <nav aria-label="Quick links">
@@ -112,16 +109,24 @@ export function SiteFooter() {
           <nav aria-label="Real estate services">
             <h3 className="font-bold text-lg mb-4">Real Estate Services</h3>
             <ul className="space-y-2">
-              {services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-[#eaf0f2] hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/buyers-guide" className={serviceLinkClass}>
+                  Home Buying
+                </Link>
+              </li>
+              <li>
+                <RealScoutSearchCta variant="footerInline" />
+              </li>
+              <li>
+                <Link href="/neighborhoods/trilogy-sunstone" className={serviceLinkClass}>
+                  Trilogy Sunstone Community
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className={serviceLinkClass}>
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
 

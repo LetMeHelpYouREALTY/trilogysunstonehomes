@@ -3,9 +3,9 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd } from "@/lib/schema";
-import { REALSCOUT_SHARED_SEARCH_URL } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Buy a Home in Trilogy Sunstone | Resale vs New | Floor Plans & Listings",
@@ -80,14 +80,9 @@ export default function BuyersGuidePage() {
                 Shea Homes (Freedom Collection single-story plans and Resort Collection duplex-style
                 product where offered). Neither is automatically “better”—your timeline, budget, and
                 floor plan needs should drive the decision. Browse{" "}
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
+                <RealScoutSearchCta variant="inline" className="text-blue-600 hover:text-blue-700 font-medium">
                   current inventory
-                </a>{" "}
+                </RealScoutSearchCta>{" "}
                 and we will help you compare net cost, HOA, and inspections side by side.
               </p>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Floor plans &amp; search tips</h2>
@@ -112,14 +107,12 @@ export default function BuyersGuidePage() {
                   <h3 className="text-xl font-semibold text-slate-900 inline">Search and tour.</h3>
                   <p className="text-slate-700 mt-1 ml-6">
                     Browse{" "}
-                    <a
-                      href={REALSCOUT_SHARED_SEARCH_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <RealScoutSearchCta
+                      variant="inline"
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
                       current Trilogy Sunstone listings
-                    </a>{" "}
+                    </RealScoutSearchCta>{" "}
                     and schedule showings. We can help you narrow by price, floor plan, and
                     location within the community.
                   </p>
@@ -182,14 +175,9 @@ export default function BuyersGuidePage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Ready to start?</h2>
               <p className="text-slate-700 mb-6">
                 View{" "}
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
+                <RealScoutSearchCta variant="inline" className="text-blue-600 hover:text-blue-700 font-medium">
                   Trilogy Sunstone homes for sale
-                </a>{" "}
+                </RealScoutSearchCta>{" "}
                 or{" "}
                 <Link href="/contact" className="text-blue-600 hover:text-blue-700 font-medium">
                   contact us
@@ -197,14 +185,7 @@ export default function BuyersGuidePage() {
                 for personalized help.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-                >
-                  View Listings
-                </a>
+                <RealScoutSearchCta variant="buttonPrimary" />
                 <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
                   Schedule time with me
                 </CalendlyPopupButton>

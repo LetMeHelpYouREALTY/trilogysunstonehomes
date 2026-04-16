@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { PHONE_DISPLAY, PHONE_E164, SITE_NAME, SITE_NAME_SHORT } from "@/lib/site-contact";
 
 const homesIdx = SITE_NAME_SHORT.lastIndexOf(" Homes");
@@ -47,6 +48,9 @@ export function SiteHeader() {
               </Link>
             </li>
           ))}
+          <li>
+            <RealScoutSearchCta variant="nav" className="h-9 px-3 sm:px-4" />
+          </li>
           <li>
             <a
               href={`tel:${PHONE_E164}`}

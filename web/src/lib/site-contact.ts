@@ -24,4 +24,4 @@ export const BROKERAGE_LEGAL_LINE =
 
 export const REALSCOUT_AGENT_ENCODED_ID = "QWdlbnQtMjI1MDUw";
 export const REALSCOUT_SHARED_SEARCH_URL =
-  "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0yMDk0Ng==";
+  "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xMDkzMA==";

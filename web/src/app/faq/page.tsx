@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { faqPageJsonLd } from "@/lib/schema";
-import { REALSCOUT_SHARED_SEARCH_URL, SITE_NAME_SHORT } from "@/lib/site-contact";
+import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: `Trilogy Sunstone FAQ | HOA Fees, Cost & 55+ Rules | ${SITE_NAME_SHORT}`,
@@ -162,14 +163,9 @@ export default function FaqPage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Still have questions?</h2>
               <p className="text-slate-700 mb-6">
                 Browse{" "}
-                <a
-                  href={REALSCOUT_SHARED_SEARCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
+                <RealScoutSearchCta variant="inline" className="text-blue-600 hover:text-blue-700 font-medium">
                   Trilogy Sunstone homes for sale
-                </a>
+                </RealScoutSearchCta>
                 , read our{" "}
                 <Link href="/buyers-guide" className="text-blue-600 hover:text-blue-700 font-medium">
                   buyer&apos;s guide

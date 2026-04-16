@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { contactRealEstateAgentJsonLd } from "@/lib/schema";
 import {
@@ -10,7 +11,6 @@ import {
   AGENT_LICENSE_LINE,
   MAPS_SEARCH_URL,
   PHONE_DISPLAY,
-  REALSCOUT_SHARED_SEARCH_URL,
   SITE_NAME_SHORT,
 } from "@/lib/site-contact";
 
@@ -45,14 +45,9 @@ export default function ContactPage() {
               <div className="space-y-6 text-[#3d4544]">
                 <p className="text-lg">
                   Reach out for{" "}
-                  <a
-                    href={REALSCOUT_SHARED_SEARCH_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#1c5087] hover:text-[#003a70] font-medium"
-                  >
+                  <RealScoutSearchCta variant="inline" className="font-medium">
                     Trilogy Sunstone homes for sale
-                  </a>
+                  </RealScoutSearchCta>
                   ,{" "}
                   <Link
                     href="/neighborhoods/trilogy-sunstone"
@@ -66,14 +61,7 @@ export default function ContactPage() {
                   <CalendlyPopupButton className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold bg-[#789e35] text-white hover:bg-[#66872d] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#8bb63e] focus:ring-offset-2">
                     Schedule time with me
                   </CalendlyPopupButton>
-                  <a
-                    href={REALSCOUT_SHARED_SEARCH_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
-                  >
-                    View Listings
-                  </a>
+                  <RealScoutSearchCta variant="buttonPrimary" className="w-full sm:w-auto" />
                 </div>
               </div>
             </div>
