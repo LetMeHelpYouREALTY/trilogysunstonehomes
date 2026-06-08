@@ -7,7 +7,7 @@
 			"platform": "node",
 			"dockerBuild": {
 				"dockerfile": "${workspaceFolder}/archive/spiffy-saturn/Dockerfile",
-				"context": "${workspaceFolder}/spiffy-saturn",
+				"context": "${workspaceFolder}/archive/spiffy-saturn",
 				"pull": true
 			},
 			"node": {
