@@ -15,6 +15,19 @@ export const metadata: Metadata = {
   description:
     "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Inventory, tours, and buyer guidance.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
+    description:
+      "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Inventory, tours, and buyer guidance.",
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
+    description:
+      "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Inventory, tours, and buyer guidance.",
+  },
 };
 
 export default function HomePage() {
