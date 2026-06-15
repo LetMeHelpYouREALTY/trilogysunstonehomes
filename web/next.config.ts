@@ -1,4 +1,8 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const appRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const csp = [
   "default-src 'self'",
@@ -13,6 +17,10 @@ const csp = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  // Monorepo: keep Turbopack rooted in web/ (repo also has a root package-lock.json).
+  turbopack: {
+    root: appRoot,
+  },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },

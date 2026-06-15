@@ -1,9 +1,7 @@
 name: CI — MDC Rules Drift
 
+# Cursor MDC baseline sync — not a deploy gate. Project rules are customized in .cursor/rules/.
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
 
 jobs:

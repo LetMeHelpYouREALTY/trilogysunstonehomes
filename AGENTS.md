@@ -16,9 +16,15 @@
 - **Large media:** Prefer optimized WebP/AVIF under `web/public/images/`; avoid committing very large originals to Git (clone size affects CI and every Vercel git fetch). Use compression or a CDN for huge assets.
 - **Cloudflare Pages:** not wired for this Next app. Using Next on Cloudflare would require [`@cloudflare/next-on-pages`](https://developers.cloudflare.com/pages/framework-guides/nextjs/) or a static export—do not assume the old Astro → Cloudflare flow applies.
 
+## Before push (prevents Vercel failures)
+
+- Run **`npm run verify`** from the repo root before `git push`. It checks that every `@/` import resolves **and is tracked by git**, then runs build/typecheck/lint in `web/`.
+- Optional: **`sh scripts/install-pre-push-hook.sh`** installs a pre-push hook that runs verify automatically.
+- See **[`docs/vercel-deployment.md`](docs/vercel-deployment.md)** for the deployment audit (incomplete commits, duplicate Vercel projects, Root Directory).
+
 ## CI (GitHub Actions)
 
-- **[`.github/workflows/web-ci.yml`](.github/workflows/web-ci.yml)** — `main` pushes: install/build/typecheck/lint in **`web/`** (Next.js app).
+- **[`.github/workflows/web-ci.yml`](.github/workflows/web-ci.yml)** — `main` pushes: install/build/typecheck/lint in **`web/`** (Next.js app). This is the deploy gate.
 - **[`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml)** — GitHub Pages template; **`workflow_dispatch` only** so it does not run on every push (production is Vercel). Enable `push` there only after adapting it for `web/` + static export if you need Pages.
 - **`.nvmrc`** — Node **20**, aligned with [`web/package.json`](web/package.json) `engines`.
 
