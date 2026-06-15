@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { COMMUNITY_NAME, ZIP } from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { PHONE_DISPLAY, PHONE_E164, SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: `Accessibility Statement | ${SITE_NAME_SHORT}`,
-  description:
-    "Accessibility statement for Trilogy Sunstone Homes by Dr. Jan Duffy, including support options and our ongoing accessibility commitments.",
-  alternates: { canonical: "/accessibility-statement" },
+  ...pageSeo({
+    title: `Accessibility Statement | ${SITE_NAME_SHORT}`,
+    description:
+      `Accessibility statement for ${COMMUNITY_NAME} (${ZIP}) Homes by Dr. Jan Duffy—support options, contact paths, and our ongoing commitment to an inclusive northwest Las Vegas real estate website.`,
+    path: "/accessibility-statement",
+  }),
 };
 
 export default function AccessibilityStatementPage() {

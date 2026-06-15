@@ -1,3 +1,12 @@
+import {
+  AREA_LABEL,
+  CLUB_NAME,
+  COMMUNITY_NAME,
+  LIFESTYLE_CONTEXT,
+  LOCAL_CONTEXT_PARAGRAPH,
+  ZIP,
+} from "@/lib/hyperlocal";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -48,6 +57,14 @@ export const BLOG_POSTS: BlogPost[] = [
           "Tour homes with a checklist: storage, guest space, single-level flow, and outdoor privacy.",
         ],
       },
+      {
+        heading: `${COMMUNITY_NAME} & ${CLUB_NAME} context`,
+        body: [
+          `${LOCAL_CONTEXT_PARAGRAPH}`,
+          `${CLUB_NAME} at ${COMMUNITY_NAME} (${ZIP}) anchors resort-style living in ${AREA_LABEL} with pickleball courts, pools, and fitness programming—verify court count and reservation rules during your sales-center tour on Lapis Ln.`,
+          "Dr. Jan Duffy helps buyers weigh amenity access against floor-plan fit so northwest Las Vegas 55+ lifestyle goals match the home you purchase.",
+        ],
+      },
     ],
   },
   {
@@ -89,6 +106,14 @@ export const BLOG_POSTS: BlogPost[] = [
           "Balance lifestyle keywords with HOA budget reality and home suitability.",
         ],
       },
+      {
+        heading: `Outdoor access from ${COMMUNITY_NAME} (${ZIP})`,
+        body: [
+          `${COMMUNITY_NAME} sits in ${AREA_LABEL} with US-95 and Kyle Canyon Rd. (Exit 96) access—buyers often reach Red Rock Canyon and Mount Charleston faster than from central Las Vegas.`,
+          LIFESTYLE_CONTEXT,
+          "Dr. Jan Duffy maps drive times from the sales center at 9560 Lapis Ln. to your favorite trailheads so recreation goals align with daily errands in 89143.",
+        ],
+      },
     ],
   },
   {
@@ -120,6 +145,14 @@ export const BLOG_POSTS: BlogPost[] = [
         body: [
           "Prioritize structural and utility upgrades first, then finish selections.",
           "It is usually easier to change paint later than to retrofit electrical, storage, or core layout decisions.",
+        ],
+      },
+      {
+        heading: `Comparing lots & plans in ${ZIP}`,
+        body: [
+          LOCAL_CONTEXT_PARAGRAPH,
+          `Resort Collection and Freedom Collection plans at ${COMMUNITY_NAME} carry different base prices and lot premiums—model payments with master-plan and HOA dues before selecting upgrades.`,
+          "Dr. Jan Duffy compares quick-move-in inventory against to-be-built lots on Lapis Ln. so northwest Las Vegas buyers see real tradeoffs before signing a Shea Homes contract.",
         ],
       },
     ],
@@ -155,6 +188,14 @@ export const BLOG_POSTS: BlogPost[] = [
           "Respond to lender requests quickly so underwriting and clear-to-close milestones stay on track.",
         ],
       },
+      {
+        heading: `Financing ${COMMUNITY_NAME} in ${AREA_LABEL}`,
+        body: [
+          `${COMMUNITY_NAME} purchases in ${ZIP} require lenders to document master-plan and community HOA layers—include both in every payment scenario before touring the sales center.`,
+          "New construction draws differ from resale closings on Lapis Ln.; confirm your loan officer has closed Shea Homes transactions in northwest Las Vegas.",
+          "Dr. Jan Duffy shares current HOA ranges and comparable sales so your pre-approval matches real 89143 inventory—not generic calculator defaults.",
+        ],
+      },
     ],
   },
   {
@@ -186,6 +227,14 @@ export const BLOG_POSTS: BlogPost[] = [
         body: [
           "Use a must-have, should-have, and nice-to-have budget framework before design studio appointments.",
           "This approach reduces decision fatigue and keeps your spend aligned with long-term goals.",
+        ],
+      },
+      {
+        heading: `Design upgrades at Shea ${COMMUNITY_NAME}`,
+        body: [
+          `Shea Homes design studio appointments for ${COMMUNITY_NAME} (${ZIP}) follow structural lock-in—bring a tiered budget and inspiration photos to the sales center in ${AREA_LABEL}.`,
+          "Northwest Las Vegas sun favors covered patios, efficient windows, and durable flooring—upgrades that perform well on resale comps along Lapis Ln.",
+          "Dr. Jan Duffy reviews your selection summary against 89143 market expectations so comfort upgrades do not outpace neighborhood resale norms.",
         ],
       },
     ],

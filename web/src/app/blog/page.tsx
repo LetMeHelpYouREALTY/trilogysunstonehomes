@@ -3,15 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { BLOG_POSTS } from "@/lib/blog-posts";
+import { COMMUNITY_NAME, GEO_SUBHEAD, REALTOR_POSITIONING, ZIP } from "@/lib/hyperlocal";
 import { getOptimizedImageUrl } from "@/lib/image-url";
 import { getRssImageMap } from "@/lib/rss-images";
+import { pageSeo } from "@/lib/seo-metadata";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: `Blog | ${SITE_NAME_SHORT}`,
-  description:
-    "Blog articles from Dr. Jan Duffy covering Trilogy Sunstone buying strategy, financing, building, and Las Vegas 55+ homeownership.",
-  alternates: { canonical: "/blog" },
+  ...pageSeo({
+    title: `Trilogy Sunstone & Las Vegas 55+ Blog | ${SITE_NAME_SHORT}`,
+    description:
+      `Articles on ${COMMUNITY_NAME} (${ZIP}) buying strategy, financing, Shea Homes building, Cabochon Club lifestyle, and northwest Las Vegas 55+ homeownership from Dr. Jan Duffy.`,
+    path: "/blog",
+  }),
 };
 
 export default async function BlogPage() {
@@ -24,10 +28,15 @@ export default async function BlogPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Blog</h1>
-        <p className="text-lg md:text-xl max-w-3xl text-center text-white/90">
-          Strategy, insights, and practical tips for Trilogy Sunstone buyers and Las Vegas 55+
-          homeowners.
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          Trilogy Sunstone &amp; Las Vegas 55+ Blog
+        </h1>
+        <p className="text-lg md:text-xl max-w-3xl text-center text-white/90 mb-3">
+          Strategy, insights, and practical tips for {COMMUNITY_NAME} buyers in zip {ZIP} and
+          northwest Las Vegas 55+ homeowners.
+        </p>
+        <p className="text-base md:text-lg max-w-3xl text-center text-white/80">
+          {GEO_SUBHEAD}. {REALTOR_POSITIONING}
         </p>
       </section>
 
