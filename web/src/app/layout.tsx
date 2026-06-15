@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { DM_Serif_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
@@ -7,9 +7,17 @@ import { SiteHeader } from "@/components/site-header";
 import { localBusinessJsonLd, websiteJsonLd } from "@/lib/schema";
 import { SITE_NAME_SHORT, SITE_URL } from "@/lib/site-contact";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const sans = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: true,
+});
+
+const display = DM_Serif_Display({
+  variable: "--font-dm-serif",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
   adjustFontFallback: true,
 });
@@ -57,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.variable}>
+    <html lang="en" className={`${sans.variable} ${display.variable}`}>
       <head>
         <meta name="theme-color" content="#003a70" />
         <link rel="preconnect" href="https://calendly.com" />

@@ -41,7 +41,7 @@ export default function HomePage() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
             {GEO_SUBHEAD}
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-sm">
+          <h1 className="hero-title-lg mb-6 leading-tight text-white drop-shadow-sm">
             Trilogy Sunstone Homes for Sale
           </h1>
           <p className="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto">
@@ -267,7 +267,7 @@ export default function HomePage() {
 
         <section className="section-cta py-16 md:py-20">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-display mb-4 tracking-tight">
               Ready to Start Your Journey?
             </h2>
             <p className="text-xl text-[#eaf0f2] mb-8 max-w-2xl mx-auto">

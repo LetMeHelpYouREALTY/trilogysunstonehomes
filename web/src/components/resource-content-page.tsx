@@ -32,7 +32,7 @@ export function ResourceContentPage({ page }: ResourceContentPageProps) {
       />
       <main className="min-h-screen flex flex-col">
       <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">{page.h1}</h1>
+        <h1 className="hero-title mb-4 text-center">{page.h1}</h1>
         <p className="text-lg md:text-xl max-w-3xl text-center text-white/90">{page.intro}</p>
       </section>
 

@@ -2,7 +2,8 @@
 
 /* Design tokens — Trilogy blue base + lifestyle green accent from provided reference image */
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-dm-serif), ui-serif, Georgia, "Times New Roman", serif;
   --color-surface-page: #eaf0f2;
   --color-surface-muted: #d9e0e2;
   --color-brand-50: #eaf0f2;
@@ -26,8 +27,9 @@
     @apply scroll-smooth;
   }
   body {
-    @apply antialiased text-[#3d4544];
+    @apply antialiased font-sans text-[#3d4544];
     background: var(--color-surface-page);
+    font-feature-settings: "kern" 1, "liga" 1;
   }
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -58,7 +60,7 @@
   h2,
   h3,
   h4 {
-    @apply text-balance;
+    @apply text-balance font-display font-normal tracking-tight;
   }
   p {
     @apply text-pretty;
@@ -66,6 +68,10 @@
 }
 
 @layer components {
+  .font-display {
+    font-family: var(--font-dm-serif), ui-serif, Georgia, serif;
+  }
+
   /* Hero band — mesh + depth (used across marketing routes) */
   .hero-mesh {
     position: relative;
@@ -94,6 +100,25 @@
   .hero-mesh > * {
     position: relative;
     z-index: 1;
+  }
+
+  .hero-mesh h1 {
+    @apply font-display font-normal tracking-tight;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title {
+    @apply font-display text-3xl font-normal tracking-tight md:text-4xl lg:text-5xl;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title-lg {
+    @apply font-display text-3xl font-normal tracking-tight md:text-4xl lg:text-6xl;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-mesh p {
+    @apply font-sans;
   }
 
   .card-elevated {

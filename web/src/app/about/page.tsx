@@ -31,7 +31,7 @@ export default function AboutPage() {
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
           {GEO_SUBHEAD}
         </p>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
+        <h1 className="hero-title mb-4 text-center">
           Dr. Jan Duffy — Trilogy Sunstone REALTOR®
         </h1>
         <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">

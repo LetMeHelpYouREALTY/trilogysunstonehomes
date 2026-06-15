@@ -31,7 +31,7 @@ export default function ResourcesHubPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Resource Library</h1>
+        <h1 className="hero-title mb-4">Resource Library</h1>
         <p className="text-lg md:text-xl max-w-3xl text-center text-white/90 mb-3">
           Practical guidance for buying, financing, building, and owning at {COMMUNITY_NAME} in
           northwest Las Vegas (zip {ZIP}) and the greater Las Vegas 55+ market.

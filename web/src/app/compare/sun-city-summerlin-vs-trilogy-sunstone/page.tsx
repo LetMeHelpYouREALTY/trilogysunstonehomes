@@ -59,7 +59,7 @@ export default function SunCityVsTrilogyPage() {
           </nav>
 
           <section className="hero-mesh relative flex flex-col items-center justify-center py-16 px-4 text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+            <h1 className="hero-title mb-4 text-white">
               Sun City Summerlin vs Trilogy Sunstone
             </h1>
             <p className="text-lg md:text-xl max-w-2xl text-white/90">

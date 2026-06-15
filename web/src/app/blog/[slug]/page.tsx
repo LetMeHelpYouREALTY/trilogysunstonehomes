@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <p className="text-sm text-white/80 mb-2">
           {new Date(post.publishedAt).toLocaleDateString()} · {post.readMinutes} min read
         </p>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{post.title}</h1>
+        <h1 className="hero-title mb-4">{post.title}</h1>
         <p className="text-lg md:text-xl max-w-3xl text-white/90">{post.excerpt}</p>
       </section>
 

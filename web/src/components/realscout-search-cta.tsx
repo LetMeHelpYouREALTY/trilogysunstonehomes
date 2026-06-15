@@ -44,6 +44,8 @@ const aria =
 
 export type RealScoutSearchCtaVariant =
   | "nav"
+  | "navCompact"
+  | "navCompactIcon"
   | "sticky"
   | "hero"
   | "buttonPrimary"
@@ -86,6 +88,18 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
         <IconHomeSearch className="h-4 w-4" />
         <span className="hidden min-[400px]:inline">Trilogy inventory</span>
         <span className="min-[400px]:hidden">Inventory</span>
+      </>
+    ),
+    navCompact: (
+      <>
+        <IconHomeSearch className="h-3.5 w-3.5" />
+        <span>Inventory</span>
+      </>
+    ),
+    navCompactIcon: (
+      <>
+        <IconHomeSearch className="h-4 w-4" />
+        <span className="sr-only">Trilogy inventory</span>
       </>
     ),
     sticky: (
@@ -146,6 +160,14 @@ export function RealScoutSearchCta({ variant, className, children }: RealScoutSe
     nav: cn(
       "inline-flex min-h-11 items-center gap-2 rounded-xl bg-gradient-to-br from-[#003a70] to-[#1c5087] px-3 py-2 text-sm font-semibold text-white shadow-md shadow-[#003a70]/30 ring-1 ring-white/15",
       "transition hover:brightness-110 hover:ring-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c5087]",
+    ),
+    navCompact: cn(
+      "inline-flex h-9 items-center gap-1.5 rounded-lg bg-gradient-to-br from-[#003a70] to-[#1c5087] px-2.5 text-[13px] font-semibold text-white shadow-sm ring-1 ring-white/10",
+      "transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1c5087] focus-visible:ring-offset-2",
+    ),
+    navCompactIcon: cn(
+      "inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#003a70] to-[#1c5087] text-white shadow-sm ring-1 ring-white/10",
+      "transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1c5087] focus-visible:ring-offset-2",
     ),
     sticky: cn(
       "inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#003a70] via-[#1c5087] to-[#205d9e] px-2 py-2.5 text-white shadow-inner ring-1 ring-white/20",

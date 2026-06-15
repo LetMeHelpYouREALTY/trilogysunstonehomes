@@ -58,7 +58,7 @@ export default function BuyersGuidePage() {
       <div className="pb-24 md:pb-0">
       <main className="min-h-screen flex flex-col">
         <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
+          <h1 className="hero-title mb-4 text-center">
             How to Buy a Home at Trilogy Sunstone
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
