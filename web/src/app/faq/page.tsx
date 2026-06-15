@@ -4,13 +4,22 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  COMMUNITY_NAME,
+  HIGHWAY_ACCESS,
+  LIFESTYLE_CONTEXT,
+  SEO_KEYWORDS,
+  ZIP,
+} from "@/lib/hyperlocal";
 import { faqPageJsonLd } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo-metadata";
 
 export const metadata: Metadata = {
-  title: `Trilogy Sunstone FAQ | HOA Fees, Home Costs, 55+ Rules & Comparisons`,
-  description:
-    "FAQ: HOA fees at Trilogy Sunstone, how much homes cost, age rules, zip code, distance to the Strip, and comparisons (Sun City Summerlin, Del Webb). Trilogy Sunstone Las Vegas 55+ community.",
-  alternates: { canonical: "/faq" },
+  ...pageSeo({
+    title: "Trilogy Sunstone FAQ | HOA Fees, Home Costs, 55+ Rules & Comparisons",
+    description: `FAQ for ${COMMUNITY_NAME} in northwest Las Vegas (${ZIP}): HOA fees, home costs, age rules, Kyle Canyon access, Skye Canyon shopping, agent registration, and community comparisons. ${SEO_KEYWORDS.split(", ").slice(0, 3).join(", ")}.`,
+    path: "/faq",
+  }),
 };
 
 const faqItems = [
@@ -84,6 +93,19 @@ const faqItems = [
     question: "Trilogy Sunstone vs Del Webb Las Vegas — what should I know?",
     answer:
       "Del Webb and Trilogy communities can both offer active adult living, but builder, floor plans, amenities, and monthly costs vary by neighborhood. Start with the comparison guide linked below and confirm details on site visits.",
+  },
+  {
+    question: "How do I access Trilogy Sunstone from Kyle Canyon Road?",
+    answer: `Trilogy Sunstone sits in northwest Las Vegas (${ZIP}) inside the Sunstone master plan. Most buyers arrive via ${HIGHWAY_ACCESS}—US-95 north to Kyle Canyon Rd. (Exit 96), then into the gated community. Dr. Jan Duffy can coordinate a tour and walk you through gate access on your first visit.`,
+  },
+  {
+    question: "How close is Trilogy Sunstone to Skye Canyon shopping?",
+    answer: LIFESTYLE_CONTEXT,
+  },
+  {
+    question: "Do I need to register my agent on the first visit to Trilogy Sunstone?",
+    answer:
+      "Yes. Shea Homes requires buyer-agent registration before or at your first visit to the Trilogy Sunstone sales center. If you tour without registering your agent, you may limit buyer representation on new construction. Contact Dr. Jan Duffy before your first appointment so registration is handled correctly for buyer representation.",
   },
 ];
 

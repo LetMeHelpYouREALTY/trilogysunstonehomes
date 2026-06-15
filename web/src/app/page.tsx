@@ -7,27 +7,28 @@ import { LazyRealScoutOfficeListings } from "@/components/lazy-realscout-office-
 import { MlsListingDisclaimer } from "@/components/mls-listing-disclaimer";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  AGE_RESTRICTION,
+  BUILDER,
+  CLUB_NAME,
+  COMMUNITY_NAME,
+  GEO_SUBHEAD,
+  HOME_COLLECTIONS,
+  LIFESTYLE_CONTEXT,
+  LOCAL_CONTEXT_PARAGRAPH,
+  REALTOR_POSITIONING,
+  ZIP,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
 import { AGENT_LICENSE_LINE, CONTACT_SELLING_SECTION_ID } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
-  description:
-    "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Inventory, tours, and buyer guidance.",
-  alternates: { canonical: "/" },
-  openGraph: {
+  ...pageSeo({
     title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
-    description:
-      "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Inventory, tours, and buyer guidance.",
-    url: "/",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Trilogy Sunstone Homes for Sale | Las Vegas 55+ | Northwest Active Adult",
-    description:
-      "Trilogy Sunstone homes for sale in Las Vegas — Trilogy at Sunstone real estate in a 55+ community (89143). Shea Homes new construction and resale. Inventory, tours, and buyer guidance.",
-  },
+    description: `Trilogy Sunstone homes for sale in northwest Las Vegas (${ZIP}) — ${AGE_RESTRICTION} active adult community with Shea Homes new construction and resale. Inventory, Cabochon Club tours, and buyer guidance.`,
+    path: "/",
+  }),
 };
 
 export default function HomePage() {
@@ -38,7 +39,7 @@ export default function HomePage() {
       <main className="min-h-screen flex flex-col">
         <section className="hero-mesh relative flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
-            Northwest Las Vegas · 55+ Active Adult · Trilogy at Sunstone
+            {GEO_SUBHEAD}
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-sm">
             Trilogy Sunstone Homes for Sale
@@ -64,6 +65,44 @@ export default function HomePage() {
               Selling your Trilogy Sunstone home?
             </Link>
           </p>
+        </section>
+
+        <section className="py-16 md:py-20 bg-[#eaf0f2]">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-4 text-center">
+                Northwest Las Vegas {ZIP}: {COMMUNITY_NAME}
+              </h2>
+              <p className="text-[#3d4544] leading-relaxed mb-4">{LOCAL_CONTEXT_PARAGRAPH}</p>
+              <p className="text-[#3d4544] leading-relaxed mb-6">{LIFESTYLE_CONTEXT}</p>
+              <p className="text-[#4e5655] text-sm leading-relaxed mb-6">{REALTOR_POSITIONING}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="card-elevated bg-white p-6">
+                  <h3 className="font-semibold text-[#1c5087] mb-2">
+                    <Link
+                      href="/amenities/cabochon-club"
+                      className="hover:text-[#003a70]"
+                    >
+                      {CLUB_NAME}
+                    </Link>
+                  </h3>
+                  <p className="text-[#6b7373] text-sm">
+                    Resort-style amenities anchor daily life at {COMMUNITY_NAME}—fitness,
+                    pools, social clubs, and events inside the staff-gated {AGE_RESTRICTION}{" "}
+                    neighborhood.
+                  </p>
+                </div>
+                <div className="card-elevated bg-white p-6">
+                  <h3 className="font-semibold text-[#1c5087] mb-2">{BUILDER} collections</h3>
+                  <ul className="text-[#6b7373] text-sm space-y-1 list-disc list-inside">
+                    {HOME_COLLECTIONS.map((collection) => (
+                      <li key={collection}>{collection}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="py-16 md:py-20 bg-white">

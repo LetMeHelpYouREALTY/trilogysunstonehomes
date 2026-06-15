@@ -5,13 +5,22 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  BUILDER,
+  COMMUNITY_NAME,
+  HOME_COLLECTIONS,
+  LOCAL_CONTEXT_PARAGRAPH,
+  ZIP,
+} from "@/lib/hyperlocal";
 import { faqPageJsonLd } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo-metadata";
 
 export const metadata: Metadata = {
-  title: "Buy a Home in Trilogy Sunstone | Resale vs New | Floor Plans & Inventory",
-  description:
-    "Buy a home in Trilogy Sunstone: resale vs new construction, Freedom & Resort Collection floor plans, single-story options, and how to search Trilogy Sunstone homes for sale in Las Vegas.",
-  alternates: { canonical: "/buyers-guide" },
+  ...pageSeo({
+    title: "Buy a Home in Trilogy Sunstone | Resale vs New | Floor Plans & Inventory",
+    description: `Buy a home in ${COMMUNITY_NAME} (${ZIP}): resale vs Shea Homes new construction, Freedom & Resort Collection floor plans, single-story options, and how to search Trilogy Sunstone homes for sale in northwest Las Vegas.`,
+    path: "/buyers-guide",
+  }),
 };
 
 const faqItems = [
@@ -70,6 +79,25 @@ export default function BuyersGuidePage() {
                 </Link>{" "}
                 follows the same proven steps as any great home purchase—with the added
                 benefit of a 55+ community designed for your lifestyle. Here is how it works.
+              </p>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                Shea Homes collections at {COMMUNITY_NAME}
+              </h2>
+              <p className="text-slate-700 mb-4">{LOCAL_CONTEXT_PARAGRAPH}</p>
+              <p className="text-slate-700 mb-4">
+                {BUILDER} offers distinct product lines inside the {ZIP} master plan. Current
+                and past collections include:
+              </p>
+              <ul className="text-slate-700 mb-6 space-y-1 list-disc list-inside">
+                {HOME_COLLECTIONS.map((collection) => (
+                  <li key={collection}>{collection}</li>
+                ))}
+              </ul>
+              <p className="text-slate-700 mb-10">
+                Freedom Collection plans emphasize single-story living; Resort Collection and
+                Modern Collection options add variety for buyers comparing square footage,
+                HOA layers, and lot premiums. Inventory changes weekly—browse live search
+                before locking in a floor plan.
               </p>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">
                 Resale vs new construction at Trilogy Sunstone

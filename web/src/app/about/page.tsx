@@ -1,26 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
+import {
+  COMMUNITY_NAME,
+  GEO_SUBHEAD,
+  LOCAL_CONTEXT_PARAGRAPH,
+  REALTOR_POSITIONING,
+  ZIP,
+} from "@/lib/hyperlocal";
+import { contactRealEstateAgentJsonLd } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo-metadata";
 import { AGENT_LICENSE_LINE } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "About Trilogy Sunstone | Dr. Jan Duffy | BHHS Nevada Properties",
-  description:
-    "About Trilogy Sunstone and Las Vegas 55+ living. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties—Trilogy Sunstone real estate specialist.",
-  alternates: { canonical: "/about" },
+  ...pageSeo({
+    title: "Dr. Jan Duffy — Trilogy Sunstone REALTOR® | BHHS Nevada Properties",
+    description: `Dr. Jan Duffy is your Trilogy Sunstone REALTOR® in northwest Las Vegas (${ZIP})—buyer and seller representation, Shea Homes new construction guidance, resale tours, and first-visit agent registration.`,
+    path: "/about",
+  }),
 };
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <>
+      <JsonLd data={contactRealEstateAgentJsonLd()} />
+      <main className="min-h-screen flex flex-col">
       <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
+          {GEO_SUBHEAD}
+        </p>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
-          About Trilogy Sunstone
+          Dr. Jan Duffy — Trilogy Sunstone REALTOR®
         </h1>
         <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-          Las Vegas&apos; premier 55+ active lifestyle community—where new homes, amenities,
-          and a vibrant neighborhood come together.
+          Buyer and seller representation in {COMMUNITY_NAME} ({ZIP})—Shea Homes new
+          construction, resale inventory, and community tours in northwest Las Vegas.
         </p>
       </section>
 
@@ -28,6 +44,11 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-sm text-[#6b7373] mb-8 border-b border-[#d9e0e2] pb-6">{AGENT_LICENSE_LINE}</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-6">
+              Serving zip {ZIP}
+            </h2>
+            <p className="text-[#3d4544] leading-relaxed mb-4">{REALTOR_POSITIONING}</p>
+            <p className="text-[#3d4544] leading-relaxed mb-8">{LOCAL_CONTEXT_PARAGRAPH}</p>
             <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-6">Our Community</h2>
             <p className="text-[#3d4544] leading-relaxed mb-4">
               <Link
@@ -51,6 +72,12 @@ export default function AboutPage() {
                 buyer&apos;s guide
               </Link>{" "}
               and personalized support.
+            </p>
+            <p className="text-[#3d4544] leading-relaxed mt-4">
+              For Shea Homes new construction, Dr. Jan Duffy helps you navigate floor plans,
+              incentives, and the first-visit agent registration process at the sales center.
+              For resale sellers, she provides pricing context, prep guidance, and marketing
+              aligned with northwest Las Vegas 55+ demand.
             </p>
           </div>
         </div>
@@ -125,5 +152,6 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

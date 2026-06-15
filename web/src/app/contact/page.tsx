@@ -5,7 +5,15 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  AREA_LABEL,
+  COMMUNITY_NAME,
+  LOCAL_CONTEXT_PARAGRAPH,
+  REALTOR_POSITIONING,
+  ZIP,
+} from "@/lib/hyperlocal";
 import { contactRealEstateAgentJsonLd } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo-metadata";
 import {
   ADDRESS_LINE,
   AGENT_LICENSE_LINE,
@@ -16,10 +24,11 @@ import {
 } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: `Contact Dr. Jan Duffy | Trilogy Sunstone Specialist | BHHS Nevada`,
-  description:
-    `Contact Dr. Jan Duffy for Trilogy Sunstone homes for sale or selling — Berkshire Hathaway HomeServices Nevada Properties. Call ${PHONE_DISPLAY}. Las Vegas 55+ buyer and seller guidance.`,
-  alternates: { canonical: "/contact" },
+  ...pageSeo({
+    title: "Contact Dr. Jan Duffy | Trilogy Sunstone Specialist | BHHS Nevada",
+    description: `Contact Dr. Jan Duffy for Trilogy Sunstone homes for sale or selling in ${AREA_LABEL} (${ZIP}). Call ${PHONE_DISPLAY}. Buyer and seller representation for the ${COMMUNITY_NAME} 55+ community.`,
+    path: "/contact",
+  }),
 };
 
 export default function ContactPage() {
@@ -65,6 +74,24 @@ export default function ContactPage() {
                   <RealScoutSearchCta variant="buttonPrimary" className="w-full sm:w-auto" />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-20 bg-[#eaf0f2]">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-2xl font-bold text-[#3d4544] mb-4">
+                Trilogy Sunstone service area — {ZIP}
+              </h2>
+              <p className="text-[#3d4544] leading-relaxed mb-4">{REALTOR_POSITIONING}</p>
+              <p className="text-[#3d4544] leading-relaxed mb-4">{LOCAL_CONTEXT_PARAGRAPH}</p>
+              <p className="text-[#6b7373] text-sm leading-relaxed">
+                Whether you are touring Shea Homes new construction, comparing resale on Lapis
+                Ln., or preparing to list, Dr. Jan Duffy provides buyer and seller
+                representation focused on {COMMUNITY_NAME} and the northwest Las Vegas 55+
+                market—not a generic Las Vegas search.
+              </p>
             </div>
           </div>
         </section>
