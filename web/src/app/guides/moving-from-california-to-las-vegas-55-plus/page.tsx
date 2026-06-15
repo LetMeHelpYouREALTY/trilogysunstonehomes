@@ -2,14 +2,26 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  AREA_LABEL,
+  CLUB_NAME,
+  COMMUNITY_NAME,
+  HIGHWAY_ACCESS,
+  LIFESTYLE_CONTEXT,
+  LOCAL_CONTEXT_PARAGRAPH,
+  RESOURCE_LOCAL_SECTION,
+  SEO_KEYWORDS,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "California to Las Vegas 55+ | Retirement Relocation Guide",
-  description:
-    "Moving from California to Las Vegas for retirement: 55+ community shopping, lifestyle tradeoffs, and why buyers tour Trilogy Sunstone. General information—not tax or legal advice.",
-  alternates: { canonical: "/guides/moving-from-california-to-las-vegas-55-plus" },
+  ...pageSeo({
+    title: "California to Las Vegas 55+ | Retirement Relocation Guide",
+    description: `Moving from California to Las Vegas for retirement: 55+ community shopping, lifestyle tradeoffs, and why buyers tour ${COMMUNITY_NAME} in ${AREA_LABEL}. ${SEO_KEYWORDS}. General information—not tax or legal advice.`,
+    path: "/guides/moving-from-california-to-las-vegas-55-plus",
+  }),
 };
 
 export default function CaliforniaRelocationGuidePage() {
@@ -96,12 +108,24 @@ export default function CaliforniaRelocationGuidePage() {
                   href="/neighborhoods/trilogy-sunstone"
                   className="text-[#1c5087] hover:text-[#003a70] font-medium"
                 >
-                  Trilogy Sunstone
+                  {COMMUNITY_NAME}
                 </Link>{" "}
                 combines Shea Homes new construction and resale inventory with a dedicated 55+
-                lifestyle footprint in northwest Las Vegas. Start with a tour and a live search
-                aligned to your budget.
+                lifestyle footprint in {AREA_LABEL}, accessed via {HIGHWAY_ACCESS}. The{" "}
+                {CLUB_NAME}—with Cooper&apos;s Kitchen, eight pickleball courts, and resort-style
+                pools—draws many California relocators comparing northwest Las Vegas to Summerlin.
+                Start with a tour and a live search aligned to your budget.
               </p>
+              <p className="text-[#3d4544] leading-relaxed mb-6">{LIFESTYLE_CONTEXT}</p>
+              <article className="space-y-4 rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-6 mb-6">
+                <h2 className="text-2xl font-bold text-[#3d4544]">{RESOURCE_LOCAL_SECTION.heading}</h2>
+                <p className="text-[#3d4544] leading-relaxed">{LOCAL_CONTEXT_PARAGRAPH}</p>
+                {RESOURCE_LOCAL_SECTION.body.slice(1).map((paragraph) => (
+                  <p key={paragraph} className="text-[#3d4544] leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
               <p className="text-sm text-[#6b7373] border-t border-[#d9e0e2] pt-6">
                 Questions? {SITE_NAME_SHORT} is happy to coordinate tours and introductions to
                 trusted local professionals when you need them. Start with our{" "}

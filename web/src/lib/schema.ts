@@ -12,8 +12,40 @@ import {
   SITE_URL,
   STREET_ADDRESS,
 } from "@/lib/site-contact";
+import { COMMUNITY_NAME, COMMUNITY_NAME_ALT, MASTER_PLAN } from "@/lib/hyperlocal";
 
 const base = SITE_URL.replace(/\/$/, "");
+
+/** Shared areaServed for Trilogy Sunstone realtor schema */
+export function trilogySunstoneAreaServed() {
+  return [
+    {
+      "@type": "Place" as const,
+      name: COMMUNITY_NAME,
+      alternateName: COMMUNITY_NAME_ALT,
+      containedInPlace: {
+        "@type": "City" as const,
+        name: ADDRESS_LOCALITY,
+        containedInPlace: { "@type": "State" as const, name: "Nevada" },
+      },
+      address: {
+        "@type": "PostalAddress" as const,
+        addressLocality: ADDRESS_LOCALITY,
+        addressRegion: ADDRESS_REGION,
+        postalCode: POSTAL_CODE,
+        addressCountry: "US",
+      },
+    },
+    {
+      "@type": "AdministrativeArea" as const,
+      name: `${MASTER_PLAN} master plan`,
+      containedInPlace: {
+        "@type": "City" as const,
+        name: ADDRESS_LOCALITY,
+      },
+    },
+  ];
+}
 
 export const SCHEMA_IDS = {
   website: `${base}/#website`,
@@ -28,7 +60,7 @@ export function websiteJsonLd() {
     name: SITE_NAME_SHORT,
     alternateName: SITE_NAME,
     url: base,
-    description: `${SITE_NAME_SHORT} — Las Vegas 55+ active adult community. Find homes for sale, community info, and buyer resources.`,
+    description: `${SITE_NAME_SHORT} — Trilogy Sunstone real estate specialist in northwest Las Vegas (${POSTAL_CODE}). Buyer and seller representation for Shea Homes new construction and resale in the 55+ community.`,
     publisher: { "@id": SCHEMA_IDS.realEstateAgent },
   };
 }
@@ -50,13 +82,9 @@ export function localBusinessJsonLd() {
       postalCode: POSTAL_CODE,
       addressCountry: "US",
     },
-    areaServed: {
-      "@type": "City",
-      name: "Las Vegas",
-      containedInPlace: { "@type": "State", name: "Nevada" },
-    },
+    areaServed: trilogySunstoneAreaServed(),
     hasMap: MAPS_SEARCH_URL,
-    description: `${SITE_NAME_SHORT} helps buyers with Trilogy Sunstone homes for sale in Las Vegas 55+ communities.`,
+    description: `${SITE_NAME_SHORT} helps buyers and sellers with Trilogy Sunstone homes for sale in northwest Las Vegas (${POSTAL_CODE}) — Shea Homes new construction, resale, and Cabochon Club community tours.`,
     image: `${base}/favicon-48.png`,
   };
 }
@@ -77,11 +105,7 @@ export function realEstateAgentBase() {
       addressRegion: ADDRESS_REGION,
       postalCode: POSTAL_CODE,
     },
-    areaServed: {
-      "@type": "City",
-      name: "Las Vegas",
-      containedInPlace: { "@type": "State", name: "Nevada" },
-    },
+    areaServed: trilogySunstoneAreaServed(),
   };
 }
 
@@ -103,7 +127,7 @@ export function homeRealEstateAgentWithReviewsJsonLd() {
   return {
     ...realEstateAgentBase(),
     description:
-      "Real estate and homes at Trilogy Sunstone, Las Vegas 55+ active adult community.",
+      "Dr. Jan Duffy, REALTOR® — Trilogy Sunstone real estate specialist for buyer and seller representation in northwest Las Vegas (89143).",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: 5,
@@ -123,7 +147,7 @@ export function contactRealEstateAgentJsonLd() {
   return {
     ...realEstateAgentBase(),
     description:
-      "Real estate and homes at Trilogy Sunstone, Las Vegas 55+ active adult community.",
+      "Dr. Jan Duffy, REALTOR® — Trilogy Sunstone real estate specialist for buyer and seller representation in northwest Las Vegas (89143).",
   };
 }
 
@@ -166,6 +190,29 @@ export function trilogySunstoneBreadcrumbJsonLd() {
         item: `${base}/neighborhoods/trilogy-sunstone`,
       },
     ],
+  };
+}
+
+/** BlogPosting schema for blog articles */
+export function blogPostingJsonLd(input: {
+  title: string;
+  description: string;
+  slug: string;
+  publishedAt: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: input.title,
+    description: input.description,
+    url: `${base}/blog/${input.slug}`,
+    datePublished: input.publishedAt,
+    dateModified: input.publishedAt,
+    author: { "@id": SCHEMA_IDS.realEstateAgent },
+    publisher: { "@id": SCHEMA_IDS.realEstateAgent },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${base}/blog/${input.slug}` },
+    ...(input.image ? { image: input.image } : {}),
   };
 }
 

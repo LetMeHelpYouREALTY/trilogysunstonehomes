@@ -2,13 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  AREA_LABEL,
+  CLUB_NAME,
+  COMMUNITY_NAME,
+  COMPETING_COMMUNITIES,
+  RESOURCE_LOCAL_SECTION,
+  SEO_KEYWORDS,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Best 55+ Communities Las Vegas 2026 | How to Compare (No Fake Rankings)",
-  description:
-    "How to evaluate the best 55+ communities in Las Vegas in 2026: location, HOA, product type, and lifestyle fit—including Trilogy Sunstone and Summerlin-area alternatives.",
-  alternates: { canonical: "/guides/best-55-plus-communities-las-vegas" },
+  ...pageSeo({
+    title: "Best 55+ Communities Las Vegas 2026 | How to Compare (No Fake Rankings)",
+    description: `How to evaluate the best 55+ communities in Las Vegas in 2026: location, HOA, product type, and lifestyle fit—including ${COMMUNITY_NAME} and Summerlin-area alternatives. ${SEO_KEYWORDS}.`,
+    path: "/guides/best-55-plus-communities-las-vegas",
+  }),
 };
 
 export default function Best55PlusCommunitiesPage() {
@@ -66,7 +76,9 @@ export default function Best55PlusCommunitiesPage() {
               <p className="text-[#3d4544] text-lg leading-relaxed mb-6">
                 Searching <strong>best 55+ communities Las Vegas 2026</strong> will surface glossy
                 marketing and conflicting opinions. Google rewards helpful, reliable content—so here
-                is an honest decision framework instead of a fake numbered ranking.
+                is an honest decision framework instead of a fake numbered ranking. Popular
+                comparisons include {COMPETING_COMMUNITIES.slice(0, 3).join(", ")}, and{" "}
+                {COMMUNITY_NAME} in {AREA_LABEL}.
               </p>
               <h2 className="text-2xl font-bold text-[#3d4544] mt-10 mb-4">Start with constraints</h2>
               <p className="text-[#3d4544] leading-relaxed mb-4">
@@ -87,10 +99,11 @@ export default function Best55PlusCommunitiesPage() {
                   href="/neighborhoods/trilogy-sunstone"
                   className="text-[#1c5087] hover:text-[#003a70] font-medium"
                 >
-                  Trilogy Sunstone
+                  {COMMUNITY_NAME}
                 </Link>{" "}
-                is a strong candidate when you want Shea Homes product, a northwest Las Vegas
-                location, and resort-style programming. Compare it directly using our{" "}
+                is a strong candidate when you want Shea Homes product, a {AREA_LABEL} location,
+                and resort-style programming at the {CLUB_NAME}—including Cooper&apos;s Kitchen and
+                eight pickleball courts. Compare it directly using our{" "}
                 <Link href="/compare/sun-city-summerlin-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
                   Sun City Summerlin comparison
                 </Link>{" "}
@@ -104,9 +117,21 @@ export default function Best55PlusCommunitiesPage() {
                 </Link>
                 .
               </p>
+              <article className="space-y-4 rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-6 mb-6">
+                <h2 className="text-2xl font-bold text-[#3d4544]">{RESOURCE_LOCAL_SECTION.heading}</h2>
+                {RESOURCE_LOCAL_SECTION.body.map((paragraph) => (
+                  <p key={paragraph} className="text-[#3d4544] leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
               <p className="text-sm text-[#6b7373]">
                 Dr. Jan Duffy represents buyers—not sellers for competing builders. Disclosures are
-                part of good service, not a footnote.
+                part of good service, not a footnote.{" "}
+                <Link href="/contact" className="text-[#1c5087] font-medium">
+                  Contact us
+                </Link>{" "}
+                for buyer-side guidance.
               </p>
             </div>
           </article>

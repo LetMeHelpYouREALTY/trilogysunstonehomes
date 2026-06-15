@@ -2,15 +2,27 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
+import {
+  AREA_LABEL,
+  COMMUNITY_NAME,
+  GEO_SUBHEAD,
+  HIGHWAY_ACCESS,
+  LOCAL_CONTEXT_PARAGRAPH,
+  REALTOR_POSITIONING,
+  SEO_KEYWORDS,
+  ZIP,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: `Neighborhoods & Communities | ${SITE_NAME_SHORT}`,
-  description:
-    "Explore Trilogy Sunstone and nearby Las Vegas 55+ and active adult communities. Find the right neighborhood for your next home.",
-  alternates: { canonical: "/neighborhoods" },
+  ...pageSeo({
+    title: `Neighborhoods & Communities | ${SITE_NAME_SHORT}`,
+    description: `Explore ${COMMUNITY_NAME} and nearby Las Vegas 55+ communities in ${AREA_LABEL} (${ZIP}). ${SEO_KEYWORDS}.`,
+    path: "/neighborhoods",
+  }),
 };
 
 export default function NeighborhoodsPage() {
@@ -21,7 +33,7 @@ export default function NeighborhoodsPage() {
           Neighborhoods We Serve
         </h1>
         <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-          Trilogy Sunstone and surrounding Las Vegas area communities.
+          {GEO_SUBHEAD} — and surrounding Las Vegas area communities.
         </p>
       </section>
 
@@ -36,12 +48,15 @@ export default function NeighborhoodsPage() {
                 </Link>
               </h3>
               <p className="text-[#3d4544] mb-4">
-                Las Vegas&apos; premier 55+ active lifestyle community.{" "}
+                {LOCAL_CONTEXT_PARAGRAPH}
+              </p>
+              <p className="text-[#3d4544] mb-4">
+                Access via {HIGHWAY_ACCESS}.{" "}
                 <RealScoutSearchCta variant="inline" className="font-medium">
-                  New homes
+                  Search Trilogy Sunstone homes
                 </RealScoutSearchCta>{" "}
-                for sale, resort-style amenities, and a vibrant neighborhood designed for active
-                adults.
+                for sale, tour the Cabochon Club, and compare northwest Las Vegas 55+ options with
+                buyer representation.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -97,16 +112,28 @@ export default function NeighborhoodsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-[#3d4544] mb-4">Not Sure Where to Start?</h2>
+            <p className="text-[#3d4544] mb-4">{REALTOR_POSITIONING}</p>
             <p className="text-[#3d4544] mb-6">
               Read our{" "}
               <Link href="/buyers-guide" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                 buyer&apos;s guide
-              </Link>{" "}
-              or check the{" "}
+              </Link>
+              , explore{" "}
+              <Link
+                href="/neighborhoods/trilogy-sunstone"
+                className="text-[#1c5087] hover:text-[#003a70] font-medium"
+              >
+                {COMMUNITY_NAME}
+              </Link>
+              , or check the{" "}
               <Link href="/faq" className="text-[#1c5087] hover:text-[#003a70] font-medium">
                 FAQ
               </Link>
-              .
+              .{" "}
+              <Link href="/contact" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                Contact us
+              </Link>{" "}
+              when you are ready to tour.
             </p>
             <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70] transition-colors shadow focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2">
               Schedule time with me

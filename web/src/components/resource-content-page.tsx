@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { JsonLd } from "@/components/json-ld";
+import { RESOURCE_LOCAL_SECTION } from "@/lib/hyperlocal";
 import type { ResourcePage } from "@/lib/resource-pages";
+import { breadcrumbListJsonLd } from "@/lib/schema";
 
 type ResourceContentPageProps = {
   page: ResourcePage;
@@ -16,8 +19,18 @@ export function ResourceContentPage({ page }: ResourceContentPageProps) {
       ?.replaceAll("-", " ")
       .replace(/\b\w/g, (m) => m.toUpperCase()) ?? href;
 
+  const resourcePath = `/resources/${page.slug.join("/")}`;
+
   return (
-    <main className="min-h-screen flex flex-col">
+    <>
+      <JsonLd
+        data={breadcrumbListJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Resources", path: "/resources" },
+          { name: page.h1, path: resourcePath },
+        ])}
+      />
+      <main className="min-h-screen flex flex-col">
       <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">{page.h1}</h1>
         <p className="text-lg md:text-xl max-w-3xl text-center text-white/90">{page.intro}</p>
@@ -36,6 +49,26 @@ export function ResourceContentPage({ page }: ResourceContentPageProps) {
                 ))}
               </article>
             ))}
+            <article className="space-y-4 rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-6">
+              <h2 className="text-2xl font-bold text-[#3d4544]">{RESOURCE_LOCAL_SECTION.heading}</h2>
+              {RESOURCE_LOCAL_SECTION.body.map((paragraph) => (
+                <p key={paragraph} className="text-[#3d4544] leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+              <p className="text-[#3d4544] leading-relaxed">
+                <Link
+                  href="/neighborhoods/trilogy-sunstone"
+                  className="text-[#1c5087] hover:text-[#003a70] font-medium"
+                >
+                  Trilogy Sunstone community guide
+                </Link>
+                {" · "}
+                <Link href="/contact" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  Contact Dr. Jan Duffy
+                </Link>
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -84,5 +117,6 @@ export function ResourceContentPage({ page }: ResourceContentPageProps) {
         </section>
       ) : null}
     </main>
+    </>
   );
 }

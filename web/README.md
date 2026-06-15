@@ -17,6 +17,8 @@ npm run lint
 
 Copy `.env.example` to `.env.local` if you use optional public vars (e.g. Search Console verification).
 
+See [Google Search Console setup](../docs/google-search-console.md) for verification and sitemap submission steps.
+
 ### v0 Platform API (optional)
 
 - `V0_API_KEY` — for `npm run design:v0` or server route `POST /api/v0/design`.

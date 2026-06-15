@@ -4,13 +4,24 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  AREA_LABEL,
+  CLUB_NAME,
+  COMMUNITY_NAME,
+  HIGHWAY_ACCESS,
+  LOCAL_CONTEXT_PARAGRAPH,
+  RESOURCE_LOCAL_SECTION,
+  SEO_KEYWORDS,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Regency at Summerlin vs Trilogy Sunstone | 55+ Buyer Notes",
-  description:
-    "Regency at Summerlin vs Trilogy Sunstone: Summerlin luxury 55+ vs northwest Trilogy Sunstone—what to compare on price, HOA, and lifestyle.",
-  alternates: { canonical: "/compare/regency-at-summerlin-vs-trilogy-sunstone" },
+  ...pageSeo({
+    title: "Regency at Summerlin vs Trilogy Sunstone | 55+ Buyer Notes",
+    description: `Regency at Summerlin vs ${COMMUNITY_NAME}: Summerlin luxury 55+ vs ${AREA_LABEL} Trilogy Sunstone—compare price, HOA, and lifestyle at the ${CLUB_NAME}. ${SEO_KEYWORDS}.`,
+    path: "/compare/regency-at-summerlin-vs-trilogy-sunstone",
+  }),
 };
 
 export default function RegencyVsTrilogyPage() {
@@ -65,16 +76,18 @@ export default function RegencyVsTrilogyPage() {
               </p>
               <h2 className="text-2xl font-bold">Product &amp; price bands</h2>
               <p className="leading-relaxed">
-                Regency at Summerlin is widely viewed as a luxury 55+ enclave within Summerlin;
-                Trilogy Sunstone targets active adults with Shea Homes plans in northwest Las Vegas.
-                Apples-to-apples price comparisons only work when you align plan size, lot, upgrades,
-                and resale vs new status.
+                Regency at Summerlin is widely viewed as a luxury 55+ enclave within Summerlin;{" "}
+                {COMMUNITY_NAME} targets active adults with Shea Homes plans in {AREA_LABEL},
+                accessed via {HIGHWAY_ACCESS}. The {CLUB_NAME} offers Cooper&apos;s Kitchen, eight
+                pickleball courts, and resort-style pools. Apples-to-apples price comparisons only
+                work when you align plan size, lot, upgrades, and resale vs new status.
               </p>
               <h2 className="text-2xl font-bold">Lifestyle &amp; commute</h2>
               <p className="leading-relaxed">
-                Summerlin-centric living can shorten certain west-side commutes; northwest placement
-                can be advantageous for specific recreation and growth corridors. Write down your top
-                three weekly destinations and test drive them during peak hours.
+                Summerlin-centric living can shorten certain west-side commutes; {AREA_LABEL}{" "}
+                placement via Kyle Canyon Exit 96 can be advantageous for specific recreation and
+                growth corridors. Write down your top three weekly destinations and test drive them
+                during peak hours.
               </p>
               <h2 className="text-2xl font-bold">See current Trilogy inventory</h2>
               <p className="leading-relaxed">
@@ -91,9 +104,19 @@ export default function RegencyVsTrilogyPage() {
               <h2 className="text-2xl font-bold">Quick verdict</h2>
               <p className="leading-relaxed">
                 Regency at Summerlin can be compelling for buyers prioritizing a Summerlin luxury
-                address. Trilogy Sunstone can be a better match for buyers prioritizing northwest Las
-                Vegas location and newer Shea Homes product at different price bands.
+                address. {COMMUNITY_NAME} can be a better match for buyers prioritizing{" "}
+                {AREA_LABEL} location, newer Shea Homes product, and on-site dining at
+                Cooper&apos;s Kitchen at different price bands.
               </p>
+              <article className="space-y-4 rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-6">
+                <h2 className="text-2xl font-bold">{RESOURCE_LOCAL_SECTION.heading}</h2>
+                <p className="leading-relaxed">{LOCAL_CONTEXT_PARAGRAPH}</p>
+                {RESOURCE_LOCAL_SECTION.body.slice(1).map((paragraph) => (
+                  <p key={paragraph} className="leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
               <p className="text-sm text-[#6b7373]">
                 Related comparisons:{" "}
                 <Link href="/compare/sun-city-summerlin-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
@@ -111,6 +134,12 @@ export default function RegencyVsTrilogyPage() {
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70]"
                 >
                   Explore Trilogy Sunstone
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2]"
+                >
+                  Contact us
                 </Link>
                 <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2]">
                   Schedule time

@@ -5,16 +5,31 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  AREA_LABEL,
+  BUILDER,
+  CLUB_NAME,
+  COMMUNITY_NAME,
+  COMMUNITY_NAME_ALT,
+  GEO_SUBHEAD,
+  HIGHWAY_ACCESS,
+  HOME_COLLECTIONS,
+  LIFESTYLE_CONTEXT,
+  LOCAL_CONTEXT_PARAGRAPH,
+  MASTER_PLAN,
+  SALES_OFFICE,
+  SEO_KEYWORDS,
+  ZIP,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { faqPageJsonLd, trilogySunstoneBreadcrumbJsonLd } from "@/lib/schema";
-import { POSTAL_CODE } from "@/lib/site-contact";
-
-export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Trilogy at Sunstone Real Estate | Shea Homes Floor Plans, HOA & Cabochon Club",
-  description:
-    "Trilogy at Sunstone real estate: Shea Homes Trilogy Sunstone in the Sunstone master plan (northwest Las Vegas). Freedom Collection & Resort Collection homes, HOA fees, Cabochon Club, resale & new construction. Inventory & tours.",
-  alternates: { canonical: "/neighborhoods/trilogy-sunstone" },
+  ...pageSeo({
+    title: "Trilogy at Sunstone Real Estate | Shea Homes Floor Plans, HOA & Cabochon Club",
+    description: `${COMMUNITY_NAME_ALT} real estate in ${AREA_LABEL} (${ZIP}): ${BUILDER}, Freedom & Resort Collection homes, Cabochon Club, resale & new construction. ${SEO_KEYWORDS}.`,
+    path: "/neighborhoods/trilogy-sunstone",
+  }),
 };
 
 const communityFaq = [
@@ -26,7 +41,7 @@ const communityFaq = [
   {
     question: "What zip code is Trilogy Sunstone?",
     answer:
-      `Trilogy Sunstone is in Las Vegas zip code ${POSTAL_CODE}, in the northwest Las Vegas / Sunstone area. Always confirm the property address on the listing you are considering.`,
+      `${COMMUNITY_NAME} is in Las Vegas zip code ${ZIP}, in the ${AREA_LABEL} / ${MASTER_PLAN} area off ${HIGHWAY_ACCESS}. Always confirm the property address on the listing you are considering.`,
   },
   {
     question: "How far is Trilogy Sunstone from the Las Vegas Strip?",
@@ -46,17 +61,27 @@ const communityFaq = [
   {
     question: "What is the Cabochon Club at Trilogy Sunstone?",
     answer:
-      "The Cabochon Club is the resident lifestyle hub for the community—resort-style gathering space, fitness and social programming, and a central place to meet neighbors. Details evolve with the community; review the Cabochon Club page on this site or tour to confirm current amenities.",
+      `The ${CLUB_NAME} at ${SALES_OFFICE} is the resident lifestyle hub—resort-style gathering space, fitness and social programming, Cooper's Kitchen dining, and a central place to meet neighbors. Review the Cabochon Club page on this site or tour to confirm current hours and programming.`,
   },
   {
     question: "What amenities does Trilogy Sunstone offer?",
     answer:
-      "The community is built around an active lifestyle: resort-style amenities typically include pools, fitness, social spaces, and outdoor gathering areas. Specific offerings can be confirmed when you tour or contact us.",
+      `${COMMUNITY_NAME} is built around an active lifestyle: the ${CLUB_NAME} with Cooper's Kitchen, resort-style pools, eight pickleball courts, fitness and wellness facilities, and outdoor gathering areas. Specific offerings and hours can be confirmed when you tour or contact us.`,
   },
   {
     question: "Where is Trilogy Sunstone located?",
     answer:
-      `Trilogy Sunstone sits in northwest Las Vegas within the Sunstone master-planned area (zip ${POSTAL_CODE}), with outdoor recreation toward Red Rock Canyon and Mount Charleston. It is part of the Trilogy brand of 55+ communities, with access to shopping, healthcare, and entertainment across the valley.`,
+      `${COMMUNITY_NAME} sits in ${AREA_LABEL} within the ${MASTER_PLAN} master-planned area (zip ${ZIP}), accessed via ${HIGHWAY_ACCESS}. The sales center and ${CLUB_NAME} are at ${SALES_OFFICE}. Outdoor recreation toward Red Rock Canyon and Mount Charleston is a major draw for northwest Las Vegas 55+ buyers.`,
+  },
+  {
+    question: "How many homes are in Trilogy Sunstone?",
+    answer:
+      `Trilogy Sunstone is planned for roughly 933 homes across ${HOME_COLLECTIONS.join(", ")} product lines. Build-out continues in phases—confirm which collections and lots are available when you tour.`,
+  },
+  {
+    question: "How do I get to Trilogy Sunstone from US-95?",
+    answer:
+      `From US-95 northbound, take Kyle Canyon Road (Exit 96) toward the ${MASTER_PLAN} master plan. The ${CLUB_NAME} and sales office are at ${SALES_OFFICE}. Allow extra time during peak commute hours and confirm gate procedures with your agent before your first visit.`,
   },
   {
     question: "Where can I find Trilogy Sunstone Las Vegas reviews?",
@@ -109,8 +134,8 @@ export default function TrilogySunstonePage() {
             Trilogy at Sunstone Real Estate
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-            Shea Homes Trilogy Sunstone — Freedom &amp; Resort Collection homes, Cabochon Club
-            lifestyle, and Trilogy at Sunstone real estate in northwest Las Vegas.
+            {GEO_SUBHEAD} — Freedom &amp; Resort Collection homes, {CLUB_NAME} lifestyle, and
+            Trilogy at Sunstone real estate off Kyle Canyon Exit 96.
           </p>
         </section>
 
@@ -119,17 +144,19 @@ export default function TrilogySunstonePage() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Overview</h2>
               <p className="text-[#3d4544] leading-relaxed mb-4">
-                Trilogy Sunstone is a Shea Homes 55+ community in the Sunstone master plan
-                (northwest Las Vegas), offering new construction and resale homes for active
-                adults. Residents enjoy low-maintenance living, resort-style amenities, and a
-                built-in social environment—including the{" "}
+                {LOCAL_CONTEXT_PARAGRAPH}
+              </p>
+              <p className="text-[#3d4544] leading-relaxed mb-4">
+                The community is planned for roughly 933 homes across Shea Homes collections,
+                centered on the{" "}
                 <Link
                   href="/amenities/cabochon-club"
                   className="text-[#1c5087] hover:text-[#003a70] font-medium"
                 >
-                  Cabochon Club
-                </Link>
-                .
+                  {CLUB_NAME}
+                </Link>{" "}
+                at {SALES_OFFICE}—with Cooper&apos;s Kitchen, eight pickleball courts, pools, and
+                fitness programming for active adults arriving via Kyle Canyon Road (Exit 96).
               </p>
               <p className="text-[#3d4544] leading-relaxed">
                 Whether you are relocating, downsizing, or looking for a dedicated 55+
@@ -162,12 +189,17 @@ export default function TrilogySunstonePage() {
                   </Link>{" "}
                   — resident clubhouse and lifestyle programming
                 </li>
-                <li>Resort-style pool, pickleball, and outdoor spaces (confirm on tour)</li>
+                <li>Eight pickleball courts, resort-style pools, and outdoor spaces (confirm on tour)</li>
+                <li>Cooper&apos;s Kitchen at the {CLUB_NAME}</li>
                 <li>Fitness and wellness facilities</li>
                 <li>Shea Homes Freedom Collection (single-story plans) and Resort Collection (duplex-style options where offered)</li>
                 <li>Low-maintenance homes and landscaping</li>
-                <li>Northwest Las Vegas location—outdoor recreation toward Red Rock Canyon and Mount Charleston</li>
+                <li>
+                  {AREA_LABEL} location via {HIGHWAY_ACCESS}—outdoor recreation toward Red Rock
+                  Canyon and Mount Charleston
+                </li>
               </ul>
+              <p className="text-[#3d4544] leading-relaxed mt-6">{LIFESTYLE_CONTEXT}</p>
             </div>
           </div>
         </section>

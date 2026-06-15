@@ -2,14 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  COMMUNITY_NAME,
+  LOCAL_CONTEXT_PARAGRAPH,
+  REALTOR_POSITIONING,
+  RESOURCE_LOCAL_SECTION,
+  SEO_KEYWORDS,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Las Vegas 55+ Guides | Northwest Active Adult, Relocation & Comparisons",
-  description:
-    "Guides for northwest Las Vegas 55+ homes, California-to-Vegas retirement, and how top active adult communities compare—including Trilogy Sunstone.",
-  alternates: { canonical: "/guides" },
+  ...pageSeo({
+    title: "Las Vegas 55+ Guides | Northwest Active Adult, Relocation & Comparisons",
+    description: `Guides for northwest Las Vegas 55+ homes, California-to-Vegas retirement, and how top active adult communities compare—including ${COMMUNITY_NAME}. ${SEO_KEYWORDS}.`,
+    path: "/guides",
+  }),
 };
 
 const guides = [
@@ -90,6 +99,7 @@ export default function GuidesIndexPage() {
 
           <section className="py-16 md:py-20 bg-white">
             <div className="container mx-auto px-4 max-w-3xl">
+              <p className="text-[#3d4544] leading-relaxed mb-8">{LOCAL_CONTEXT_PARAGRAPH}</p>
               <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Guides</h2>
               <ul className="space-y-6">
                 {guides.map((g) => (
@@ -127,9 +137,32 @@ export default function GuidesIndexPage() {
                 ))}
               </ul>
               <p className="text-sm text-[#6b7373] mt-6">
-                Dr. Jan Duffy represents buyers—community marketing centers represent builders.
-                Comparisons are for education; confirm details on tours and in HOA documents.
+                {REALTOR_POSITIONING} Comparisons are for education; confirm details on tours and in
+                HOA documents.{" "}
+                <Link
+                  href="/neighborhoods/trilogy-sunstone"
+                  className="text-[#1c5087] hover:text-[#003a70] font-medium"
+                >
+                  {COMMUNITY_NAME} community page
+                </Link>
+                {" · "}
+                <Link href="/contact" className="text-[#1c5087] hover:text-[#003a70] font-medium">
+                  Contact us
+                </Link>
               </p>
+            </div>
+          </section>
+
+          <section className="py-16 md:py-20 bg-white">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <article className="space-y-4 rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-6">
+                <h2 className="text-2xl font-bold text-[#3d4544]">{RESOURCE_LOCAL_SECTION.heading}</h2>
+                {RESOURCE_LOCAL_SECTION.body.map((paragraph) => (
+                  <p key={paragraph} className="text-[#3d4544] leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
             </div>
           </section>
         </main>

@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { BLOG_POSTS, getBlogPost } from "@/lib/blog-posts";
 import { getOptimizedImageUrl } from "@/lib/image-url";
 import { getRssImageMap } from "@/lib/rss-images";
+import { blogPostingJsonLd } from "@/lib/schema";
 import { SITE_NAME_SHORT } from "@/lib/site-contact";
 
 type BlogPostPageProps = {
@@ -52,7 +54,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const image = rssImageMap.get(post.slug) ?? post.image;
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <>
+      <JsonLd
+        data={blogPostingJsonLd({
+          title: post.title,
+          description: post.description,
+          slug: post.slug,
+          publishedAt: post.publishedAt,
+          image: image
+            ? getOptimizedImageUrl(image, {
+                width: 1200,
+                height: 630,
+                fit: "cover",
+                format: "webp",
+                quality: 85,
+              }) ?? image
+            : undefined,
+        })}
+      />
+      <main className="min-h-screen flex flex-col">
       <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
         <p className="text-sm text-white/80 mb-2">
           {new Date(post.publishedAt).toLocaleDateString()} · {post.readMinutes} min read
@@ -142,5 +162,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </section>
     </main>
+    </>
   );
 }

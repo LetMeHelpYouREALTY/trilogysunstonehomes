@@ -4,13 +4,24 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import {
+  AREA_LABEL,
+  CLUB_NAME,
+  COMMUNITY_NAME,
+  HIGHWAY_ACCESS,
+  LOCAL_CONTEXT_PARAGRAPH,
+  RESOURCE_LOCAL_SECTION,
+  SEO_KEYWORDS,
+} from "@/lib/hyperlocal";
+import { pageSeo } from "@/lib/seo-metadata";
 import { breadcrumbListJsonLd, contactRealEstateAgentJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Sun City Summerlin vs Trilogy Sunstone | Las Vegas 55+ Comparison",
-  description:
-    "Compare Sun City Summerlin and Trilogy Sunstone: location, home types, HOA considerations, and lifestyle fit. Educational overview for buyers touring Las Vegas 55+ communities.",
-  alternates: { canonical: "/compare/sun-city-summerlin-vs-trilogy-sunstone" },
+  ...pageSeo({
+    title: "Sun City Summerlin vs Trilogy Sunstone | Las Vegas 55+ Comparison",
+    description: `Compare Sun City Summerlin and ${COMMUNITY_NAME}: location, home types, HOA considerations, and lifestyle fit in ${AREA_LABEL}. ${SEO_KEYWORDS}. Educational overview for buyers.`,
+    path: "/compare/sun-city-summerlin-vs-trilogy-sunstone",
+  }),
 };
 
 export default function SunCityVsTrilogyPage() {
@@ -66,9 +77,10 @@ export default function SunCityVsTrilogyPage() {
               <h2 className="text-2xl font-bold text-[#3d4544]">Location &amp; setting</h2>
               <p className="leading-relaxed">
                 Sun City Summerlin is an established Del Webb community within the Summerlin master
-                plan—mature trees, extensive clubs, and a wide range of resale homes. Trilogy
-                Sunstone is a newer Shea Homes 55+ neighborhood in northwest Las Vegas within the
-                Sunstone area, with modern floor plans and resort-style programming. Your preferred
+                plan—mature trees, extensive clubs, and a wide range of resale homes.{" "}
+                {COMMUNITY_NAME} is a newer Shea Homes 55+ neighborhood in {AREA_LABEL} within the
+                Sunstone master plan, with modern floor plans, the {CLUB_NAME} (Cooper&apos;s
+                Kitchen, eight pickleball courts), and access via {HIGHWAY_ACCESS}. Your preferred
                 geography—Summerlin vs northwest—often narrows the decision quickly.
               </p>
               <h2 className="text-2xl font-bold text-[#3d4544]">Homes &amp; inventory</h2>
@@ -89,11 +101,20 @@ export default function SunCityVsTrilogyPage() {
               </p>
               <h2 className="text-2xl font-bold text-[#3d4544]">Quick verdict</h2>
               <p className="leading-relaxed">
-                Sun City Summerlin often fits buyers who prefer an established resale-heavy setting.
-                Trilogy Sunstone often fits buyers who want newer Shea Homes floor plans in northwest
-                Las Vegas with resort-style programming. The right choice depends on your commute,
-                budget, and amenity priorities.
+                Sun City Summerlin often fits buyers who prefer an established resale-heavy setting.{" "}
+                {COMMUNITY_NAME} often fits buyers who want newer Shea Homes floor plans in{" "}
+                {AREA_LABEL} with resort-style programming at the {CLUB_NAME}. The right choice
+                depends on your commute, budget, and amenity priorities.
               </p>
+              <article className="space-y-4 rounded-lg border border-[#d9e0e2] bg-[#f7fafb] p-6">
+                <h2 className="text-2xl font-bold text-[#3d4544]">{RESOURCE_LOCAL_SECTION.heading}</h2>
+                <p className="leading-relaxed">{LOCAL_CONTEXT_PARAGRAPH}</p>
+                {RESOURCE_LOCAL_SECTION.body.slice(1).map((paragraph) => (
+                  <p key={paragraph} className="leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
               <p className="text-sm text-[#6b7373]">
                 Compare other options:{" "}
                 <Link href="/compare/del-webb-north-ranch-vs-trilogy-sunstone" className="text-[#1c5087] font-medium">
@@ -111,6 +132,12 @@ export default function SunCityVsTrilogyPage() {
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-[#1c5087] text-white hover:bg-[#003a70]"
                 >
                   Explore Trilogy Sunstone
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2]"
+                >
+                  Contact us
                 </Link>
                 <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2]">
                   Schedule a tour
