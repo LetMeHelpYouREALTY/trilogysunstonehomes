@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { COMMUNITY_NAME, ZIP } from "@/lib/hyperlocal";
@@ -17,12 +18,12 @@ export const metadata: Metadata = {
 export default function AccessibilityStatementPage() {
   return (
     <main className="min-h-screen flex flex-col">
-      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+      <PageHero image="accessibility">
         <h1 className="hero-title mb-4">Accessibility Statement</h1>
         <p className="text-lg md:text-xl max-w-3xl text-center text-white/90">
           We are committed to making this website accessible and usable for all visitors.
         </p>
-      </section>
+      </PageHero>
 
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-4xl space-y-8">

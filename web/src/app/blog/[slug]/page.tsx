@@ -4,7 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { PageHero } from "@/components/page-hero";
 import { BLOG_POSTS, getBlogPost } from "@/lib/blog-posts";
+import { getHeroImageForBlogSlug } from "@/lib/hero-images";
 import { getOptimizedImageUrl } from "@/lib/image-url";
 import { getRssImageMap } from "@/lib/rss-images";
 import { blogPostingJsonLd } from "@/lib/schema";
@@ -51,7 +53,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) notFound();
 
   const rssImageMap = await getRssImageMap();
-  const image = rssImageMap.get(post.slug) ?? post.image;
+  const rssRaw = rssImageMap.get(post.slug) ?? post.image;
+  const heroPreset = getHeroImageForBlogSlug(slug);
+  const heroImageSrc = rssRaw
+    ? (getOptimizedImageUrl(rssRaw, {
+        width: 1920,
+        height: 1080,
+        fit: "cover",
+        format: "webp",
+        quality: 85,
+      }) ?? rssRaw)
+    : heroPreset.src;
+  const heroImageAlt = rssRaw ? post.title : heroPreset.alt;
+  const image = rssRaw;
 
   return (
     <>
@@ -73,13 +87,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         })}
       />
       <main className="min-h-screen flex flex-col">
-      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+      <PageHero imageSrc={heroImageSrc} imageAlt={heroImageAlt}>
         <p className="text-sm text-white/80 mb-2">
           {new Date(post.publishedAt).toLocaleDateString()} · {post.readMinutes} min read
         </p>
         <h1 className="hero-title mb-4">{post.title}</h1>
         <p className="text-lg md:text-xl max-w-3xl text-white/90">{post.excerpt}</p>
-      </section>
+      </PageHero>
 
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">

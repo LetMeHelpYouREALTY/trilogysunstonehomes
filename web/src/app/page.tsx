@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { LazyRealScoutOfficeListings } from "@/components/lazy-realscout-office-listings";
 import { MlsListingDisclaimer } from "@/components/mls-listing-disclaimer";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
@@ -37,7 +38,7 @@ export default function HomePage() {
       <JsonLd data={homeRealEstateAgentWithReviewsJsonLd()} />
       <div className="pb-24 md:pb-0">
       <main className="min-h-screen flex flex-col">
-        <section className="hero-mesh relative flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
+        <PageHero image="home" size="large" priority>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
             {GEO_SUBHEAD}
           </p>
@@ -65,7 +66,7 @@ export default function HomePage() {
               Selling your Trilogy Sunstone home?
             </Link>
           </p>
-        </section>
+        </PageHero>
 
         <section className="py-16 md:py-20 bg-[#eaf0f2]">
           <div className="container mx-auto px-4">

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { RESOURCE_LOCAL_SECTION } from "@/lib/hyperlocal";
+import { getHeroImageForResourceSlug } from "@/lib/hero-images";
 import type { ResourcePage } from "@/lib/resource-pages";
 import { breadcrumbListJsonLd } from "@/lib/schema";
 
@@ -20,6 +22,7 @@ export function ResourceContentPage({ page }: ResourceContentPageProps) {
       .replace(/\b\w/g, (m) => m.toUpperCase()) ?? href;
 
   const resourcePath = `/resources/${page.slug.join("/")}`;
+  const heroImage = getHeroImageForResourceSlug(page.slug);
 
   return (
     <>
@@ -31,10 +34,10 @@ export function ResourceContentPage({ page }: ResourceContentPageProps) {
         ])}
       />
       <main className="min-h-screen flex flex-col">
-      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+      <PageHero imageSrc={heroImage.src} imageAlt={heroImage.alt}>
         <h1 className="hero-title mb-4 text-center">{page.h1}</h1>
         <p className="text-lg md:text-xl max-w-3xl text-center text-white/90">{page.intro}</p>
-      </section>
+      </PageHero>
 
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">

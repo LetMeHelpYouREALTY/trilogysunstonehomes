@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import {
   COMMUNITY_NAME,
@@ -27,7 +28,7 @@ export default function AboutPage() {
     <>
       <JsonLd data={contactRealEstateAgentJsonLd()} />
       <main className="min-h-screen flex flex-col">
-      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+      <PageHero image="about">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/95">
           {GEO_SUBHEAD}
         </p>
@@ -38,7 +39,7 @@ export default function AboutPage() {
           Buyer and seller representation in {COMMUNITY_NAME} ({ZIP})—Shea Homes new
           construction, resale inventory, and community tours in northwest Las Vegas.
         </p>
-      </section>
+      </PageHero>
 
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">

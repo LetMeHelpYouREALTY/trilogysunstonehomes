@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import {
@@ -58,7 +59,7 @@ export default function RegencyVsTrilogyPage() {
             </div>
           </nav>
 
-          <section className="hero-mesh relative flex flex-col items-center justify-center py-16 px-4 text-center">
+          <PageHero image="compare">
             <h1 className="hero-title mb-4 text-white">
               Regency at Summerlin vs Trilogy Sunstone
             </h1>
@@ -66,7 +67,7 @@ export default function RegencyVsTrilogyPage() {
               Summerlin luxury 55+ living vs northwest Trilogy Sunstone—compare with your budget
               and daily routine.
             </p>
-          </section>
+          </PageHero>
 
           <article className="py-16 md:py-20 bg-white">
             <div className="container mx-auto px-4 max-w-3xl space-y-6 text-[#3d4544]">

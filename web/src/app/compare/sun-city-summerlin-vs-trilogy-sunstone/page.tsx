@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import {
@@ -58,14 +59,14 @@ export default function SunCityVsTrilogyPage() {
             </div>
           </nav>
 
-          <section className="hero-mesh relative flex flex-col items-center justify-center py-16 px-4 text-center">
+          <PageHero image="compare">
             <h1 className="hero-title mb-4 text-white">
               Sun City Summerlin vs Trilogy Sunstone
             </h1>
             <p className="text-lg md:text-xl max-w-2xl text-white/90">
               A balanced buyer-side look at two popular Las Vegas 55+ options.
             </p>
-          </section>
+          </PageHero>
 
           <article className="py-16 md:py-20 bg-white">
             <div className="container mx-auto px-4 max-w-3xl space-y-6 text-[#3d4544]">

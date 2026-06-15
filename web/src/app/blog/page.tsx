@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { PageHero } from "@/components/page-hero";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { COMMUNITY_NAME, GEO_SUBHEAD, REALTOR_POSITIONING, ZIP } from "@/lib/hyperlocal";
 import { getOptimizedImageUrl } from "@/lib/image-url";
@@ -27,7 +28,7 @@ export default async function BlogPage() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+      <PageHero image="blog">
         <h1 className="hero-title mb-4">
           Trilogy Sunstone &amp; Las Vegas 55+ Blog
         </h1>
@@ -38,7 +39,7 @@ export default async function BlogPage() {
         <p className="text-base md:text-lg max-w-3xl text-center text-white/80">
           {GEO_SUBHEAD}. {REALTOR_POSITIONING}
         </p>
-      </section>
+      </PageHero>
 
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">

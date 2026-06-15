@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import {
@@ -129,7 +130,7 @@ export default function TrilogySunstonePage() {
             </ol>
           </div>
         </nav>
-        <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+        <PageHero image="community">
           <h1 className="hero-title mb-4 text-center">
             Trilogy at Sunstone Real Estate
           </h1>
@@ -137,7 +138,7 @@ export default function TrilogySunstonePage() {
             {GEO_SUBHEAD} — Freedom &amp; Resort Collection homes, {CLUB_NAME} lifestyle, and
             Trilogy at Sunstone real estate off Kyle Canyon Exit 96.
           </p>
-        </section>
+        </PageHero>
 
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">

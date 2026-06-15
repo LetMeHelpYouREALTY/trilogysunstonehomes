@@ -72,7 +72,37 @@
     font-family: var(--font-dm-serif), ui-serif, Georgia, serif;
   }
 
-  /* Hero band — mesh + depth (used across marketing routes) */
+  /* Hero with photo background + brand gradient overlay */
+  .hero-photo {
+    color: #fff;
+  }
+
+  .hero-photo-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgb(0 58 112 / 0.55) 0%,
+        rgb(28 80 135 / 0.72) 40%,
+        rgb(0 58 112 / 0.88) 100%
+      ),
+      linear-gradient(
+        135deg,
+        rgb(0 58 112 / 0.82) 0%,
+        rgb(28 80 135 / 0.78) 42%,
+        rgb(64 115 141 / 0.74) 100%
+      );
+  }
+
+  .hero-photo-content h1 {
+    @apply font-display font-normal tracking-tight text-white drop-shadow-md;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-photo-content p {
+    @apply font-sans text-white/92;
+  }
+
+  /* Legacy gradient-only hero (fallback) */
   .hero-mesh {
     position: relative;
     isolation: isolate;

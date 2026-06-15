@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import {
   AREA_LABEL,
@@ -66,7 +67,7 @@ export default function NorthwestLasVegas55GuidePage() {
             </div>
           </nav>
 
-          <section className="hero-mesh relative flex flex-col items-center justify-center py-16 px-4 text-center">
+          <PageHero image="desert-mountains">
             <h1 className="hero-title mb-4 text-white">
               Northwest Las Vegas 55+ homes
             </h1>
@@ -74,7 +75,7 @@ export default function NorthwestLasVegas55GuidePage() {
               Active adult communities, Sunstone-area master planning, and Trilogy Sunstone in zip{" "}
               {POSTAL_CODE}.
             </p>
-          </section>
+          </PageHero>
 
           <article className="py-16 md:py-20 bg-white">
             <div className="container mx-auto px-4 max-w-3xl">

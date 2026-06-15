@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import {
@@ -37,7 +38,7 @@ export default function ContactPage() {
       <JsonLd data={contactRealEstateAgentJsonLd()} />
       <div className="pb-24 md:pb-0">
       <main className="min-h-screen flex flex-col">
-        <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+        <PageHero image="contact">
           <h1 className="hero-title mb-4 text-center">
             Contact Dr. Jan Duffy
           </h1>
@@ -45,7 +46,7 @@ export default function ContactPage() {
             Trilogy Sunstone specialist · Berkshire Hathaway HomeServices Nevada Properties · Call{" "}
             {PHONE_DISPLAY}
           </p>
-        </section>
+        </PageHero>
 
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">

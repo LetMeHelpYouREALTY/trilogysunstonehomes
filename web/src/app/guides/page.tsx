@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/page-hero";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import {
   COMMUNITY_NAME,
@@ -87,7 +88,7 @@ export default function GuidesIndexPage() {
               </ol>
             </div>
           </nav>
-          <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+          <PageHero image="guides">
             <h1 className="hero-title mb-4 text-white">
               Las Vegas 55+ guides and community comparisons
             </h1>
@@ -95,7 +96,7 @@ export default function GuidesIndexPage() {
               Practical resources for {SITE_NAME_SHORT} buyers—local context, relocation, and
               side-by-side community notes.
             </p>
-          </section>
+          </PageHero>
 
           <section className="py-16 md:py-20 bg-white">
             <div className="container mx-auto px-4 max-w-3xl">

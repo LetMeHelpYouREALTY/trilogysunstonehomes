@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
+import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import {
   AREA_LABEL,
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
 export default function NeighborhoodsPage() {
   return (
     <main className="min-h-screen flex flex-col">
-      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+      <PageHero image="neighborhoods">
         <h1 className="hero-title mb-4 text-center">
           Neighborhoods We Serve
         </h1>
         <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
           {GEO_SUBHEAD} — and surrounding Las Vegas area communities.
         </p>
-      </section>
+      </PageHero>
 
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">

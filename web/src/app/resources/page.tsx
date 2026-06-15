@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
 import Link from "next/link";
 import { COMMUNITY_NAME, LOCAL_CONTEXT_PARAGRAPH, ZIP } from "@/lib/hyperlocal";
 import { getAllResourcePages } from "@/lib/resource-pages";
@@ -30,7 +31,7 @@ export default function ResourcesHubPage() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      <section className="hero-mesh relative flex flex-col items-center justify-center py-20 px-4 text-center">
+      <PageHero image="resources">
         <h1 className="hero-title mb-4">Resource Library</h1>
         <p className="text-lg md:text-xl max-w-3xl text-center text-white/90 mb-3">
           Practical guidance for buying, financing, building, and owning at {COMMUNITY_NAME} in
@@ -39,7 +40,7 @@ export default function ResourcesHubPage() {
         <p className="text-base md:text-lg max-w-3xl text-center text-white/80">
           {LOCAL_CONTEXT_PARAGRAPH}
         </p>
-      </section>
+      </PageHero>
 
       <section className="py-10 md:py-12 bg-[#1c5087]">
         <div className="container mx-auto px-4 max-w-4xl text-center">
