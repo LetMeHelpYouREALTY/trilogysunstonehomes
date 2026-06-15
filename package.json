@@ -14,6 +14,7 @@
     "typecheck": "cd web && npm run typecheck",
     "verify": "node scripts/verify-deploy.mjs",
     "vercel-build": "cd web && npm install --include=dev && npm run build",
-    "vercel:set-root": "node scripts/set-vercel-root-web.mjs"
+    "vercel:set-root": "node scripts/set-vercel-root-web.mjs",
+    "vercel:setup-production": "node scripts/vercel-setup-production.mjs"
   }
 }

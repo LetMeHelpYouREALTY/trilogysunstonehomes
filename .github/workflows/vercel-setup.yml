@@ -1,0 +1,29 @@
+name: Vercel — production setup
+
+# Disconnects duplicate Vercel project, confirms Root Directory, optional GSC env.
+# Add VERCEL_TOKEN to repo secrets, then run manually from Actions tab.
+on:
+  workflow_dispatch:
+    inputs:
+      gsc_verification:
+        description: "Optional GSC HTML tag content value (NEXT_PUBLIC_GSC_VERIFICATION)"
+        required: false
+        type: string
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Run Vercel production setup
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          NEXT_PUBLIC_GSC_VERIFICATION: ${{ inputs.gsc_verification }}
+        run: node scripts/vercel-setup-production.mjs

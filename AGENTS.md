@@ -22,6 +22,22 @@
 - Optional: **`sh scripts/install-pre-push-hook.sh`** installs a pre-push hook that runs verify automatically.
 - See **[`docs/vercel-deployment.md`](docs/vercel-deployment.md)** for the deployment audit (incomplete commits, duplicate Vercel projects, Root Directory).
 
+## Vercel production setup (one command)
+
+After adding **`VERCEL_TOKEN`** ([create token](https://vercel.com/account/tokens)):
+
+```bash
+VERCEL_TOKEN=... npm run vercel:setup-production
+```
+
+This script:
+- Confirms **`trilogysunstonehomes`** Root Directory = `web`
+- Disconnects duplicate **`web`** project from GitHub (stops double deploys)
+- Optionally sets `NEXT_PUBLIC_GSC_VERIFICATION` if provided
+- Triggers a production redeploy
+
+GitHub Actions alternative: add `VERCEL_TOKEN` to repo secrets, then run workflow **Vercel — production setup** from the Actions tab.
+
 ## CI (GitHub Actions)
 
 - **[`.github/workflows/web-ci.yml`](.github/workflows/web-ci.yml)** — `main` pushes: install/build/typecheck/lint in **`web/`** (Next.js app). This is the deploy gate.

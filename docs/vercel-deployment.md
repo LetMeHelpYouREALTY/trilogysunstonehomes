@@ -84,6 +84,24 @@ git push origin main
 
 GitHub Actions [`web-ci.yml`](../.github/workflows/web-ci.yml) runs the same build on `main` pushes.
 
+## One-command Vercel cleanup
+
+Add a [Vercel token](https://vercel.com/account/tokens), then:
+
+```bash
+VERCEL_TOKEN=... npm run vercel:setup-production
+```
+
+Optional GSC verification at the same time:
+
+```bash
+VERCEL_TOKEN=... NEXT_PUBLIC_GSC_VERIFICATION=your-gsc-content-value npm run vercel:setup-production
+```
+
+Or add `VERCEL_TOKEN` to GitHub repo secrets and run the **Vercel — production setup** workflow from Actions.
+
+This disconnects the duplicate **`web`** Vercel project from GitHub so only **`trilogysunstonehomes`** deploys on push.
+
 ## Google Search Console
 
 After deploy, set `NEXT_PUBLIC_GSC_VERIFICATION` in Vercel → **Environment Variables**, redeploy, then verify in Search Console. See [`docs/google-search-console.md`](google-search-console.md).
