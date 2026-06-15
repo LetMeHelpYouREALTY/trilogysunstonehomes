@@ -2,7 +2,7 @@
 
 import type { MouseEvent } from "react";
 import { loadCalendlyWidget } from "@/lib/calendly-loader";
-import { CALENDLY_EVENT_URL } from "@/lib/calendly";
+import { calendlyPopupUrl } from "@/lib/calendly";
 
 declare global {
   interface Window {
@@ -29,7 +29,7 @@ type CalendlyPopupButtonProps = {
 export function CalendlyPopupButton({
   children,
   className,
-  url = CALENDLY_EVENT_URL,
+  url = calendlyPopupUrl(),
 }: CalendlyPopupButtonProps) {
   async function openCalendly(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();

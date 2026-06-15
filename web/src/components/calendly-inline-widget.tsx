@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CALENDLY_INLINE_URL } from "@/lib/calendly";
+import { CALENDLY_INLINE_URL, calendlyEmbedUrl } from "@/lib/calendly";
 
 type CalendlyInlineWidgetProps = {
   className?: string;
@@ -14,7 +14,10 @@ type CalendlyInlineWidgetProps = {
  * within a large distance threshold and pulls the heavy booking/Stripe bundle during
  * initial page load; deferring `src` keeps that work off the critical path for LCP.
  */
-export function CalendlyInlineWidget({ className, title = "Schedule a home tour" }: CalendlyInlineWidgetProps) {
+export function CalendlyInlineWidget({
+  className,
+  title = "Schedule a 15-minute conversation with Dr. Jan Duffy",
+}: CalendlyInlineWidgetProps) {
   const [iframeSrc, setIframeSrc] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -26,7 +29,7 @@ export function CalendlyInlineWidget({ className, title = "Schedule a home tour"
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setIframeSrc(`${CALENDLY_INLINE_URL}&hide_gdpr_banner=1`);
+            setIframeSrc(calendlyEmbedUrl(CALENDLY_INLINE_URL));
             observer.disconnect();
             return;
           }

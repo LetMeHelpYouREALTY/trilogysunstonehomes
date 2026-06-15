@@ -232,10 +232,10 @@ export default function BuyersGuidePage() {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
-                Schedule Your 2-3 Home Tour
+                Schedule a 15-Minute Conversation
               </h2>
               <p className="text-slate-700 mb-8 text-center">
-                Reserve a 90-minute consultation and tour slot that fits your schedule.
+                Reserve a consultation and tour slot that fits your schedule.
               </p>
               <CalendlyInlineWidget />
             </div>

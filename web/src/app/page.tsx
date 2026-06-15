@@ -52,7 +52,7 @@ export default function HomePage() {
           <div className="flex w-full max-w-3xl flex-col items-stretch justify-center gap-4 px-2 sm:flex-row sm:items-stretch">
             <RealScoutSearchCta variant="hero" className="sm:min-w-0 sm:flex-1" />
             <CalendlyPopupButton className="btn-primary-solid sm:flex-1 sm:justify-center">
-              Schedule a Home Tour
+              Schedule a 15-Minute Conversation
             </CalendlyPopupButton>
           </div>
           <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-white/90 sm:text-xs">
@@ -256,7 +256,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-4 text-center">
-                Schedule Your 90-Minute Home Tour
+                Book a 15-Minute Conversation
               </h2>
               <p className="text-[#6b7373] mb-8 text-center">
                 Pick a time that works for you and we will confirm the details.

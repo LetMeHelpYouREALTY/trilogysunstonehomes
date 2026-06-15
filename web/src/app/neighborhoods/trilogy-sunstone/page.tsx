@@ -309,7 +309,7 @@ export default function TrilogySunstonePage() {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-4 text-center">
-                Schedule a 90-Minute Trilogy Sunstone Tour
+                Schedule a 15-Minute Conversation
               </h2>
               <p className="text-[#6b7373] mb-8 text-center">
                 Book directly on our calendar to tour 2-3 homes in the community.

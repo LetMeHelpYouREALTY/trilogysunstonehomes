@@ -130,7 +130,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-4 text-center">
-                Book Your 90-Minute Home Tour
+                Book a 15-Minute Conversation
               </h2>
               <p className="text-[#6b7373] mb-8 text-center">
                 Choose a date and time to connect directly with Dr. Jan Duffy.
