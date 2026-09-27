@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { NearbyAmenityMapSection } from "@/components/nearby-amenity-map/nearby-amenity-map-section";
 import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
@@ -197,6 +198,8 @@ export default function BuyersGuidePage() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenityMapSection compact id="buyers-nearby-map" />
 
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">

@@ -12,7 +12,9 @@ import {
   SITE_URL,
   STREET_ADDRESS,
 } from "@/lib/site-contact";
+import { COMMUNITY_MAP_CENTER } from "@/lib/community-map";
 import { COMMUNITY_NAME, COMMUNITY_NAME_ALT, MASTER_PLAN } from "@/lib/hyperlocal";
+import type { FeaturedNearbyPlace } from "@/lib/nearby-amenities-content";
 
 const base = SITE_URL.replace(/\/$/, "");
 
@@ -229,5 +231,69 @@ export function breadcrumbListJsonLd(
       name: item.name,
       item: `${base}${item.path.startsWith("/") ? item.path : `/${item.path}`}`,
     })),
+  };
+}
+
+/** Community center Place with geo — aligns with map center / sales office. */
+export function trilogySunstoneCommunityPlaceJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    "@id": `${base}/#trilogySunstoneCommunity`,
+    name: COMMUNITY_NAME,
+    alternateName: COMMUNITY_NAME_ALT,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: COMMUNITY_MAP_CENTER.lat,
+      longitude: COMMUNITY_MAP_CENTER.lng,
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: STREET_ADDRESS,
+      addressLocality: ADDRESS_LOCALITY,
+      addressRegion: ADDRESS_REGION,
+      postalCode: POSTAL_CODE,
+      addressCountry: "US",
+    },
+    hasMap: MAPS_SEARCH_URL,
+  };
+}
+
+export function nearbyFeaturedPlacesItemListJsonLd(
+  places: readonly FeaturedNearbyPlace[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Featured places near ${COMMUNITY_NAME}`,
+    itemListElement: places.map((place, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": place.schemaType,
+        name: place.name,
+        ...(place.streetAddress
+          ? {
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: place.streetAddress,
+                addressLocality: place.addressLocality,
+                addressRegion: place.addressRegion,
+                postalCode: place.postalCode,
+                addressCountry: "US",
+              },
+            }
+          : {}),
+      },
+    })),
+  };
+}
+
+/** RealEstateAgent with areaServed for amenities / hyperlocal pages */
+export function amenitiesRealEstateAgentJsonLd() {
+  return {
+    ...realEstateAgentBase(),
+    description:
+      "Dr. Jan Duffy, REALTOR® — hyperlocal Trilogy Sunstone specialist for buyer and seller representation, community tours, and northwest Las Vegas 55+ lifestyle guidance.",
   };
 }

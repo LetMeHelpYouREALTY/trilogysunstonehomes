@@ -5,6 +5,7 @@ import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { LazyRealScoutOfficeListings } from "@/components/lazy-realscout-office-listings";
+import { NearbyAmenityMapSection } from "@/components/nearby-amenity-map/nearby-amenity-map-section";
 import { MlsListingDisclaimer } from "@/components/mls-listing-disclaimer";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
@@ -159,6 +160,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenityMapSection />
 
         <section className="py-16 md:py-20 bg-[#eaf0f2]">
           <div className="container mx-auto px-4">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { CalendlyPopupButton } from "@/components/calendly-popup-button";
 import { JsonLd } from "@/components/json-ld";
+import { NearbyAmenityMapSection } from "@/components/nearby-amenity-map/nearby-amenity-map-section";
 import { PageHero } from "@/components/page-hero";
 import { RealScoutSearchCta } from "@/components/realscout-search-cta";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
@@ -205,6 +206,8 @@ export default function TrilogySunstonePage() {
           </div>
         </section>
 
+        <NearbyAmenityMapSection centered={false} id="nearby-amenities-map" />
+
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
@@ -285,6 +288,12 @@ export default function TrilogySunstonePage() {
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
                 >
                   Guides &amp; comparisons
+                </Link>
+                <Link
+                  href="/amenities"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold border border-[#d9e0e2] text-[#3d4544] hover:bg-[#eaf0f2] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1c5087] focus:ring-offset-2"
+                >
+                  Nearby Amenities
                 </Link>
                 <Link
                   href="/amenities/cabochon-club"
