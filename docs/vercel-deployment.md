@@ -40,9 +40,9 @@ Both must succeed for a green commit status, but only **`trilogysunstonehomes`**
 
 **Recommendation:** In [Vercel Dashboard](https://vercel.com/dashboard) → project **`web`** → **Settings → Git**, disconnect this repo (or delete the duplicate project) so pushes only deploy once.
 
-### 3. Misleading red X on GitHub (not Vercel)
+### 3. MDC Rules Drift CI (not Vercel)
 
-`CI — MDC Rules Drift` fails on every push because project-specific `.cursor/rules/*.mdc` files differ from the generic baseline in `scripts/sync-mdc-rules.ps1`. This workflow is **not** a deploy gate and does not affect Vercel.
+`CI — MDC Rules Drift` compares `.cursor/rules/*.mdc` to the canonical content in `scripts/sync-mdc-rules.ps1`. It is **not** a deploy gate and does not affect Vercel. Keep the script baseline aligned with this repo’s customized rules (Trilogy Sunstone / `web/` patterns).
 
 ### 4. Root Directory must be `web`
 
