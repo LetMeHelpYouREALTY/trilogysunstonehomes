@@ -38,6 +38,7 @@ const guidesAndComparisons = [
     href: "/guides/best-55-plus-communities-las-vegas",
     label: "Best 55+ communities overview",
   },
+  { href: "/amenities", label: "Nearby Amenities" },
   { href: "/amenities/cabochon-club", label: "Cabochon Club" },
   {
     href: "/compare/sun-city-summerlin-vs-trilogy-sunstone",

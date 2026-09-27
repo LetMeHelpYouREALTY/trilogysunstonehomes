@@ -13,6 +13,7 @@ const beforeHomes =
 /** Primary links — always visible on desktop */
 const primaryLinks = [
   { href: "/neighborhoods/trilogy-sunstone", label: "Community" },
+  { href: "/amenities", label: "Nearby Amenities" },
   { href: "/buyers-guide", label: "Buyer's Guide" },
   { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },
