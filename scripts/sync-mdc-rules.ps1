@@ -27,12 +27,13 @@ alwaysApply: true
 
 # Next.js Stack Baseline
 
-- Next.js 15, App Router only. Never use Pages Router patterns.
+- Next.js 16, App Router only. Never use Pages Router patterns.
 - React 19 with TypeScript strict mode.
-- Use `next/image` for all listing photos. Never use raw `<img>` tags.
-- Use `generateMetadata()` on every page.
+- Use `next/image` for local listing photos and other first-party images. Only use raw third-party embeds or iframes when the integration requires it.
+- Every route should export either static `metadata` or `generateMetadata()` with page-specific title, description, and canonical behavior.
 - Server Components by default. Use `'use client'` only when required.
-- Tailwind CSS v4 classes for styling. Avoid inline styles.
+- Tailwind CSS v4 classes for styling. Avoid inline styles unless a browser API or external embed requires a dynamic inline value.
+- Prefer shared constants and helpers in `web/src/lib/` over duplicating SEO, NAP, schema, or URL strings in page files.
 '@;
     "realtor-site.mdc" = @'
 ---
@@ -42,11 +43,11 @@ alwaysApply: true
 
 # Realtor Site Rules
 
-- Never change site-specific phone numbers directly in page/component code. Read from environment variables.
-- Use RealScout embeds in Server Components only.
-- Include LocalBusiness and RealEstateListing JSON-LD schema on every page.
-- Use the Cloudflare Worker schema injector pattern across all sites.
-- `cadencehenderson.com` is new-build buyers only and uses phone `702-930-8672`.
+- Never hardcode site-specific phone numbers, address lines, or license text in page/component copy when a shared source already exists. Use shared constants such as `web/src/lib/site-contact.ts`.
+- Keep visible NAP, metadata, and JSON-LD aligned. If a page mentions Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, or Trilogy Sunstone contact details, they must match the shared contact source.
+- Use RealScout embeds only where the integration requires them, and keep related CSP/script domains aligned with the app config.
+- Use shared schema helpers in `web/src/lib/schema.ts` for `WebSite`, `RealEstateAgent`, `LocalBusiness`, `FAQPage`, and breadcrumbs before adding page-specific schema.
+- Do not add `RealEstateListing` schema unless the page has concrete listing-level data to support it.
 '@;
     "seo.mdc" = @'
 ---
@@ -56,10 +57,11 @@ alwaysApply: true
 
 # SEO Rules
 
-- Create `error.tsx` alongside each `page.tsx`.
-- Use `generateMetadata()` with title, description, Open Graph, and canonical URL fields.
-- Use auto-generated sitemap via `next-sitemap`.
-- Allow CCBot in `robots.txt` and never block it.
+- Each indexable route should have unique title, description, and canonical behavior via static `metadata` or `generateMetadata()`.
+- Match visible H1/H2 copy to the route's primary search intent; avoid boilerplate titles that invite Google rewrites.
+- Use App Router `robots.ts` and `sitemap.ts` metadata routes unless the project explicitly uses a different supported generator.
+- Keep structured data tied to visible content and shared schema helpers. Favor `FAQPage`, `BreadcrumbList`, `RealEstateAgent`, and `LocalBusiness` where appropriate.
+- Allow `CCBot` and other legitimate crawlers in `robots.ts`; never block `/_next/static` assets needed for rendering.
 '@
   }
 }
