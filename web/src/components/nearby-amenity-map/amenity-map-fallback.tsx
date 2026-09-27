@@ -5,24 +5,33 @@ import {
   COMMUNITY_MAP_SUBLABEL,
   directionsUrl,
   googleMapsEmbedUrl,
+  type AmenityCategoryId,
 } from "@/lib/community-map";
-import { FEATURED_NEARBY_PLACES } from "@/lib/nearby-amenities-content";
+import { featuredPlacesForCategory } from "@/lib/nearby-amenities-content";
+import { CuratedPlacesList } from "@/components/nearby-amenity-map/curated-places-list";
 import { MAP_CONTAINER_MIN_HEIGHT } from "@/components/nearby-amenity-map/types";
 
 type AmenityMapFallbackProps = {
+  activeCategory?: AmenityCategoryId;
   activeCategoryLabel?: string;
 };
 
-export function AmenityMapFallback({ activeCategoryLabel }: AmenityMapFallbackProps) {
+export function AmenityMapFallback({
+  activeCategory = "healthcare",
+  activeCategoryLabel,
+}: AmenityMapFallbackProps) {
   const { lat, lng } = COMMUNITY_MAP_CENTER;
   const embedSrc = googleMapsEmbedUrl(lat, lng);
+  const curated = featuredPlacesForCategory(activeCategory);
+  const label =
+    activeCategoryLabel ??
+    AMENITY_CATEGORIES.find((c) => c.id === activeCategory)?.label;
 
   return (
     <div className="space-y-6">
       <p className="text-sm text-[#6b7373]">
-        Interactive amenity search requires a Google Maps API key. Showing a map centered on{" "}
-        {COMMUNITY_MAP_LABEL}
-        {activeCategoryLabel ? ` (${activeCategoryLabel})` : ""}.
+        Showing a map centered on {COMMUNITY_MAP_LABEL}
+        {label ? ` (${label})` : ""} and verified nearby places for this category.
       </p>
       <div
         className="overflow-hidden rounded-lg border border-[#d9e0e2] bg-white shadow-sm"
@@ -38,26 +47,10 @@ export function AmenityMapFallback({ activeCategoryLabel }: AmenityMapFallbackPr
           allowFullScreen
         />
       </div>
-      <div>
-        <h3 className="mb-3 text-lg font-semibold text-[#3d4544]">
-          Featured places near {COMMUNITY_MAP_LABEL}
-        </h3>
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {FEATURED_NEARBY_PLACES.map((place) => (
-            <li key={place.name} className="card-elevated bg-white p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#1c5087]">
-                {place.category}
-              </p>
-              <p className="mt-1 font-semibold text-[#3d4544]">{place.name}</p>
-              <p className="mt-1 text-sm text-[#6b7373]">
-                {place.streetAddress}, {place.addressLocality}, {place.addressRegion}{" "}
-                {place.postalCode}
-              </p>
-              <p className="mt-2 text-sm text-[#4e5655]">{place.summary}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <CuratedPlacesList
+        places={curated}
+        heading={`Verified places (${label ?? "nearby"})`}
+      />
       <p className="text-xs text-[#6b7373]">
         Community center: {COMMUNITY_MAP_SUBLABEL}. Filter categories on this page:{" "}
         {AMENITY_CATEGORIES.map((c) => c.label).join(", ")}.

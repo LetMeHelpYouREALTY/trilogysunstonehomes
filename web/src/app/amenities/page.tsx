@@ -71,9 +71,9 @@ export default function NearbyAmenitiesPage() {
                   Interactive amenity map
                 </h2>
                 <p className="text-[#4e5655] mb-8 leading-relaxed">
-                  Filter by category to explore places Google Maps returns within a few miles of{" "}
-                  {COMMUNITY_NAME}. When the map API is not configured, you still get a centered
-                  embed plus our verified featured-place list below.
+                  Filter by category to explore places within a few miles of {COMMUNITY_NAME}. If
+                  live search is unavailable, you still get a centered map embed plus verified
+                  places for that category.
                 </p>
                 <LazyNearbyAmenityMap />
               </div>
@@ -104,10 +104,12 @@ export default function NearbyAmenitiesPage() {
                         {place.category}
                       </p>
                       <p className="mt-1 font-semibold text-[#3d4544]">{place.name}</p>
-                      <p className="mt-1 text-sm text-[#6b7373]">
-                        {place.streetAddress}, {place.addressLocality}, {place.addressRegion}{" "}
-                        {place.postalCode}
-                      </p>
+                      {place.streetAddress ? (
+                        <p className="mt-1 text-sm text-[#6b7373]">
+                          {place.streetAddress}, {place.addressLocality}, {place.addressRegion}{" "}
+                          {place.postalCode}
+                        </p>
+                      ) : null}
                     </li>
                   ))}
                 </ul>

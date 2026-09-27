@@ -1,7 +1,8 @@
 /**
  * Server-rendered copy and verified place list for /amenities (crawlers + fallback map).
- * Only include businesses/locations with a verifiable name and address.
+ * Each curated entry includes a primary-source URL used to verify name and address.
  */
+import type { AmenityCategoryId } from "@/lib/community-map";
 import { ADDRESS_LINE } from "@/lib/site-contact";
 import {
   CLUB_NAME,
@@ -24,12 +25,15 @@ export type FeaturedNearbyPlace = {
     | "ShoppingCenter"
     | "Pharmacy"
     | "GroceryStore";
-  streetAddress: string;
+  /** Omitted from JSON-LD when not verified */
+  streetAddress?: string;
   addressLocality: string;
   addressRegion: string;
   postalCode: string;
   category: string;
   summary: string;
+  sourceUrl: string;
+  amenityCategoryIds: readonly AmenityCategoryId[];
 };
 
 /** Curated list used in fallback UI and ItemList schema */
@@ -43,21 +47,25 @@ export const FEATURED_NEARBY_PLACES: readonly FeaturedNearbyPlace[] = [
     postalCode: "89143",
     category: "On-site recreation",
     summary:
-      "Resort-style club at the Trilogy Sunstone sales center address—fitness, pools, pickleball, dining at Cooper's Kitchen, and resident programming.",
+      "Resort-style club at the Trilogy Sunstone sales center—fitness, pools, pickleball, dining at Cooper's Kitchen, and resident programming.",
+    sourceUrl: "https://www.sheahomes.com/new-homes/nevada/las-vegas-area/las-vegas/trilogy-sunstone",
+    amenityCategoryIds: ["community", "fitness"],
   },
   {
     name: "Skye Canyon Marketplace",
     schemaType: "ShoppingCenter",
-    streetAddress: "Skye Canyon Park Dr area",
+    streetAddress: "9710 W Skye Canyon Park Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
-    postalCode: "89143",
+    postalCode: "89166",
     category: "Shopping & dining",
     summary:
-      "Retail and restaurant cluster in Skye Canyon—typically the first stop for groceries, pharmacy, and casual dining from Trilogy Sunstone.",
+      "Retail and restaurant cluster in Skye Canyon, anchored by Smith's Marketplace—typically the first stop for groceries, pharmacy, and casual dining from Trilogy Sunstone.",
+    sourceUrl: "https://skyecanyon.com/amenities/shopping/",
+    amenityCategoryIds: ["shopping", "restaurants", "pharmacies"],
   },
   {
-    name: "Smith's Food and Drug",
+    name: "Smith's Marketplace",
     schemaType: "GroceryStore",
     streetAddress: "9710 W Skye Canyon Park Dr",
     addressLocality: "Las Vegas",
@@ -65,7 +73,10 @@ export const FEATURED_NEARBY_PLACES: readonly FeaturedNearbyPlace[] = [
     postalCode: "89166",
     category: "Grocery",
     summary:
-      "Full-service supermarket in Skye Canyon Marketplace—common weekly grocery run for northwest Las Vegas 55+ buyers.",
+      "Full-service Smith's Marketplace in Skye Canyon—a common weekly grocery run for northwest Las Vegas 55+ buyers.",
+    sourceUrl:
+      "https://www.smithsfoodanddrug.com/stores/grocery/nv/las-vegas/smiths-marketplace/706/00367",
+    amenityCategoryIds: ["grocery"],
   },
   {
     name: "Centennial Hills Hospital Medical Center",
@@ -77,6 +88,8 @@ export const FEATURED_NEARBY_PLACES: readonly FeaturedNearbyPlace[] = [
     category: "Healthcare",
     summary:
       "Acute-care hospital in the Centennial Hills area—one of the major medical campuses northwest residents reference for emergencies and specialists.",
+    sourceUrl: "https://www.centennialhillshospital.com/patients-visitors/maps-directions",
+    amenityCategoryIds: ["healthcare"],
   },
   {
     name: "Red Rock Canyon National Conservation Area",
@@ -87,25 +100,38 @@ export const FEATURED_NEARBY_PLACES: readonly FeaturedNearbyPlace[] = [
     postalCode: "89161",
     category: "Parks & outdoor recreation",
     summary:
-      "Scenic desert conservation area with hiking and driving loops—a signature outdoor draw for Trilogy Sunstone and Skye Canyon homeowners.",
+      "BLM conservation area with hiking and the Scenic Drive—a signature outdoor draw for Trilogy Sunstone and Skye Canyon homeowners.",
+    sourceUrl: "https://www.redrockcanyonlv.org/contact-us/",
+    amenityCategoryIds: ["parks"],
   },
   {
-    name: "Lone Mountain Golf Club",
+    name: "TPC Las Vegas",
     schemaType: "GolfCourse",
-    streetAddress: "10388 W Lone Mountain Pkwy",
+    streetAddress: "9851 Canyon Run Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
-    postalCode: "89129",
+    postalCode: "89144",
     category: "Golf",
     summary:
-      "Public golf course in northwest Las Vegas—buyers comparing active-adult communities often pair on-site pickleball with nearby public golf.",
+      "Public PGA TOUR course in Summerlin with views toward Red Rock Canyon—confirm tee times and rates directly with the club.",
+    sourceUrl: "https://tpc.com/lasvegas/contact-directions/",
+    amenityCategoryIds: ["golf"],
   },
 ] as const;
+
+export function featuredPlacesForCategory(
+  categoryId: AmenityCategoryId,
+): readonly FeaturedNearbyPlace[] {
+  const matches = FEATURED_NEARBY_PLACES.filter((place) =>
+    place.amenityCategoryIds.includes(categoryId),
+  );
+  return matches.length > 0 ? matches : FEATURED_NEARBY_PLACES;
+}
 
 export const AMENITIES_PAGE_FAQ = [
   {
     question: `What grocery stores are near ${COMMUNITY_NAME}?`,
-    answer: `Smith's Food and Drug at Skye Canyon Marketplace (9710 W Skye Canyon Park Dr) is the closest full grocery run for most ${COMMUNITY_NAME} residents—about a few minutes from ${SALES_OFFICE} via Skye Canyon roads.`,
+    answer: `Smith's Marketplace at Skye Canyon Marketplace (9710 W Skye Canyon Park Dr) is the closest full grocery run for most ${COMMUNITY_NAME} residents—a short drive from ${SALES_OFFICE} via Skye Canyon roads.`,
   },
   {
     question: `How far is ${COMMUNITY_NAME} from the Las Vegas Strip?`,
@@ -125,11 +151,11 @@ export const AMENITIES_PAGE_FAQ = [
   },
   {
     question: `What outdoor recreation is near ${COMMUNITY_NAME}?`,
-    answer: `Red Rock Canyon National Conservation Area (Scenic Loop visitor access off Charleston Blvd) is the headline hike-and-drive destination; Mount Charleston and Lee Canyon are farther but popular for cooler-season day trips from northwest Las Vegas.`,
+    answer: `Red Rock Canyon National Conservation Area (visitor access at 1000 Scenic Loop Dr) is the headline hike-and-drive destination; Mount Charleston and Lee Canyon are farther but popular for cooler-season day trips from northwest Las Vegas.`,
   },
   {
     question: `Is there golf near ${COMMUNITY_NAME}?`,
-    answer: `On-site, ${COMMUNITY_NAME} emphasizes pickleball and club fitness; public golf options such as Lone Mountain Golf Club are a short northwest Las Vegas drive—confirm tee times and membership policies directly with the course.`,
+    answer: `On-site, ${COMMUNITY_NAME} emphasizes pickleball and club fitness; public golf options such as TPC Las Vegas (9851 Canyon Run Dr) are a northwest/Summerlin drive—confirm tee times and policies directly with the course.`,
   },
   {
     question: `How do I tour ${COMMUNITY_NAME} and see nearby amenities?`,
@@ -151,7 +177,7 @@ export const AMENITIES_CATEGORY_SECTIONS = [
   {
     id: "golf",
     heading: "Golf & active sports",
-    body: `${COMMUNITY_NAME} buyers often prioritize pickleball and club fitness first. Public golf such as Lone Mountain Golf Club supplements on-site sports when you want a traditional 18-hole round in northwest Las Vegas.`,
+    body: `${COMMUNITY_NAME} buyers often prioritize pickleball and club fitness first. Public golf such as TPC Las Vegas supplements on-site sports when you want a traditional 18-hole round in northwest Las Vegas.`,
   },
   {
     id: "healthcare",
