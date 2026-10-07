@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/compare/del-webb-north-ranch-vs-trilogy-sunstone",
     "/compare/regency-at-summerlin-vs-trilogy-sunstone",
     "/amenities/cabochon-club",
+    "/amenities",
   ];
 
   return [

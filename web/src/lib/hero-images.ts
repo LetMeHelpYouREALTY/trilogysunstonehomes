@@ -133,6 +133,7 @@ const PATH_TO_HERO: Record<string, HeroImageKey> = {
   "/neighborhoods": "neighborhoods",
   "/neighborhoods/trilogy-sunstone": "community",
   "/amenities/cabochon-club": "amenities",
+  "/amenities": "amenities",
   "/guides": "guides",
   "/guides/northwest-las-vegas-55-plus-homes": "desert-mountains",
   "/guides/moving-from-california-to-las-vegas-55-plus": "relocation",

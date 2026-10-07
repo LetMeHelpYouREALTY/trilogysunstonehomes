@@ -1,6 +1,9 @@
 {
   "name": "trilogysunstonehomes",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "description": "Monorepo root; Next.js marketing site in web/ (Trilogy Sunstone Las Vegas).",
   "dependencies": {
     "next": "16.2.3",
