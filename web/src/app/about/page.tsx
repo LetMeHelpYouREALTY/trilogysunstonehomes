@@ -13,11 +13,11 @@ import {
 } from "@/lib/hyperlocal";
 import { contactRealEstateAgentJsonLd } from "@/lib/schema";
 import { pageSeo } from "@/lib/seo-metadata";
-import { AGENT_LICENSE_LINE } from "@/lib/site-contact";
+import { AGENT_BYLINE } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   ...pageSeo({
-    title: "Dr. Jan Duffy — Trilogy Sunstone REALTOR® | BHHS Nevada Properties",
+    title: "Dr. Jan Duffy — Trilogy Sunstone REALTOR®",
     description: `Dr. Jan Duffy is your Trilogy Sunstone REALTOR® in northwest Las Vegas (${ZIP})—buyer and seller representation, Shea Homes new construction guidance, resale tours, and first-visit agent registration.`,
     path: "/about",
   }),
@@ -44,7 +44,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <p className="text-sm text-[#6b7373] mb-8 border-b border-[#d9e0e2] pb-6">{AGENT_LICENSE_LINE}</p>
+            <p className="text-sm text-[#6b7373] mb-8 border-b border-[#d9e0e2] pb-6">{AGENT_BYLINE}</p>
             <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-6">
               Serving zip {ZIP}
             </h2>

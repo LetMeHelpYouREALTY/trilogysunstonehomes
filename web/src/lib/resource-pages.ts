@@ -54,12 +54,12 @@ const resourcePages: ResourcePage[] = [
   },
   {
     slug: ["berkshire-hathaway-home-services-resources"],
-    title: "Berkshire Hathaway HomeServices Resources",
+    title: "Buyer and Ownership Resources",
     description:
-      "Berkshire Hathaway HomeServices buying and ownership resources for Trilogy Sunstone clients in northwest Las Vegas (89143) with Dr. Jan Duffy.",
-    h1: "Berkshire Hathaway HomeServices Resources",
+      "Buying and ownership resources for Trilogy Sunstone clients in northwest Las Vegas (89143) with Dr. Jan Duffy.",
+    h1: "Buyer and Ownership Resources",
     intro:
-      `These resources help clients work confidently with a Berkshire Hathaway HomeServices Nevada Properties-backed process from search to close—tailored for ${COMMUNITY_NAME} buyers in ${ZIP} and the broader ${AREA_LABEL} market.`,
+      `These resources help clients work confidently through a structured process from search to close—tailored for ${COMMUNITY_NAME} buyers in ${ZIP} and the broader ${AREA_LABEL} market.`,
     sections: [
       {
         heading: "Client-first process",
@@ -76,10 +76,10 @@ const resourcePages: ResourcePage[] = [
         ],
       },
       {
-        heading: `BHHS support for ${COMMUNITY_NAME} buyers`,
+        heading: `Support for ${COMMUNITY_NAME} buyers`,
         body: [
-          `Dr. Jan Duffy represents buyers through Berkshire Hathaway HomeServices Nevada Properties with local expertise in ${COMMUNITY_NAME}, Shea Homes new construction, and resale listings on Lapis Ln. and surrounding streets.`,
-          "BHHS tools complement hyperlocal knowledge: comparable sales in 89143, contract review for builder and resale transactions, and coordination with lenders familiar with active-adult communities.",
+          `Dr. Jan Duffy, in real estate since 1983, represents buyers with local expertise in ${COMMUNITY_NAME}, Shea Homes new construction, and resale listings on Lapis Ln. and surrounding streets.`,
+          "Her tools complement hyperlocal knowledge: comparable sales in 89143, contract review for builder and resale transactions, and coordination with lenders familiar with active-adult communities.",
           "Pair these resources with our Trilogy Sunstone community page and buyers guide before scheduling a tour at the sales office.",
         ],
       },
@@ -768,10 +768,10 @@ const resourcePages: ResourcePage[] = [
   },
   {
     slug: ["the-berkshire-hathaway-home-services-design-studio"],
-    title: "The Berkshire Hathaway Home Services Design Studio",
+    title: "The Design Studio",
     description:
       `Design studio guidance for Trilogy Sunstone (89143) finish selections with Dr. Jan Duffy—northwest Las Vegas new construction buyers.`,
-    h1: "The Berkshire Hathaway HomeServices Design Studio",
+    h1: "The Design Studio",
     intro:
       `Use this design studio framework to make Shea Homes selections efficiently at ${COMMUNITY_NAME} in ${ZIP} while staying aligned with budget, desert-climate durability, and your northwest Las Vegas move timeline.`,
     sections: [
@@ -792,7 +792,7 @@ const resourcePages: ResourcePage[] = [
       {
         heading: `Studio sessions at ${COMMUNITY_NAME}`,
         body: [
-          `The Berkshire Hathaway HomeServices design studio experience supports ${COMMUNITY_NAME} buyers selecting finishes for Resort and Freedom Collection plans—schedule after your lot and elevation are confirmed in 89143.`,
+          `The design studio experience supports ${COMMUNITY_NAME} buyers selecting finishes for Resort and Freedom Collection plans—schedule after your lot and elevation are confirmed in 89143.`,
           "Bundle selections into tiers: structural lighting and electrical first, then surfaces, then decorative items with lower resale impact in northwest Las Vegas.",
           "Dr. Jan Duffy reviews your final upgrade total against payment models that include HOA, taxes, and insurance for your Lapis Ln. address.",
         ],

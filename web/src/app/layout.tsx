@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME_SHORT}`,
   },
   description:
-    "Trilogy Sunstone homes for sale — Trilogy at Sunstone real estate, Las Vegas 55+ community in northwest Las Vegas (89143). Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+    "Trilogy Sunstone homes for sale — Trilogy at Sunstone real estate, Las Vegas 55+ community in northwest Las Vegas (89143). Dr. Jan Duffy, REALTOR®, in real estate since 1983.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },

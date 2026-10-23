@@ -16,11 +16,14 @@ export const PHONE_E164 = "+17025001942";
 
 export const MAPS_SEARCH_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS_LINE)}`;
 
+/** Footer only: brokerage and license line. */
 export const AGENT_LICENSE_LINE =
-  "Dr. Jan Duffy, REALTOR® | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada Properties";
+  "Berkshire Hathaway HomeServices Nevada Properties since September 2008 · License S.0197614.LLC";
 
-export const BROKERAGE_LEGAL_LINE =
-  "© 2026 Berkshire Hathaway HomeServices Nevada Properties. All Rights Reserved.";
+/** Body byline (no brokerage or license). */
+export const AGENT_BYLINE = "Dr. Jan Duffy, REALTOR® · In real estate since 1983";
+
+export const BROKERAGE_LEGAL_LINE = `© 2026 ${SITE_NAME}. All Rights Reserved.`;
 
 export const REALSCOUT_AGENT_ENCODED_ID = "QWdlbnQtMjI1MDUw";
 export const REALSCOUT_SHARED_SEARCH_URL =

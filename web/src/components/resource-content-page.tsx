@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { RESOURCE_LOCAL_SECTION } from "@/lib/hyperlocal";
 import { getHeroImageForResourceSlug } from "@/lib/hero-images";
-import type { ResourcePage } from "@/lib/resource-pages";
+import { getResourcePageBySlug, type ResourcePage } from "@/lib/resource-pages";
 import { breadcrumbListJsonLd } from "@/lib/schema";
 
 type ResourceContentPageProps = {
@@ -13,6 +13,9 @@ type ResourceContentPageProps = {
 
 export function ResourceContentPage({ page }: ResourceContentPageProps) {
   const formatLabel = (href: string) =>
+    (href.startsWith("/resources/")
+      ? getResourcePageBySlug(href.replace(/^\/resources\//, "").split("/"))?.title
+      : undefined) ??
     href
       .replace(/^\/resources\//, "")
       .replace(/^\/+/, "")

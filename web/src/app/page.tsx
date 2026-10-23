@@ -22,7 +22,7 @@ import {
 } from "@/lib/hyperlocal";
 import { pageSeo } from "@/lib/seo-metadata";
 import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
-import { AGENT_LICENSE_LINE, CONTACT_SELLING_SECTION_ID } from "@/lib/site-contact";
+import { AGENT_BYLINE, CONTACT_SELLING_SECTION_ID } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   ...pageSeo({
@@ -56,7 +56,7 @@ export default function HomePage() {
             </CalendlyPopupButton>
           </div>
           <p className="mx-auto mt-6 max-w-xl px-2 text-[11px] leading-relaxed text-white/90 sm:text-xs">
-            {AGENT_LICENSE_LINE}
+            {AGENT_BYLINE}
           </p>
           <p className="mt-4 text-sm font-medium text-white">
             <Link

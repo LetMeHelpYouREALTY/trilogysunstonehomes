@@ -17,7 +17,7 @@ import { contactRealEstateAgentJsonLd } from "@/lib/schema";
 import { pageSeo } from "@/lib/seo-metadata";
 import {
   ADDRESS_LINE,
-  AGENT_LICENSE_LINE,
+  AGENT_BYLINE,
   CONTACT_SELLING_SECTION_ID,
   MAPS_SEARCH_URL,
   PHONE_DISPLAY,
@@ -26,7 +26,7 @@ import {
 
 export const metadata: Metadata = {
   ...pageSeo({
-    title: "Contact Dr. Jan Duffy | Trilogy Sunstone Specialist | BHHS Nevada",
+    title: "Contact Dr. Jan Duffy | Trilogy Sunstone Specialist",
     description: `Contact Dr. Jan Duffy for Trilogy Sunstone homes for sale or selling in ${AREA_LABEL} (${ZIP}). Call ${PHONE_DISPLAY}. Buyer and seller representation for the ${COMMUNITY_NAME} 55+ community.`,
     path: "/contact",
   }),
@@ -43,7 +43,7 @@ export default function ContactPage() {
             Contact Dr. Jan Duffy
           </h1>
           <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-            Trilogy Sunstone specialist · Berkshire Hathaway HomeServices Nevada Properties · Call{" "}
+            Trilogy Sunstone specialist · In real estate since 1983 · Call{" "}
             {PHONE_DISPLAY}
           </p>
         </PageHero>
@@ -52,7 +52,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-[#3d4544] mb-6">Get in Touch</h2>
-              <p className="text-sm text-[#6b7373] mb-4">{AGENT_LICENSE_LINE}</p>
+              <p className="text-sm text-[#6b7373] mb-4">{AGENT_BYLINE}</p>
               <div className="space-y-6 text-[#3d4544]">
                 <p className="text-lg">
                   Reach out for{" "}
@@ -106,7 +106,7 @@ export default function ContactPage() {
               <h2 className="mb-3 text-2xl font-bold text-[#3d4544]">
                 Selling your Trilogy Sunstone home?
               </h2>
-              <p className="mb-2 text-sm text-[#6b7373]">{AGENT_LICENSE_LINE}</p>
+              <p className="mb-2 text-sm text-[#6b7373]">{AGENT_BYLINE}</p>
               <p className="mb-6 text-[#3d4544]">
                 Get pricing context, prep guidance, and a marketing plan aligned with northwest Las Vegas
                 55+ demand—not a one-size-fits-all template.

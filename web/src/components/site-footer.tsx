@@ -242,10 +242,6 @@ export function SiteFooter() {
             </nav>
           </div>
           <p className="text-[#b7bec0] text-xs text-center">{AGENT_LICENSE_LINE}</p>
-          <p className="text-[#b7bec0] text-xs text-center max-w-2xl mx-auto">
-            When you work with a Berkshire Hathaway HomeServices agent, you&apos;re backed
-            by a name synonymous with trust, ethical standards, and financial strength.
-          </p>
         </div>
       </div>
     </footer>

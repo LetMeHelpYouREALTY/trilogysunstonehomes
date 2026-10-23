@@ -17,7 +17,7 @@ export default async function OpenGraphImage() {
       subline:
         "New construction & resale in Las Vegas' 55+ community — resort living near Red Rock Canyon.",
       badge: "55+ Active Adult · Trilogy at Sunstone",
-      footer: "Dr. Jan Duffy, REALTOR® · BHHS Nevada Properties",
+      footer: "Dr. Jan Duffy, REALTOR® · Since 1983",
       domain,
     },
     fontConfig,
