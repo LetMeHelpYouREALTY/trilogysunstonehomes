@@ -42,7 +42,7 @@ GitHub Actions alternative: add `VERCEL_TOKEN` to repo secrets, then run workflo
 
 - **[`.github/workflows/web-ci.yml`](.github/workflows/web-ci.yml)** — `main` pushes: install/build/typecheck/lint in **`web/`** (Next.js app). This is the deploy gate.
 - **[`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml)** — GitHub Pages template; **`workflow_dispatch` only** so it does not run on every push (production is Vercel). Enable `push` there only after adapting it for `web/` + static export if you need Pages.
-- **`.nvmrc`** — Node **20**, aligned with [`web/package.json`](web/package.json) `engines`.
+- **`.nvmrc`** — Node **24**, aligned with [`web/package.json`](web/package.json) `engines` (Vercel discontinued Node 20.x).
 
 ## Cursor rules
 
