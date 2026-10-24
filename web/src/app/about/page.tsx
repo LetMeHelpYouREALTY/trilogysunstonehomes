@@ -44,7 +44,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <p className="text-sm text-[#6b7373] mb-8 border-b border-[#d9e0e2] pb-6">{AGENT_BYLINE}</p>
+            <p className="text-sm text-[#6b7373] mb-8 border-b border-[#d9e0e2] pb-6">{AGENT_BYLINE} · Top 1% Las Vegas REALTOR®</p>
             <h2 className="text-2xl md:text-3xl font-bold text-[#3d4544] mb-6">
               Serving zip {ZIP}
             </h2>
