@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { localBusinessJsonLd, websiteJsonLd } from "@/lib/schema";
 import { SITE_NAME_SHORT, SITE_URL } from "@/lib/site-contact";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const sans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -86,6 +87,7 @@ export default function RootLayout({
           {children}
         </div>
         <SiteFooter />
+        <SpeedInsights />
       </body>
     </html>
   );
