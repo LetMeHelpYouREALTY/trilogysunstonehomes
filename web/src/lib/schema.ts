@@ -128,12 +128,6 @@ export function homeRealEstateAgentWithReviewsJsonLd() {
     ...realEstateAgentBase(),
     description:
       "Dr. Jan Duffy, REALTOR® — Trilogy Sunstone real estate specialist for buyer and seller representation in northwest Las Vegas (89143).",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: 5,
-      bestRating: 5,
-      reviewCount: 2,
-    },
     review: testimonialReviews.map((r) => ({
       "@type": "Review",
       author: r.author,
