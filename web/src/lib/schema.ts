@@ -109,31 +109,16 @@ export function realEstateAgentBase() {
   };
 }
 
-const testimonialReviews = [
-  {
-    author: { "@type": "Person", name: "Linda S." },
-    reviewBody: "The process was so easy and the community is amazing!",
-    reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
-  },
-  {
-    author: { "@type": "Person", name: "Mark L." },
-    reviewBody: "I found my perfect home and made new friends right away.",
-    reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
-  },
-];
-
-/** Matches visible testimonials on the homepage. */
-export function homeRealEstateAgentWithReviewsJsonLd() {
+/**
+ * No Review markup here: Google ignores reviews a business publishes about itself, and the
+ * testimonial review[] triggered a Review snippets error in Search Console. The testimonials
+ * stay visible on the homepage.
+ */
+export function homeRealEstateAgentJsonLd() {
   return {
     ...realEstateAgentBase(),
     description:
       "Dr. Jan Duffy, REALTOR® — Trilogy Sunstone real estate specialist for buyer and seller representation in northwest Las Vegas (89143).",
-    review: testimonialReviews.map((r) => ({
-      "@type": "Review",
-      author: r.author,
-      reviewBody: r.reviewBody,
-      reviewRating: r.reviewRating,
-    })),
   };
 }
 

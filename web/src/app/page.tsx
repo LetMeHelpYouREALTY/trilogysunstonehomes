@@ -21,7 +21,7 @@ import {
   ZIP,
 } from "@/lib/hyperlocal";
 import { pageSeo } from "@/lib/seo-metadata";
-import { homeRealEstateAgentWithReviewsJsonLd } from "@/lib/schema";
+import { homeRealEstateAgentJsonLd } from "@/lib/schema";
 import { AGENT_BYLINE, CONTACT_SELLING_SECTION_ID } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={homeRealEstateAgentWithReviewsJsonLd()} />
+      <JsonLd data={homeRealEstateAgentJsonLd()} />
       <div className="pb-24 md:pb-0">
       <main className="min-h-screen flex flex-col">
         <PageHero image="home" size="large" priority>
